@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkoHubben | Air Jordan Dub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet">
+    <link rel="icon" href="bilder/Logo.png" type="image/icon type">
+</head>
+
+<body>
+    <!--alt for header her inne -->
+    <div id="header_index">
+        <div id="hamburger_div">
+            <h1 id="hamburger_menu" onclick="open_menu()">&#9776;</h1>
+        </div>
+        <div id="link_holder">
+            <a href="index.html" id="home_link">
+                <h1 id="home">Home</h1>
+
+            </a>
+
+        </div>
+        <div id="logo_holder">
+            <div id="logo_tekst">
+                <a href="index.html">
+                    <h1 id="title">SkoHubben AS</h1>
+                </a>
+            </div>
+            <a href="index.html">
+                <img id="logo" src="bilder/Logo.png" alt="">
+            </a>
+        </div>
+
+        <a href="pay_page.html" id="shopping_link">
+            <img src="bilder/shopping_cart.png" alt="" id="shopping_cart" class="index_shopping">
+        </a>
+
+    </div>
+
+    <div id="menu_content">
+
+        <h1 id="close_button" onclick="close_menu()">X</h1>
+
+        <img id="menu_logo" onclick="close_menu()" src="bilder/Logo.png" alt="">
+
+        <a href="index.html">
+            <h1 id="home_menu">Home</h1>
+        </a>
+        <a href="pay_page.html">
+            <h1 id="cart_menu">Cart</h1>
+        </a>
+    </div>
+    
+    
+    <div id="packing_sell">
+        <div id="packing_pictures">
+            <div id="picture_12">
+                <img id="showcase_pictures" src="sko/air_jordan_dub_zero/black/left.webp" alt="">
+                <img id="showcase_pictures" src="sko/air_jordan_dub_zero/black/right.webp" alt="">
+            </div>
+            <div id="picture_34">
+                <img id="showcase_pictures" src="sko/air_jordan_dub_zero/black/bottom.webp" alt="">
+                <img id="showcase_pictures" src="sko/air_jordan_dub_zero/black/top.webp" alt="">
+            </div>
+            <div id="picture_5">
+
+            </div>
+        </div>
+        <div id="packing_options">
+            <h1>Air Jordan Dub Zero</h1>
+            <div id="color_change_div">
+                <a href="#"><img id="change_color_shoe_orig" src="sko/air_jordan_dub_zero/black/left.webp"></a>
+                <a href="Air_Jordan_dub_white.html"><img id="change_color_shoe" src="sko/air_jordan_dub_zero/white/left.webp"></a>
+            </div>
+            <div id="Storelse_tekst">
+                <p id="size_tekst">Sizes</p>
+            </div>
+            <div id="storelser">
+                <div class="Size_kubes" id="storelse38"><button onclick="border38()">38</button></div>
+                <div class="Size_kubes" id="storelse39"><button onclick="border39()">39</button></div>
+                <div class="Size_kubes" id="storelse40"><button onclick="border40()">40</button></div>
+            </div>
+
+            <div id="size_2nd_row">
+                <div class="Size_kubes" id="storelse41"><button onclick="border41()">41</button></div>
+                <div class="Size_kubes" id="storelse42"><button onclick="border42()">42</button></div>
+                <div class="Size_kubes" id="storelse43"><button onclick="border43()">43</button></div>
+            </div>
+
+            <div id="packing_price">
+                <div id="price">
+                    <h3 id="price_tekst">Price: 1300kr</h3>
+                </div>
+                <div id="add_to_cart">
+                    <button class="button_add_to_cart" onclick="add_specific_shoe()" id="AJDB">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="sko_side.js"></script>
+
+</html>
