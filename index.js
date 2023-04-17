@@ -1,288 +1,39 @@
-var x = window.matchMedia("(max-width: 600px)")
+const bodyParser = require('body-parser');
 
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+    host: "65.108.15.66",
+    user: 'u131_I1Cc22TtMg',
+    password: "d3sS3tsJUm=QtEQtz=BMIQVx",
+    database: 's131_Epic',
+});
 
-/* et globalt variabel som skal skjekke hvilken av knappene ble trykket på */
+connection.connect();
 
-if (!x.matches) {
-  console.log("yay")
-  var what_input = 0
-  var slideIndex = 1;
-  showDivs(slideIndex);
+const express = require('express')
+const app = express()
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+const path = require( "path")
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + "/code/index.html"))
 
-  function plusDivs(n) {
-    if (n === 1) {
-      what_input = 1
-    } else if (n === -1) {
-      what_input = -1
-    }
-    showDivs(slideIndex += n);
-  }
-  var x;
-  function showDivs(n) {
-    var i;
+})
 
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {
-      slideIndex = 5
-    }
+app.post("/buy/shoe", function(req, res){
+    let antall = req.body.antall
+    let name = req.body.name
+    connection.query(`INSERT INTO orders(shoe_name, order_nr) VALUE(${connection.escape(name)}, ${connection.escape(antall)})`)
+    
+})
 
+app.get("/bought/items", function(req, res){
+    connection.query(`SELECT * FROM orders`, function(err, result, fields){
+        let data = JSON.parse(JSON.stringify(result))
+        res.send(data)
+    })
+})
 
-    if (n < 5) { slideIndex = x.length }
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    x[slideIndex - 1].style.opacity = "0";
-    x[slideIndex - 2].style.opacity = "0";
-    x[slideIndex - 3].style.opacity = "0";
-    x[slideIndex - 4].style.opacity = "0";
-    x[slideIndex - 5].style.opacity = "0";
-    if (what_input === 1) {
-      for (let i = 0; i < x.length; i++) {
-        document.getElementsByClassName("mySlides")[i].className = "mySlides"
-      }
-      requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-          for (let i = 0; i < x.length; i++) {
-            document.getElementsByClassName("mySlides")[i].className = "mySlides changing"
-            x[slideIndex - 1].style.opacity = "1";
-            x[slideIndex - 1].className = "mySlides animate_in"
-          }
-        });
-      });
-    } else {
-      for (let i = 0; i < x.length; i++) {
-        document.getElementsByClassName("mySlides")[i].className = "mySlides"
-      }
-      requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-          for (let i = 0; i < x.length; i++) {
-            document.getElementsByClassName("mySlides")[i].className = "mySlides changing_out"
-            x[slideIndex - 5].className = "mySlides animate_out"
-          }
-        });
-      });
-    }
-
-    x[slideIndex - 1].style.display = "block";
-    x[slideIndex - 2].style.display = "block";
-    x[slideIndex - 3].style.display = "block";
-    x[slideIndex - 4].style.display = "block";
-    x[slideIndex - 5].style.display = "block";
-
-  }
-
-
-
-
-
-  /*all koden er samme som over, men den har anderledes variabel navn, siden jeg har 2 slideshow*/
-  var what_input1 = 0
-  var slideIndex2 = 1;
-  showDivs1(slideIndex2);
-
-  function plusDivs1(n) {
-    if (n === 1) {
-      what_input1 = 1
-    } else if (n === -1) {
-      what_input1 = -1
-    }
-    showDivs1(slideIndex2 += n);
-  }
-  var xx;
-  function showDivs1(n) {
-    var ii;
-    var xx = document.getElementsByClassName("mySlides1");
-    if (n > xx.length) {
-      slideIndex2 = 5
-    }
-
-
-    if (n < 5) { slideIndex2 = xx.length }
-    for (ii = 0; ii < xx.length; ii++) {
-      xx[ii].style.display = "none";
-    }
-    xx[slideIndex2 - 1].style.opacity = "0";
-    xx[slideIndex2 - 2].style.opacity = "0";
-    xx[slideIndex2 - 3].style.opacity = "0";
-    xx[slideIndex2 - 4].style.opacity = "0";
-    xx[slideIndex2 - 5].style.opacity = "0";
-    if (what_input1 === 1) {
-      for (let ii = 0; ii < xx.length; ii++) {
-        document.getElementsByClassName("mySlides1")[ii].className = "mySlides1"
-      }
-      requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-          for (let ii = 0; ii < xx.length; ii++) {
-            document.getElementsByClassName("mySlides1")[ii].className = "mySlides1 changing"
-            xx[slideIndex2 - 1].style.opacity = "1";
-            xx[slideIndex2 - 1].className = "mySlides1 animate_in"
-          }
-        });
-      });
-    } else {
-      for (let ii = 0; ii < xx.length; ii++) {
-        document.getElementsByClassName("mySlides1")[ii].className = "mySlides1"
-      }
-      requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-          for (let ii = 0; ii < xx.length; ii++) {
-            document.getElementsByClassName("mySlides1")[ii].className = "mySlides1 changing_out"
-            xx[slideIndex2 - 5].className = "mySlides1 animate_out"
-          }
-        });
-      });
-    }
-
-
-    xx[slideIndex2 - 1].style.display = "block";
-    xx[slideIndex2 - 2].style.display = "block";
-    xx[slideIndex2 - 3].style.display = "block";
-    xx[slideIndex2 - 4].style.display = "block";
-    xx[slideIndex2 - 5].style.display = "block";
-
-  }
-
-}else if (x.matches){
-  for (let spes = 0; spes < 8; spes++){
-    document.getElementById("special").remove()
-  }
-  var what_input = 0
-  var slideIndex = 1;
-  showDivs(slideIndex);
-
-  function plusDivs(n) {
-    if (n === 1) {
-      what_input = 1
-    } else if (n === -1) {
-      what_input = -1
-    }
-    showDivs(slideIndex += n);
-  }
-  var x;
-  function showDivs(n) {
-    var i;
-
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {
-      slideIndex = 1
-    }
-
-
-    if (n < 1) { slideIndex = x.length }
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    x[slideIndex - 1].style.opacity = "0";
-
-    if (what_input === 1) {
-      for (let i = 0; i < x.length; i++) {
-        document.getElementsByClassName("mySlides")[i].className = "mySlides"
-      }
-      requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-          for (let i = 0; i < x.length; i++) {
-            document.getElementsByClassName("mySlides")[i].className = "mySlides changing"
-            x[slideIndex - 1].style.opacity = "1";
-            x[slideIndex - 1].className = "mySlides animate_in"
-          }
-        });
-      });
-    } else {
-      for (let i = 0; i < x.length; i++) {
-        document.getElementsByClassName("mySlides")[i].className = "mySlides"
-      }
-      requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-          for (let i = 0; i < x.length; i++) {
-            document.getElementsByClassName("mySlides")[i].className = "mySlides changing_out"
-            x[slideIndex - 1].className = "mySlides animate_out"
-          }
-        });
-      });
-    }
-
-    x[slideIndex - 1].style.display = "block";
-
-
-  }
-
-
-
-
-
-  /*all koden er samme som over, men den har anderledes variabel navn, siden jeg har 2 slideshow*/
-  var what_input1 = 0
-  var slideIndex2 = 1;
-  showDivs1(slideIndex2);
-
-  function plusDivs1(n) {
-    if (n === 1) {
-      what_input1 = 1
-    } else if (n === -1) {
-      what_input1 = -1
-    }
-    showDivs1(slideIndex2 += n);
-  }
-  var xx;
-  function showDivs1(n) {
-    var ii;
-    var xx = document.getElementsByClassName("mySlides1");
-    if (n > xx.length) {
-      slideIndex2 = 1
-    }
-
-
-    if (n < 1) { slideIndex2 = xx.length }
-    for (ii = 0; ii < xx.length; ii++) {
-      xx[ii].style.display = "none";
-    }
-    xx[slideIndex2 - 1].style.opacity = "0";
-    if (what_input1 === 1) {
-      for (let ii = 0; ii < xx.length; ii++) {
-        document.getElementsByClassName("mySlides1")[ii].className = "mySlides1"
-      }
-      requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-          for (let ii = 0; ii < xx.length; ii++) {
-            document.getElementsByClassName("mySlides1")[ii].className = "mySlides1 changing"
-            xx[slideIndex2 - 1].style.opacity = "1";
-            xx[slideIndex2 - 1].className = "mySlides1 animate_in"
-          }
-        });
-      });
-    } else {
-      for (let ii = 0; ii < xx.length; ii++) {
-        document.getElementsByClassName("mySlides1")[ii].className = "mySlides1"
-      }
-      requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-          for (let ii = 0; ii < xx.length; ii++) {
-            document.getElementsByClassName("mySlides1")[ii].className = "mySlides1 changing_out"
-            xx[slideIndex2 - 1].className = "mySlides1 animate_out"
-          }
-        });
-      });
-    }
-
-
-    xx[slideIndex2 - 1].style.display = "block";
-
-  }
-  }
-
-
-
-function show_about_us() {
-  document.getElementById("about_us_packing").style.display = "flex";
-}
-
-
-function open_menu() {
-  document.getElementById("menu_content").style.width = "100%"
-  document.getElementById("header_index").style.display = "none"
-}
-function close_menu() {
-  document.getElementById("menu_content").style.width = "0%"
-  document.getElementById("header_index").style.display = "flex"
-}
+app.listen(3000)
+app.use(express.static("code"))
 
