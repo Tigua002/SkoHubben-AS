@@ -200,45 +200,64 @@ function calculate() {
 
 /*hva som skjer når du trykker på "purchase"*/
 function purchase() {
+    alert("Thank you for your purchase!")
+    document.getElementById("packing_pay_page").remove()
+    for (let i = 0; i < all_shoes.length; i++) {
+
+        if (all_shoes[i].antall > 0) {
+            const data = {
+                antall: all_shoes[i].antall,
+                name: all_shoes[i].full_name,
+                AJ1R: all_shoes[0].antall,
+                AJ1C: all_shoes[1].antall,
+                AJDB: all_shoes[2].antall,
+                AJDW: all_shoes[3].antall,
+                JMB : all_shoes[4].antall,
+                JMR : all_shoes[5].antall,
+                JR6B: all_shoes[6].antall,
+                JR6W: all_shoes[7].antall,
+                NDW : all_shoes[8].antall,
+                NDB : all_shoes[9].antall,
+                NIB : all_shoes[10].antall,
+                NIW : all_shoes[11].antall,
+            }
+            console.log(data)
+            fetch("/buy/shoe", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+        }
+
+    }
+    console.log(all_shoes.length)
     /*igjen; går antall ganger som antall sko*/
     for (let i = 0; all_shoes.length > i; i++) {
+        console.log(document.getElementById(all_shoes[i].navn + "_div"))
         /*skjekker om en div existerer, hvis den existerer, så gjør den ikke det lenger*/
         if (document.getElementById(all_shoes[i].navn + "_div")) {
+            
             /*definerer div navn*/
             var shoe_name = document.getElementById(all_shoes[i].navn + "_div")
             /*sletter div-em*/
             shoe_name.remove()
+            
             /*oppdaterer antall sko som er skjøpt*/
-            bought_items[i].antall = bought_items[i].antall + all_shoes[i].antall
-            sessionStorage.setItem(bought_items[i].navn + "_bought", bought_items[i].antall)
-            all_shoes[i].antall = 0
-            sessionStorage.setItem(all_shoes[i].navn, JSON.stringify(all_shoes[i]))
+
             /*skjekker om noe har blitt skjøpt*/
-            purchase_checker = true
         }
+        bought_items[i].antall = bought_items[i].antall + all_shoes[i].antall
+        sessionStorage.setItem(bought_items[i].navn + "_bought", bought_items[i].antall)
+        console.log(all_shoes[i].antall)
+        all_shoes[i].antall = 0
+        sessionStorage.setItem(all_shoes[i].navn, JSON.stringify(all_shoes[i]))
     }
-    if (purchase_checker == true) {
-        /*hvis noe blir skjøpt, så slettes alt på siden*/
-        alert("Thank you for your purchase!")
-        document.getElementById("packing_pay_page").remove()
-        for (let i = 0; i < all_shoes.length; i++) {
-            if (all_shoes[i].antall > 0) {
-                const data = {
-                    antall: all_shoes[i].antall,
-                    name: all_shoes[i].full_name
-                }
-                console.log(data)
-                fetch("/buy/shoe", {
-                    method: "POST",
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                }
-            }
-        }
-    }
+
+    /*hvis noe blir skjøpt, så slettes alt på siden*/
+
+}
 
 
 /*før de første kalkulationene til å gå*/
