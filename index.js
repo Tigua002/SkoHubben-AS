@@ -57,6 +57,6 @@ app.get("/bought/items", function (req, res) {
     })
 })
 
-app.listen(3000)
+app.listen(22223)
 app.use(express.static("code"))
 
