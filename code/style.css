@@ -913,6 +913,7 @@ h1 {
         background-image: linear-gradient(180deg, #EAE8FF 0%, #2D3142 100%);
         border: none;
         margin: 0%;
+        padding-bottom: 50vw;
     }
     #packing_sell{
         display: flex;
