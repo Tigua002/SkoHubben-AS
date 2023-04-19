@@ -51,18 +51,18 @@ var bought_items = [
     NIW = { navn: "NIW", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/white/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro White" },
 ]
 var shoe_types = [
-    AJ1R,
-    AJ1C,
-    AJDB,
-    AJDW,
-    JMB,
-    JMR,
-    JR6B,
-    JR6W,
-    NDW,
-    NDB,
-    NIB,
-    NIW,
+    "AJ1R",
+    "AJ1C",
+    "AJDB",
+    "AJDW",
+    "JMB",
+    "JMR",
+    "JR6B",
+    "JR6W",
+    "NDW",
+    "NDB",
+    "NIB",
+    "NIW",
 ]
 /*skjekker om noe finnes før*/
 // for (let i = 0; bought_items.length > i; i++) {
