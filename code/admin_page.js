@@ -66,6 +66,7 @@ async function Get_Orders(){
     for (let i = 0; i < data.length; i++){
         console.log("HALLO")
         for (let x = 0; bought_items.length > x; x++){
+            console.log("HALL")
             if (bought_items[x].full_name == data[i].shoe_name){
                 console.log("if")
                 bought_items[x].antall += data[i].order_nr
