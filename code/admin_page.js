@@ -1,4 +1,3 @@
-const { json } = require("body-parser")
 
 /*definerer en div for å bruke for placering senere*/
 var element = document.getElementById("item-listing")
@@ -71,8 +70,9 @@ async function Get_Orders(){
             console.log(bought_items[x].navn)
             console.log(data[i])
             var navn = bought_items[x].navn
+            navn = json.stringify(navn)
             console.log(navn)
-            if (bought_items[x].navn == data[i]){
+            if (bought_items[x].navn == data[i].navn){
                 console.log("if")
                 bought_items[x].antall += data[i].order_nr
                 
