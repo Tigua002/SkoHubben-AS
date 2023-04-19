@@ -58,7 +58,7 @@ var bought_items = [
 //     }
 // }
 async function Get_Orders(){
-    const res = await fetch("http://65.108.15.66:22223//bought/items",
+    const res = await fetch("http://65.108.15.66:22223/bought/items",
     {method: "GET"
     })
     const data= await res.json()
