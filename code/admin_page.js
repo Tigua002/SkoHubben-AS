@@ -57,6 +57,8 @@ var bought_items = [
 //         bought_items[i].antall = JSON.parse(sessionStorage.getItem(bought_items[i].navn + "_bought"))
 //     }
 // }
+var data;
+var navn;
 async function Get_Orders(){
     const res = await fetch("http://65.108.15.66:22223/bought/items",
     {method: "GET"
