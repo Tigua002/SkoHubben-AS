@@ -79,12 +79,6 @@ async function Get_Orders() {
     const data = await res.json()
     console.log(data)
     for (let i = 0; i < data.length; i++) {
-
-
-        console.log(data[i])
-
-
-
         bought_items[0].antall += data[i].AJ1R
         bought_items[1].antall += data[i].AJ1C
         bought_items[2].antall += data[i].AJDB
@@ -99,16 +93,6 @@ async function Get_Orders() {
         bought_items[9].antall += data[i].NDB
         bought_items[10].antall += data[i].NIB
         bought_items[11].antall += data[i].NIW
-
-        console.log(data[i].AJ1R)
-
-
-
-        // console.log(bought_items[x].navn)
-        // console.log(data[i])
-        // var navn = bought_items[x].navn
-        // console.log(navn)
-
     }
     update_total()
     calculate()
