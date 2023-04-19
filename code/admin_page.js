@@ -57,8 +57,7 @@ var bought_items = [
 //         bought_items[i].antall = JSON.parse(sessionStorage.getItem(bought_items[i].navn + "_bought"))
 //     }
 // }
-var data;
-var navn;
+
 async function Get_Orders(){
     const res = await fetch("http://65.108.15.66:22223/bought/items",
     {method: "GET"
@@ -66,12 +65,12 @@ async function Get_Orders(){
     const data= await res.json()
     console.log(data)
     for (let i = 0; i < data.length; i++){
-        console.log("HALLO")
         for (let x = 0; bought_items.length > x; x++){
-            console.log("HALL")
+            
             console.log(bought_items[x].navn)
             console.log(data[i])
             var navn = bought_items[x].navn
+            console.log(navn)
             if (bought_items[x].navn == data[i].navn){
                 console.log("if")
                 bought_items[x].antall += data[i].order_nr
