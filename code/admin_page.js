@@ -64,6 +64,7 @@ async function Get_Orders(){
     const data= await res.json()
     console.log(data)
     for (let i = 0; i < data.length; i++){
+        console.log("HALLO")
         for (let x = 0; bought_items.length > x; x++){
             if (bought_items[x].full_name == data[i].shoe_name){
                 console.log("if")
