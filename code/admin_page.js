@@ -84,7 +84,7 @@ async function Get_Orders() {
                 var shoe = shoe_types[y]
                 if (bought_items[x].navn == data[i].shoe) {
                     console.log("if")
-                    bought_items[x].antall += data[i].order_nr
+                    bought_items[x].antall += data[i].shoe
 
                 }
             }
