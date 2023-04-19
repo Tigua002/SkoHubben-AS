@@ -12,7 +12,7 @@ var total_amount
 // function add_shoe(number) {
 //     all_shoes[number].antall = all_shoes[number].antall + 1
 //     update_total()
- 
+
 // }
 // /*fjerner en bestemt sko*/
 // function remove_shoe(number) {
@@ -38,9 +38,9 @@ var total_amount
 /*slik teller jeg alt for admin siden*/
 var bought_items = [
     AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/red_and_black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
-    AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/colorful/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers"  },
+    AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/colorful/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
     AJDB = { navn: "AJDB", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub Black" },
-    AJDW = { navn: "AJDW", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/white/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub White"  },
+    AJDW = { navn: "AJDW", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/white/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub White" },
     JMB = { navn: "JMB", pris: 1424, antall: 0, link: "sko/jordan_max_aura_4/red&white/total.webp", been_before: false, calc_before: false, full_name: "Jordan Max Aura 4 White Top" },
     JMR = { navn: "JMR", pris: 1424, antall: 0, link: "sko/jordan_max_aura_4/white&black/total.webp", been_before: false, calc_before: false, full_name: "Jordan Max Aura 4 Black Top" },
     JR6B = { navn: "JR6B", pris: 1999, antall: 0, link: "sko/jordan6rings/black/total.webp", been_before: false, calc_before: false, full_name: "Jordan 6 Rings Black" },
@@ -50,7 +50,20 @@ var bought_items = [
     NIB = { navn: "NIB", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/black/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro Black" },
     NIW = { navn: "NIW", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/white/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro White" },
 ]
-
+var shoe_types = [
+    AJ1R,
+    AJ1C,
+    AJDB,
+    AJDW,
+    JMB,
+    JMR,
+    JR6B,
+    JR6W,
+    NDW,
+    NDB,
+    NIB,
+    NIW,
+]
 /*skjekker om noe finnes før*/
 // for (let i = 0; bought_items.length > i; i++) {
 //     if (sessionStorage.getItem(bought_items[i].navn) && JSON.parse(sessionStorage.getItem(bought_items[i].navn + "_bought"))) {
@@ -58,26 +71,28 @@ var bought_items = [
 //     }
 // }
 
-async function Get_Orders(){
+async function Get_Orders() {
     const res = await fetch("http://65.108.15.66:22223/bought/items",
-    {method: "GET"
-    })
-    const data= await res.json()
+        {
+            method: "GET"
+        })
+    const data = await res.json()
     console.log(data)
-    for (let i = 0; i < data.length; i++){
-        for (let x = 0; bought_items.length > x; x++){
-            
-            console.log(bought_items[x].navn)
-            console.log(data[i])
-            var navn = bought_items[x].navn
-            navn = json.stringify(navn)
-            console.log(navn)
-            if (bought_items[x].navn == data[i].navn){
-                console.log("if")
-                bought_items[x].antall += data[i].order_nr
-                
+    for (let i = 0; i < data.length; i++) {
+        for (let x = 0; bought_items.length > x; x++) {
+            for (let y = 0; y < shoe_types.length; y++) {
+                var shoe = shoe_types[y]
+                if (bought_items[x].navn == data[i].shoe) {
+                    console.log("if")
+                    bought_items[x].antall += data[i].order_nr
+
+                }
             }
-            
+
+            // console.log(bought_items[x].navn)
+            // console.log(data[i])
+            // var navn = bought_items[x].navn
+            // console.log(navn)
         }
     }
     update_total()
@@ -113,8 +128,8 @@ function update_total() {
             shoes_counter.setAttribute("id", "count_items_" + bought_items[i].navn)
             shoes_total.setAttribute("id", "total_pay_" + bought_items[i].navn)
             shoes_total.setAttribute("class", "total_items_pay")
- 
- 
+
+
 
 
             /*oppdaterer verdien om denne skoen har vært gjennom løkken før*/
@@ -171,7 +186,7 @@ function calculate() {
             price_div.appendChild(price_total)
 
             /*skriver ut alle viktige verdier*/
-            price_item.innerHTML = bought_items[i].full_name +  ":"
+            price_item.innerHTML = bought_items[i].full_name + ":"
             price_total.innerHTML = "Subtotal: " + shoe_total_price + "kr"
             document.getElementById("antall_solgt").innerHTML = total_amount
             document.getElementById("Sum").innerHTML = total_price + "kr"
