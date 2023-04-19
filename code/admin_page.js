@@ -81,7 +81,6 @@ async function Get_Orders() {
     for (let i = 0; i < data.length; i++) {
 
 
-        console.log(bought_items[x].navn)
         console.log(data[i])
 
 
