@@ -709,6 +709,7 @@ h1 {
 }
 #Creator_intro{
     width: 30vw;
+    font-size: 7vw;
 }
 #Creator{
     width: 30vw;
@@ -747,8 +748,12 @@ h1 {
 }
 .company_tekst{
     width: 30vw;
+    font-size: 7vw;
 }
 @media screen and (max-width: 600px) {
+    body{
+        padding-bottom: 20vw;
+    }
     button{
         color: #2D3142;
     }
@@ -913,7 +918,7 @@ h1 {
         background-image: linear-gradient(180deg, #EAE8FF 0%, #2D3142 100%);
         border: none;
         margin: 0%;
-        padding-bottom: 50vw;
+        padding-bottom: 20vw;
     }
     #packing_sell{
         display: flex;
@@ -1019,26 +1024,55 @@ h1 {
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        flex-direction: column-reverse;
     }
     #item_prises{
         width: 87vw;
         height: 10vw;
     }
     .item_nr_1, #final_total, #final_count{
-        width: 85vw;
+        width: 90%;
+        margin: 0%;
+        
         height: 10vw;
         font-size: 4vw;
         font-weight: 600;
     }
-    #purchase_div{
-        margin-top: 5vw;
-        width: 100%;
+    .item_nr_1{
+        width: 100vw;
     }
-    #purchase_button{
-        width: 30vw;
-        height: 10vw;
+    #item-listing{
+        width: 100vw;
     }
 
+    #purchase_div{
+        width: 100%;
+        position: fixed;
+        bottom: 0%;
+        right: 0%;
+
+    }
+    #purchase_button{
+        position: fixed;
+        border-radius: 0%;
+        width: 100%;
+        height: 20vw;
+    }
+
+    #empty_packing{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #EMP{
+        font-size: 7vw;
+        width: 80vw;
+    }
+    .emp{
+        width: 80%;
+        margin: 5vw;
+    }
 
 }
 /*

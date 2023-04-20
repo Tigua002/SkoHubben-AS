@@ -279,7 +279,7 @@ for (let i = 0; all_shoes.length > i; i++) {
         /*fjerner alt*/
         document.getElementById("packing_pay_page").remove()
         /*gir feil meldingen*/
-        document.getElementById("EMP").innerHTML = "Your shopping bag is empty, Go get a shoe and return here"
+        document.getElementById("EMP").innerHTML = "Your shopping cart is empty, go get a shoe and return here"
         document.getElementById("EMP").style.width = "100%"
 
     } else {
