@@ -709,7 +709,7 @@ h1 {
 }
 #Creator_intro{
     width: 30vw;
-    font-size: 7vw;
+    font-size: 2vw;
 }
 #Creator{
     width: 30vw;
@@ -748,11 +748,11 @@ h1 {
 }
 .company_tekst{
     width: 30vw;
-    font-size: 7vw;
+    font-size: 2vw;
 }
 @media screen and (max-width: 600px) {
     body{
-        padding-bottom: 20vw;
+        
     }
     button{
         color: #2D3142;
@@ -874,18 +874,22 @@ h1 {
     }
     .company_tekst{
         width: 100%;
+        font-size: 7vw;
     }
     #creator_container{
         width: 100%;
     }
     #Creator_intro{
         width: 100%;
+        font-size: 7vw;
     }
     #creator_holder{
         width: 100%;
+        font-size: 7vw;
     }
     #Creator{
         width: 100%;
+        font-size: 7vw;
     }
     #creator_logo_container{
         width: 100%

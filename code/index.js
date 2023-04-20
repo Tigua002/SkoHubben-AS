@@ -2,7 +2,6 @@ var x = window.matchMedia("(max-width: 600px)")
 
 
 /* et globalt variabel som skal skjekke hvilken av knappene ble trykket på */
-
 if (!x.matches) {
   console.log("yay")
   var what_input = 0
