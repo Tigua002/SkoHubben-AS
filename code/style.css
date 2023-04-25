@@ -525,20 +525,24 @@ h1 {
     padding-left: 1vw;
 }
 
-#purchase_div {
+.purchase_div {
     display: flex;
     width: 100%;
     justify-content: center;
     height: 10vh;
-
+    margin-top: .5vw;
+    margin-bottom: 2vw;
 }
-
+#log-in-button{
+    margin-top: 2vh;
+}
 #purchase_button {
     width: 28vw;
     border-radius: 50vw;
     background-color: #b0d9ff;
     border: solid #2D3142 .15vw;
     font-size: larger;
+    
 }
 
 #purchase_div :hover {
@@ -771,7 +775,7 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 30vw;
-    height: 40vh;
+    height: auto;
     align-items: center;
     justify-content: center;
     background-color: #B0D7FF;
@@ -791,19 +795,22 @@ h1 {
 .login-input{
     margin: 1vh;
     width: 20vw;
-    height: 5vh;
-    font-size: large;
+    height: 4vw;
+    min-height: 5vh;
+    font-size: larger;
     color: #2D3142;
     background-color: #EAE8FF;
     border: solid 1px #2D3142;
     padding-left: 1vh;
 }
 #login-submit{
-    width: 10vw;
-    height: 5vh;
+    margin: 1vw;
+    width: 13vw;
+    height: 7vh;
     float: left;
     color: #2D3142;
     background-color: #EAE8FF;
+    font-size: larger;
 }
 
 @media screen and (max-width: 600px) {
@@ -868,6 +875,10 @@ h1 {
         color: #2D3142;
     }
     #cart_menu{
+        color: #2D3142;
+    }
+    #log-in-menu{
+        width: 50vw;
         color: #2D3142;
     }
     .bilde1{
@@ -1102,7 +1113,7 @@ h1 {
         width: 100vw;
     }
 
-    #purchase_div{
+    .purchase_div{
         width: 100%;
         position: fixed;
         bottom: 0%;
@@ -1129,6 +1140,15 @@ h1 {
     .emp{
         width: 80%;
         margin: 5vw;
+    }
+    #login_holder{
+        width: 80vw;
+    }
+    .login-input{
+        width: 50vw;
+    }
+    #login-submit{
+        width: 30vw;
     }
 
 }
