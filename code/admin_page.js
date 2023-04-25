@@ -237,7 +237,7 @@ function submit_login() {
         calculate()
 
     } else {
-        alert("Wrong Input Nigger")
+        alert("Wrong Input")
     }
 }
 cause_login()
