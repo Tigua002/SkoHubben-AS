@@ -18,6 +18,7 @@ async function submit_sign_up() {
 
     // return users;
     for (let i = 0; i > users.length; i++){
+        console.log("for")
         if (users[i].username === usernameEL){
             alert("Someone else already has that name")
             return;
