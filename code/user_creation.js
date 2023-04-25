@@ -31,13 +31,14 @@ function submit_sign_up() {
     })
 
 }
-
+const users = Get_users()
 async function Get_users() {
     const res = await fetch("http://65.108.15.66:22223/get/users",
         {
             method: "GET"
         })
     var users = await res.json()
+    return users;
 
 
     // for (let i = 0; i < data.length; i++) {
