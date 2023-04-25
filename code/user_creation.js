@@ -1,7 +1,6 @@
 function submit_sign_up() {
     var usernameEL = document.getElementById("username").value
     var passwordEL = document.getElementById("password").value
-    console.log(usernameEL)
     if (usernameEL === "") {
         alert("you need to fill inn the username")
         return;
@@ -15,7 +14,7 @@ function submit_sign_up() {
         alert("sorry, no more than 30 characters, shorten the password")
         return;
     }
-    console.log(data)
+    console.log(users)
 
     const data = {
         user: usernameEL,
@@ -32,14 +31,14 @@ function submit_sign_up() {
     })
 
 }
-
+var users = "e"
 async function Get_users() {
     const res = await fetch("http://65.108.15.66:22223/get/users",
         {
             method: "GET"
         })
-    const data = await res.json()
-    console.log(data)
+    var users = await res.json()
+    console.log(resieve_data)
 
     // for (let i = 0; i < data.length; i++) {
     //     bought_items[0].antall += data[i].AJ1R
