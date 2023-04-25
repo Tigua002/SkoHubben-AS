@@ -17,7 +17,7 @@ async function submit_sign_up() {
     var users = await res.json()
 
     // return users;
-    for (let i = 0; i > users.length; i++){
+    for (let i = 0; i < users.length; i++){
         console.log("for")
         if (users[i].username === usernameEL){
             alert("Someone else already has that name")
