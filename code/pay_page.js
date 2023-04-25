@@ -92,7 +92,7 @@ function update_total() {
             shoes_div.appendChild(shoes_button_div)
             shoes_button_div.appendChild(shoes_button)
             shoes_button_div.appendChild(shoes_plus)
-            /*legger til klasser, onclicks, id-er. Alt som er intærnt*/
+            /*legger til klasser, onclicks, id-er. Alt som er intearnt*/
             shoes_div.setAttribute("class", "shopping_items")
             shoes_div.setAttribute("id", all_shoes[i].navn + "_div")
             shoes_img.setAttribute("class", "shopping_image")

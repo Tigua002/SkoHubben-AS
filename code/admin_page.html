@@ -11,7 +11,7 @@
     <link rel="icon" href="bilder/Logo.png" type="image/icon type">
 </head>
 
-<body>
+<body id="body">
     <!--alt for header her inne -->
     <div id="header_index">
         <div id="hamburger_div">
@@ -54,7 +54,7 @@
             <h1 id="cart_menu">Cart</h1>
         </a>
     </div>
-    
+
     <!--lagd packing for hele checkout pagen -->
     <div id="packing_pay_page">
         <!--lagde en holder hvor alle sko elementer skal gå, alt legges inn via javascript -->
@@ -73,13 +73,31 @@
             </div>
         </div>
 
- 
+
     </div>
     <!--en holder i tilfelle det er ingen elementer -->
     <div id="empty_packing">
         <h1 id="EMP"></h1>
-    </div>    
+    </div>
+
+    <div id="login_base">
+        <div id="login_holder">
+            <!-- <h1 id="username">
+                Username
+            </h1> -->
+            <h1 id="login-tekst">Login</h1>
+            <input type="text" id="username" class="login-input" placeholder="username">
+            <input type="text" id="password" class="login-input" placeholder="password">
+            <div id="login-packing">
+                <button id="login-submit" onclick="submit_login()">Login</button>
+            </div>
+            <!-- <h1 id="password-tekst">
+                Password
+            </h1> -->
+        </div>
+    </div>
 </body>
 <script src="admin_page.js"></script>
 <script src="script.js"></script>
+
 </html>

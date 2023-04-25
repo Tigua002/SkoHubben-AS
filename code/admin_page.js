@@ -8,6 +8,7 @@ var counter = 1
 var total_price = 0
 var purchase_checker = false
 var total_amount
+
 /*legger til en bestemt sko (might come in handy)*/
 // function add_shoe(number) {
 //     all_shoes[number].antall = all_shoes[number].antall + 1
@@ -36,6 +37,8 @@ var total_amount
 //     NIW = { navn: "NIW", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/white/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro White" },
 // ]
 /*slik teller jeg alt for admin siden*/
+var username = "admin";
+var password = "hi";
 var bought_items = [
     AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/red_and_black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
     AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/colorful/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
@@ -217,11 +220,26 @@ function calculate() {
     }
 }
 
+function cause_login() {
+    document.getElementById("packing_pay_page").style.display = "none"
+    document.getElementById("empty_packing").style.display = "none"
+    document.getElementById("header_index").style.display = "none"
+}
+function submit_login() {
+    var usernameEL = document.getElementById("username").value
+    var passwordEL = document.getElementById("password").value
+    if (username == usernameEL && password == passwordEL) {
+        document.getElementById("packing_pay_page").style.display = "block"
+        document.getElementById("empty_packing").style.display = "flex"
+        document.getElementById("header_index").style.display = "flex"
+        Get_Orders()
+        update_total()
+        calculate()
 
-
-
+    } else {
+        alert("Wrong Input Nigger")
+    }
+}
+cause_login()
 /*får alt til å gå*/
-Get_Orders()
-update_total()
-calculate()
 
