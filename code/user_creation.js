@@ -38,7 +38,7 @@ async function Get_users() {
             method: "GET"
         })
     var users = await res.json()
-    console.log(resieve_data)
+
 
     // for (let i = 0; i < data.length; i++) {
     //     bought_items[0].antall += data[i].AJ1R
