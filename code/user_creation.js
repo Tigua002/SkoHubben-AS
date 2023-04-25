@@ -14,7 +14,7 @@ function submit_sign_up() {
         alert("sorry, no more than 30 characters, shorten the password")
         return;
     }
-    console.log(users)
+    console.log(users + "Ee")
 
     const data = {
         user: usernameEL,
