@@ -38,6 +38,7 @@ async function Get_users() {
             method: "GET"
         })
     var users = await res.json()
+    console.log(users)
     return users;
 
 
