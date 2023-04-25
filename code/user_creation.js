@@ -19,7 +19,7 @@ function submit_sign_up() {
         user: usernameEL,
         pass: passwordEL
     }
-    console.log(data)
+
     fetch("/create/user", {
         method: "POST",
         headers: {
@@ -30,3 +30,30 @@ function submit_sign_up() {
     })
 
 }
+
+async function Get_users() {
+    const res = await fetch("http://65.108.15.66:22223/get/users",
+        {
+            method: "GET"
+        })
+    const data = await res.json()
+    console.log(data)
+
+    // for (let i = 0; i < data.length; i++) {
+    //     bought_items[0].antall += data[i].AJ1R
+    //     bought_items[1].antall += data[i].AJ1C
+    //     bought_items[2].antall += data[i].AJDB
+    //     bought_items[3].antall += data[i].AJDW
+
+    //     bought_items[4].antall += data[i].JMB
+    //     bought_items[5].antall += data[i].JMR
+    //     bought_items[6].antall += data[i].JR6B
+    //     bought_items[7].antall += data[i].JR6W
+
+    //     bought_items[8].antall += data[i].NDW
+    //     bought_items[9].antall += data[i].NDB
+    //     bought_items[10].antall += data[i].NIB
+    //     bought_items[11].antall += data[i].NIW
+    // }
+}
+Get_users()

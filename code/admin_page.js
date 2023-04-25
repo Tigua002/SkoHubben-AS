@@ -80,7 +80,6 @@ async function Get_Orders() {
             method: "GET"
         })
     const data = await res.json()
-    console.log(data)
     for (let i = 0; i < data.length; i++) {
         bought_items[0].antall += data[i].AJ1R
         bought_items[1].antall += data[i].AJ1C

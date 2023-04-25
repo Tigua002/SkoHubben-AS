@@ -221,7 +221,6 @@ function purchase() {
                 NIB : all_shoes[10].antall,
                 NIW : all_shoes[11].antall,
             }
-            console.log(data)
             fetch("/buy/shoe", {
                 method: "POST",
                 headers: {
