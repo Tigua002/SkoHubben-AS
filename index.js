@@ -58,6 +58,7 @@ app.get("/bought/items", function (req, res) {
 })
 
 app.post("/create/user", function (req, res) {
+    console.log("EE")
     connection.query(`SELECT * FROM users`, function (err, result, fields) {
         var data = JSON.parse(JSON.stringify(result))
         let username = req.body.user

@@ -26,6 +26,7 @@ function submit_sign_up() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
+        
     })
 
 }
