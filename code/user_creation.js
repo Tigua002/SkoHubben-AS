@@ -51,5 +51,5 @@ async function submit_sign_up() {
         
     })
     alert("User created, log in")
-    window.href("admin_page.html")
+    window.location.href("admin_page.html")
 }
