@@ -31,7 +31,7 @@ function submit_sign_up() {
     })
 
 }
-var users = "e"
+
 async function Get_users() {
     const res = await fetch("http://65.108.15.66:22223/get/users",
         {
