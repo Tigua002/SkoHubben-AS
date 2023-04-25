@@ -229,7 +229,7 @@ function submit_login() {
     var usernameEL = document.getElementById("username").value
     var passwordEL = document.getElementById("password").value
     if (username == usernameEL && password == passwordEL) {
-        document.getElementById("packing_pay_page").style.display = "block"
+        document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
         document.getElementById("header_index").style.display = "flex"
         Get_Orders()
