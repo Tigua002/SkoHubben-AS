@@ -208,6 +208,7 @@ function purchase() {
         }
         console.log(user)
         if (all_shoes[i].antall > 0) {
+            console.log(user)
             const data = {
                 antall: all_shoes[i].antall,
                 name: all_shoes[i].full_name,
