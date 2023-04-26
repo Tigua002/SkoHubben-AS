@@ -251,7 +251,7 @@ async function submit_login() {
         calculate()
     } 
     for (let i = 0; i < users.length; i++){
-        if (users[i].username == usernameEL){
+        if (users[i].username == usernameEL && users[i].passwor == passwordEL){
             console.log("Username")
         }
     }
