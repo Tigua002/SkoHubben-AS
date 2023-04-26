@@ -200,12 +200,12 @@ function calculate() {
 var user = "anonymous"
 /*hva som skjer når du trykker på "purchase"*/
 function purchase() {
+    if (sessionStorage.getItem("username")){
+        user = sessionStorage.getItem("username")
+    }
     alert("Thank you for your purchase!")
     document.getElementById("packing_pay_page").remove()
     for (let i = 0; i < all_shoes.length; i++) {
-        if (sessionStorage.getItem("username")){
-            user = sessionStorage.getItem("username")
-        }
         console.log(user)
         if (all_shoes[i].antall > 0) {
             console.log(user)

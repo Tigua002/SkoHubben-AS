@@ -45,7 +45,9 @@ app.post("/buy/shoe", function (req, res) {
         let NDB = req.body.NDB
         let NIB = req.body.NIB
         let NIW = req.body.NIW
-        connection.query(`INSERT INTO orders(order_nr, AJ1R, AJ1C, AJDB, AJDW, JMB, JMR, JR6B, JR6W, NDW, NDB, NIB, NIW) VALUE(${connection.escape(order_nr)}, ${connection.escape(AJ1R)}, ${connection.escape(AJ1C)}, ${connection.escape(AJDB)}, ${connection.escape(AJDW)}, ${connection.escape(JMB)}, ${connection.escape(JMR)}, ${connection.escape(JR6B)}, ${connection.escape(JR6W)}, ${connection.escape(NDW)}, ${connection.escape(NDB)}, ${connection.escape(NIB)}, ${connection.escape(NIW)})`)
+        let buyer = req.body.buyer
+
+        connection.query(`INSERT INTO orders(order_nr, AJ1R, AJ1C, AJDB, AJDW, JMB, JMR, JR6B, JR6W, NDW, NDB, NIB, NIW, buyer) VALUE(${connection.escape(order_nr)}, ${connection.escape(AJ1R)}, ${connection.escape(AJ1C)}, ${connection.escape(AJDB)}, ${connection.escape(AJDW)}, ${connection.escape(JMB)}, ${connection.escape(JMR)}, ${connection.escape(JR6B)}, ${connection.escape(JR6W)}, ${connection.escape(NDW)}, ${connection.escape(NDB)}, ${connection.escape(NIB)}, ${connection.escape(NIW)}, ${connection.escape(buyer)})`)
     })
 })
 
