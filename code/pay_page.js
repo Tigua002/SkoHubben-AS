@@ -197,13 +197,15 @@ function calculate() {
         }
     }
 }
-
+var user = "anonymous"
 /*hva som skjer når du trykker på "purchase"*/
 function purchase() {
     alert("Thank you for your purchase!")
     document.getElementById("packing_pay_page").remove()
     for (let i = 0; i < all_shoes.length; i++) {
-
+        if (sessionStorage.getItem("username")){
+            user = sessionStorage.getItem("username")
+        }
         if (all_shoes[i].antall > 0) {
             const data = {
                 antall: all_shoes[i].antall,
@@ -220,6 +222,7 @@ function purchase() {
                 NDB : all_shoes[9].antall,
                 NIB : all_shoes[10].antall,
                 NIW : all_shoes[11].antall,
+                buyer : user,
             }
             fetch("/buy/shoe", {
                 method: "POST",
@@ -249,7 +252,7 @@ function purchase() {
         }
         bought_items[i].antall = bought_items[i].antall + all_shoes[i].antall
         sessionStorage.setItem(bought_items[i].navn + "_bought", bought_items[i].antall)
-        console.log(all_shoes[i].antall)
+
         all_shoes[i].antall = 0
         sessionStorage.setItem(all_shoes[i].navn, JSON.stringify(all_shoes[i]))
     }

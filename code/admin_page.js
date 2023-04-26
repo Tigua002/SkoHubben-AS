@@ -53,6 +53,21 @@ var bought_items = [
     NIB = { navn: "NIB", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/black/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro Black" },
     NIW = { navn: "NIW", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/white/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro White" },
 ]
+
+var user_bought = [
+    AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/red_and_black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
+    AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/colorful/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
+    AJDB = { navn: "AJDB", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub Black" },
+    AJDW = { navn: "AJDW", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/white/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub White" },
+    JMB = { navn: "JMB", pris: 1424, antall: 0, link: "sko/jordan_max_aura_4/red&white/total.webp", been_before: false, calc_before: false, full_name: "Jordan Max Aura 4 White Top" },
+    JMR = { navn: "JMR", pris: 1424, antall: 0, link: "sko/jordan_max_aura_4/white&black/total.webp", been_before: false, calc_before: false, full_name: "Jordan Max Aura 4 Black Top" },
+    JR6B = { navn: "JR6B", pris: 1999, antall: 0, link: "sko/jordan6rings/black/total.webp", been_before: false, calc_before: false, full_name: "Jordan 6 Rings Black" },
+    JR6W = { navn: "JR6W", pris: 1999, antall: 0, link: "sko/jordan6rings/white/total.webp", been_before: false, calc_before: false, full_name: "Jordan 6 Rings White" },
+    NDW = { navn: "NDW", pris: 1999, antall: 0, link: "sko/Nike dunk high retro/red/nike_dunk_high_total_view.webp", been_before: false, calc_before: false, full_name: "Nike Dunk High Retro Red" },
+    NDB = { navn: "NDB", pris: 1999, antall: 0, link: "sko/Nike dunk high retro/black/nike_dunk_shoe_total_view.webp", been_before: false, calc_before: false, full_name: "Nike Dunk High Retro Black" },
+    NIB = { navn: "NIB", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/black/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro Black" },
+    NIW = { navn: "NIW", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/white/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro White" },
+]
 var shoe_types = [
     "AJ1R",
     "AJ1C",
@@ -99,7 +114,32 @@ async function Get_Orders() {
     update_total()
     calculate()
 }
+async function user_order() {
+    const res = await fetch("http://65.108.15.66:22223/bought/items",
+        {
+            method: "GET"
+        })
+    const data = await res.json()
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].buyer == usernameEL)
+        user_bought[0].antall += data[i].AJ1R
+        user_bought[1].antall += data[i].AJ1C
+        user_bought[2].antall += data[i].AJDB
+        user_bought[3].antall += data[i].AJDW
 
+        user_bought[4].antall += data[i].JMB
+        user_bought[5].antall += data[i].JMR
+        user_bought[6].antall += data[i].JR6B
+        user_bought[7].antall += data[i].JR6W
+
+        user_bought[8].antall += data[i].NDW
+        user_bought[9].antall += data[i].NDB
+        user_bought[10].antall += data[i].NIB
+        user_bought[11].antall += data[i].NIW
+    }
+    update_total()
+    calculate()
+}
 
 /*oppdater totalen*/
 function update_total() {
@@ -240,19 +280,21 @@ async function submit_login() {
 
     var usernameEL = document.getElementById("username").value
     var passwordEL = document.getElementById("password").value
-    console.log(document.getElementById("username"))
-    console.log(document.getElementById("password"))
+
     if (username == usernameEL && password == passwordEL) {
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
-
+        alert("Hello admin")
         Get_Orders()
         update_total()
         calculate()
+        return;
     } 
     for (let i = 0; i < users.length; i++){
         if (users[i].username == usernameEL && users[i].passwor == passwordEL){
-            console.log("Username")
+            alert("Hello" + usernameEL)
+            sessionStorage.setItem("username", usernameEL)
+            user_order()
         }
     }
 }
