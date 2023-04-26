@@ -224,9 +224,13 @@ function cause_login() {
     document.getElementById("empty_packing").style.display = "none"
     document.getElementById("header_index").style.display = "none"
 }
+var usernameEL = document.getElementById("username").value
+var passwordEL = document.getElementById("password").value
 function submit_login() {
     var usernameEL = document.getElementById("username").value
     var passwordEL = document.getElementById("password").value
+    console.log(document.getElementById("username"))
+    console.log(document.getElementById("password"))
     if (username == usernameEL && password == passwordEL) {
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"

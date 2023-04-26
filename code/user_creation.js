@@ -1,11 +1,7 @@
 var usernameEL = document.getElementById("username").value
 var passwordEL = document.getElementById("password").value
 
-function submit_sign_up() {
 
-
-
-}
 
 async function submit_sign_up() {
     var usernameEL = document.getElementById("username").value
