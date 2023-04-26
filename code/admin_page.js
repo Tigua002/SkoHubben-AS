@@ -292,7 +292,7 @@ async function submit_login() {
     } 
     for (let i = 0; i < users.length; i++){
         if (users[i].username == usernameEL && users[i].passwor == passwordEL){
-            alert("Hello" + usernameEL)
+            alert("Hello " + usernameEL)
             sessionStorage.setItem("username", usernameEL)
             user_order()
         }

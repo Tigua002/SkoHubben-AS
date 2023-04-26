@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkoHubben | Admin page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet">
+    <link rel="icon" href="bilder/Logo.png" type="image/icon type">
+</head>
+
+<body id="body">
+    <!--alt for header her inne -->
+    <div id="header_index">
+        <div id="hamburger_div">
+            <h1 id="hamburger_menu" onclick="open_menu()">&#9776;</h1>
+        </div>
+        <div id="link_holder">
+            <a href="index.html" id="home_link">
+                <h1 id="home">Home</h1>
+
+            </a>
+
+        </div>
+        <div id="logo_holder">
+            <div id="logo_tekst">
+                <a href="index.html">
+                    <h1 id="title">Admin Page</h1>
+                </a>
+            </div>
+            <a href="index.html">
+                <img id="logo" src="bilder/Logo.png" alt="">
+            </a>
+        </div>
+
+        <a href="pay_page.html" id="shopping_link">
+            <img src="bilder/shopping_cart.png" alt="" id="shopping_cart" class="index_shopping">
+        </a>
+
+    </div>
+    <div id="menu_content">
+        <h1 id="close_button" onclick="close_menu()">X</h1>
+        <img id="menu_logo" onclick="close_menu()" src="bilder/Logo.png" alt="">
+        <a href="index.html">
+            <h1 id="home_menu">Home</h1>
+        </a>
+        <a href="pay_page.html">
+            <h1 id="cart_menu">Cart</h1>
+        </a>
+        <a href="admin_page.html">
+            <h1 id="log-in-menu">Log In</h1>
+        </a>
+    </div>
+
+    <!--lagd packing for hele checkout pagen -->
+    <div id="packing_pay_page">
+        <!--lagde en holder hvor alle sko elementer skal gå, alt legges inn via javascript -->
+        <div id="item-listing"></div>
+        <div id="check_out_div">
+            <!--tom holder for å putte inn elemter gjennom javascript -->
+            <div id="item_prises"></div>
+            <!--siste total -->
+            <div id="final_total">
+                <p id="total_tekst">Sum:</p>
+                <p id="Sum">sum</p>
+            </div>
+            <div id="final_count">
+                <p>Totall solgt:</p>
+                <p id="antall_solgt"></p>
+            </div>
+        </div>
+
+
+    </div>
+    <!--en holder i tilfelle det er ingen elementer -->
+    <div id="empty_packing">
+        <h1 id="EMP"></h1>
+    </div>
+
+    <div id="login_base">
+        <div id="login_holder">
+            <!-- <h1 id="username">
+                Username
+            </h1> -->
+
+            <h1 id="login-tekst">Login</h1>
+            <input type="text" id="username" class="login-input" placeholder="username">
+            <input type="password" id="password" class="login-input" placeholder="password">
+            <div id="login-packing">
+                <button id="login-submit" onclick="submit_login()">Login</button>
+            </div>
+            <a href="index.html">
+                <button id="login-submit">Home</button>
+            </a>
+            <a href="user_creaton.html">
+                <button id="login-submit">Sign Up</button>
+            </a>
+            <!-- <h1 id="password-tekst">
+                Password
+            </h1> -->
+        </div>
+    </div>
+</body>
+<script src="admin_page.js"></script>
+<script src="script.js"></script>
+
+</html>
