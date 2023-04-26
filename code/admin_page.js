@@ -222,11 +222,22 @@ function calculate() {
 function cause_login() {
     document.getElementById("packing_pay_page").style.display = "none"
     document.getElementById("empty_packing").style.display = "none"
-    document.getElementById("header_index").style.display = "none"
+
 }
+
 var usernameEL = document.getElementById("username").value
 var passwordEL = document.getElementById("password").value
-function submit_login() {
+
+
+async function submit_login() {
+    var usernameEL = document.getElementById("username").value
+    var passwordEL = document.getElementById("password").value
+    const res = await fetch("http://65.108.15.66:22223/get/users",
+        {
+            method: "GET"
+        })
+    var users = await res.json()
+
     var usernameEL = document.getElementById("username").value
     var passwordEL = document.getElementById("password").value
     console.log(document.getElementById("username"))
@@ -234,13 +245,15 @@ function submit_login() {
     if (username == usernameEL && password == passwordEL) {
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
-        document.getElementById("header_index").style.display = "flex"
+
         Get_Orders()
         update_total()
         calculate()
-
-    } else {
-        alert("Wrong Input")
+    } 
+    for (let i = 0; i < users.length; i++){
+        if (users[i].username == usernameEL){
+            console.log("Username")
+        }
     }
 }
 cause_login()
