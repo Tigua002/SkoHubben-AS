@@ -204,14 +204,11 @@ function calculate() {
 }
 
 function cause_login() {
-    console.log("help")
     if (sessionStorage.getItem("username")){
-        console.log("in")
         document.getElementById("login_base").style.display ="none"
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
     } else {
-        console.log("out")
         document.getElementById("login_base").style.display ="flex"
         document.getElementById("packing_pay_page").style.display = "none"
         document.getElementById("empty_packing").style.display = "none"

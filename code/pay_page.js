@@ -206,6 +206,7 @@ function purchase() {
         if (sessionStorage.getItem("username")){
             user = sessionStorage.getItem("username")
         }
+        console.log(user)
         if (all_shoes[i].antall > 0) {
             const data = {
                 antall: all_shoes[i].antall,
@@ -237,7 +238,6 @@ function purchase() {
     console.log(all_shoes.length)
     /*igjen; går antall ganger som antall sko*/
     for (let i = 0; all_shoes.length > i; i++) {
-        console.log(document.getElementById(all_shoes[i].navn + "_div"))
         /*skjekker om en div existerer, hvis den existerer, så gjør den ikke det lenger*/
         if (document.getElementById(all_shoes[i].navn + "_div")) {
             
