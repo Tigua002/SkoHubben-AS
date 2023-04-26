@@ -208,6 +208,7 @@ function cause_login() {
         document.getElementById("login_base").style.display ="none"
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
+        Get_Orders()
     } else {
         document.getElementById("login_base").style.display ="flex"
         document.getElementById("packing_pay_page").style.display = "none"
