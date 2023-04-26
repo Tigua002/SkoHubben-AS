@@ -255,6 +255,7 @@ async function submit_login() {
         }
     }
 }
+console.log("Reload")
 cause_login()
 /*får alt til å gå*/
 
