@@ -208,13 +208,11 @@ function cause_login() {
     if (sessionStorage.getItem("username")){
         console.log("in")
         document.getElementById("login_base").style.display ="none"
-        document.getElementById("login_base").style.width = "0%"
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
     } else {
         console.log("out")
         document.getElementById("login_base").style.display ="flex"
-        
         document.getElementById("packing_pay_page").style.display = "none"
         document.getElementById("empty_packing").style.display = "none"
     }
@@ -255,7 +253,7 @@ async function submit_login() {
         }
     }
 }
-console.log("Reload")
+
 cause_login()
 /*får alt til å gå*/
 
