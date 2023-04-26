@@ -114,32 +114,7 @@ async function Get_Orders() {
     update_total()
     calculate()
 }
-async function user_order() {
-    const res = await fetch("http://65.108.15.66:22223/bought/items",
-        {
-            method: "GET"
-        })
-    const data = await res.json()
-    for (let i = 0; i < data.length; i++) {
-        if (data[i].buyer == usernameEL)
-        user_bought[0].antall += data[i].AJ1R
-        user_bought[1].antall += data[i].AJ1C
-        user_bought[2].antall += data[i].AJDB
-        user_bought[3].antall += data[i].AJDW
 
-        user_bought[4].antall += data[i].JMB
-        user_bought[5].antall += data[i].JMR
-        user_bought[6].antall += data[i].JR6B
-        user_bought[7].antall += data[i].JR6W
-
-        user_bought[8].antall += data[i].NDW
-        user_bought[9].antall += data[i].NDB
-        user_bought[10].antall += data[i].NIB
-        user_bought[11].antall += data[i].NIW
-    }
-    update_total()
-    calculate()
-}
 
 /*oppdater totalen*/
 function update_total() {
@@ -294,7 +269,7 @@ async function submit_login() {
         if (users[i].username == usernameEL && users[i].passwor == passwordEL){
             alert("Hello " + usernameEL)
             sessionStorage.setItem("username", usernameEL)
-            user_order()
+            window.location.assign("user_page.html")
         }
     }
 }
