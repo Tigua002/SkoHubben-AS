@@ -262,6 +262,12 @@ function purchase() {
 
 }
 
+function log_out(){
+    sessionStorage.clear
+    window.location.assign("admin_page.html")
+}
+
+
 
 /*før de første kalkulationene til å gå*/
 update_total()
@@ -289,3 +295,5 @@ for (let i = 0; all_shoes.length > i; i++) {
     }
 
 }
+
+

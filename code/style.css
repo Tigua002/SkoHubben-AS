@@ -536,7 +536,7 @@ h1 {
 #log-in-button{
     margin-top: 2vh;
 }
-#purchase_button {
+.purchase_button {
     width: 28vw;
     border-radius: 50vw;
     background-color: #b0d9ff;
@@ -881,6 +881,10 @@ h1 {
         width: 50vw;
         color: #2D3142;
     }
+    #log-out-menu{
+        width: 50vw;
+        color: #2D3142;
+    }
     .bilde1{
         height: 30vh;
         width: auto;
@@ -1057,9 +1061,12 @@ h1 {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        background-color: #B0D7FF;
+        height: auto;
+        margin-bottom: 30vw;
     }
     .shopping_items{
-        width: 95vw;
+        width: 96%;
         margin: 0%;
         display: flex;
         justify-content: space-between;
@@ -1095,8 +1102,9 @@ h1 {
         flex-direction: column-reverse;
     }
     #item_prises{
-        width: 87vw;
-        height: 10vw;
+        width: 90%;
+        padding: 0%;
+        border: none;
     }
     .item_nr_1, #final_total, #final_count{
         width: 90%;
@@ -1107,10 +1115,26 @@ h1 {
         font-weight: 600;
     }
     .item_nr_1{
-        width: 100vw;
+        width: 97%;
+        margin: 0%;
+        margin-bottom: 1vh;
+        padding: 0%;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: solid #ADACB5 3px;
+    }
+
+    .subtotal{
+        margin: 0%;
+        padding: 0%;
     }
     #item-listing{
         width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
     .purchase_div{
@@ -1118,15 +1142,28 @@ h1 {
         position: fixed;
         bottom: 0%;
         right: 0%;
-
+        height: 20vw;
     }
-    #purchase_button{
+    .purchase_button{
         position: fixed;
         border-radius: 0%;
         width: 100%;
         height: 20vw;
     }
-
+    #log-in-button{
+        display: flex;
+        position: fixed;
+        width: 100%;
+        justify-content: left;
+        height: 10vh;
+        margin: 0%;
+        margin-bottom: 24vw;
+    }
+    #log-in{
+        border-radius: 0%;
+        width: 100%;
+        height: 20vw;
+    }
     #empty_packing{
         width: 100%;
         display: flex;
