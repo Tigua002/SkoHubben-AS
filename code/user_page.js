@@ -249,7 +249,7 @@ async function submit_login() {
         if (users[i].username == usernameEL && users[i].passwor == passwordEL) {
             alert("Hello " + usernameEL)
             sessionStorage.setItem("username", usernameEL)
-            user_order()
+            document.getElementById("title").innerHTML = usernameEL
         }
     }
 }
