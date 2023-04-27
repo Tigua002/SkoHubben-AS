@@ -263,7 +263,7 @@ function purchase() {
 }
 
 function log_out(){
-    sessionStorage.clear
+    sessionStorage.clear("username")
     window.location.assign("admin_page.html")
 }
 
