@@ -262,11 +262,6 @@ function purchase() {
 
 }
 
-function log_out(){
-    sessionStorage.clear("username")
-    window.location.assign("admin_page.html")
-}
-
 
 
 /*før de første kalkulationene til å gå*/

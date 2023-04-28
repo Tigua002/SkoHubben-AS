@@ -240,6 +240,7 @@ async function submit_login() {
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
         alert("Hello admin")
+        document.getElementById("title").innerHTML = usernameEL 
         Get_Orders()
         update_total()
 

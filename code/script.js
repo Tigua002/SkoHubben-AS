@@ -8,6 +8,12 @@ function close_menu() {
   document.getElementById("header_index").style.display = "flex"
 }
 
+function log_out(){
+  sessionStorage.clear("username")
+  window.location.assign("admin_page.html")
+}
+
+
 if (sessionStorage.getItem("username")) {
 
 } else {
