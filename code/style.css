@@ -105,6 +105,7 @@ div {
 #menu_content{
     display: none;
     width: 0%;
+    z-index: 2;
 }
 
 #shopping_cart {
