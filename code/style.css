@@ -130,6 +130,7 @@ div {
     text-decoration: underline;
     color: #2D3142;
     display: none;
+    margin-left: 5vw;
 }
 
 #about {
