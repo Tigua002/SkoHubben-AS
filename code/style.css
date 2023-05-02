@@ -1180,12 +1180,16 @@ h1 {
     }
     #login_holder{
         width: 80vw;
+        margin-top: 10vh;
     }
     .login-input{
         width: 50vw;
     }
     #login-submit{
         width: 30vw;
+    }
+    #login_base{
+        align-items: flex-start;
     }
 
 }
