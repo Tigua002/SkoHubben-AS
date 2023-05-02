@@ -547,6 +547,10 @@ h1 {
 #log-in-button{
     margin-top: 2vh;
 }
+#log_in_user_page{
+    height: 20vh;
+    margin-top: 10vh;
+}
 .purchase_button {
     width: 28vw;
     border-radius: 50vw;
