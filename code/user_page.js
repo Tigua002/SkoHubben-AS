@@ -82,7 +82,7 @@ async function Get_Orders() {
             user_bought[11].antall += data[i].NIW
         }
     }
-    document.getElementById("title").innerHTML = sessionStorage.getItem("username") + "page"
+    document.getElementById("title").innerHTML = sessionStorage.getItem("username") + " page"
     update_total()
 
 }
