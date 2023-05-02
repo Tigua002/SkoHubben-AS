@@ -82,6 +82,7 @@ async function Get_Orders() {
             user_bought[11].antall += data[i].NIW
         }
     }
+    document.getElementById("title").innerHTML = sessionStorage.getItem("username") 
     update_total()
 
 }
@@ -250,7 +251,7 @@ async function submit_login() {
         if (users[i].username == usernameEL && users[i].passwor == passwordEL) {
             alert("Hello " + usernameEL)
             sessionStorage.setItem("username", usernameEL)
-            document.getElementById("title").innerHTML = sessionStorage.getItem("username") 
+            
         }
     }
 }
