@@ -143,7 +143,7 @@ div {
 }
 #log_in_header{
     color: #2D3142;
-    margin-left: 2vw;
+
 }
 #about_link{
     color: #2D3142;
@@ -550,7 +550,7 @@ h1 {
 }
 #log_in_user_page{
     height: 20vh;
-    margin-top: 8vh;
+    margin-top: 2vh;
 }
 .purchase_button {
     width: 28vw;

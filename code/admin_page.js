@@ -88,7 +88,7 @@ var shoe_types = [
 //         bought_items[i].antall = JSON.parse(sessionStorage.getItem(bought_items[i].navn + "_bought"))
 //     }
 // }
-
+document.getElementById("home").style.marg
 async function Get_Orders() {
     const res = await fetch("http://65.108.15.66:22223/bought/items",
         {
