@@ -15,7 +15,7 @@ function log_out(){
 
 
 if (sessionStorage.getItem("username")) {
-
+  document.getElementById("home_link").style.display = "none"
 } else {
   document.getElementById("log-out-menu").style.display = "none"
 }
