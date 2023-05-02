@@ -206,9 +206,7 @@ function purchase() {
     alert("Thank you for your purchase!")
     document.getElementById("packing_pay_page").remove()
     for (let i = 0; i < all_shoes.length; i++) {
-        console.log(user)
         if (all_shoes[i].antall > 0) {
-            console.log(user)
             const data = {
                 antall: all_shoes[i].antall,
                 name: all_shoes[i].full_name,
@@ -236,7 +234,6 @@ function purchase() {
         }
 
     }
-    console.log(all_shoes.length)
     /*igjen; går antall ganger som antall sko*/
     for (let i = 0; all_shoes.length > i; i++) {
         /*skjekker om en div existerer, hvis den existerer, så gjør den ikke det lenger*/
