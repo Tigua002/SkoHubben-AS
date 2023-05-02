@@ -130,7 +130,7 @@ div {
     text-decoration: underline;
     color: #2D3142;
     display: none;
-    margin-left: 5vw;
+    margin-left: 2vw;
 }
 
 #about {
@@ -139,6 +139,7 @@ div {
 
 #home_link {
     color: #2D3142;
+
 }
 #about_link{
     color: #2D3142;
