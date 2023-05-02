@@ -126,6 +126,12 @@ div {
     margin-left: -5vw;
     text-decoration: underline;
 }
+#header_log_out{
+    text-decoration: underline;
+    color: #2D3142;
+    display: none;
+}
+
 #about {
     text-decoration: underline;
 }

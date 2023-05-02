@@ -18,4 +18,5 @@ if (sessionStorage.getItem("username")) {
   document.getElementById("home_link").style.display = "none"
 } else {
   document.getElementById("log-out-menu").style.display = "none"
+  document.getElementById("header_log_out").style.display = "block"
 }
