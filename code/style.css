@@ -1181,6 +1181,7 @@ h1 {
     #login_holder{
         width: 80vw;
         margin-top: 10vh;
+        padding-bottom: 5vh;
     }
     .login-input{
         width: 50vw;
