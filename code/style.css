@@ -931,6 +931,9 @@ h1 {
     }
     .border_div{
         box-shadow: none;
+        background-color: #f6f6f6;
+        height: 30vh;
+        border-radius: 5vw;
     }
     #popular_shoes{
         margin-top: 10vw;
@@ -1002,6 +1005,7 @@ h1 {
         margin-top: 5vw;
         color: #EAE8FF;
     }
+
     #bottom_about_us_packing{
         display: flex;
         flex-direction: column-reverse;
