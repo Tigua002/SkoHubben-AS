@@ -16,7 +16,7 @@ function log_out(){
 
 if (sessionStorage.getItem("username")) {
   document.getElementById("home_link").style.display = "none"
-  document.getElementById("header_log_out").style.display = "flex"
+
 } else {
   document.getElementById("log-out-menu").style.display = "none"
   
