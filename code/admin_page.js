@@ -238,6 +238,7 @@ function cause_login() {
     if (sessionStorage.getItem("username")){
         window.location.assign("user_page.html")
     }
+    document.getElementById("login_base").style.display = "flex"
     document.getElementById("packing_pay_page").style.display = "none"
     document.getElementById("empty_packing").style.display = "none"
 
