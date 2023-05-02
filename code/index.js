@@ -141,8 +141,8 @@ if (!x.matches) {
 
   }
 
-}else if (x.matches){
-  for (let spes = 0; spes < 8; spes++){
+} else if (x.matches) {
+  for (let spes = 0; spes < 8; spes++) {
     document.getElementById("special").remove()
   }
   var what_input = 0
@@ -267,7 +267,7 @@ if (!x.matches) {
     xx[slideIndex2 - 1].style.display = "block";
 
   }
-  }
+}
 
 
 
@@ -285,3 +285,46 @@ function close_menu() {
   document.getElementById("header_index").style.display = "flex"
 }
 
+
+let touchstartX = 0
+let touchendX = 0
+    
+function checkDirection() {
+  if (touchendX < touchstartX) {
+    plusDivs(1)
+  }
+  if (touchendX > touchstartX) {
+    plusDivs(-1)
+  }
+}
+
+document.getElementById("slideshow_div1").addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+document.getElementById("slideshow_div1").addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  checkDirection()
+})
+
+
+let touchstart = 0
+let touchend = 0
+    
+function checkDirection1() {
+  if (touchend < touchstart) {
+    plusDivs1(1)
+  }
+  if (touchend > touchstart) {
+    plusDivs1(-1)
+  }
+}
+
+document.getElementById("slideshow_div2").addEventListener('touchstart', e => {
+  touchstart = e.changedTouches[0].screenX
+})
+
+document.getElementById("slideshow_div2").addEventListener('touchend', e => {
+  touchend = e.changedTouches[0].screenX
+  checkDirection1()
+})

@@ -911,7 +911,7 @@ h1 {
         border-radius: 5vh;
     }
     .button_holder{
-        display: flex;
+        display: none;
         height: 30vh;
     }
     #button_right, #button_left{
