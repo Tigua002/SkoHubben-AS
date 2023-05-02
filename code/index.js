@@ -290,10 +290,9 @@ let touchstartX = 0
 let touchendX = 0
     
 function checkDirection() {
-  if (touchendX < touchstartX) {
+  if (touchendX < touchstartX - 100) {
     plusDivs(1)
-  }
-  if (touchendX > touchstartX) {
+  }else if (touchendX - 100 > touchstartX ) {
     plusDivs(-1)
   }
 }
@@ -312,16 +311,15 @@ let touchstart = 0
 let touchend = 0
     
 function checkDirection1() {
-  if (touchend < touchstart) {
+  if (touchend < touchstart  - 100) {
     plusDivs1(1)
-  }
-  if (touchend > touchstart) {
+  } else if (touchend - 100 > touchstart) {
     plusDivs1(-1)
   }
 }
 
 document.getElementById("slideshow_div2").addEventListener('touchstart', e => {
-  touchstart = e.changedTouches[0].screenX
+  touchstart = e.changedTouches[0].screenX 
 })
 
 document.getElementById("slideshow_div2").addEventListener('touchend', e => {
