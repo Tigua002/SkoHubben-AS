@@ -149,63 +149,6 @@ function update_total() {
     }
 }
 
-// function calculate() {
-//     /*definerer variabler*/
-//     var total_price = 0
-//     var counter = 1
-//     var total_amount = 0
-//     /*går like mange ganger som antall sko*/
-//     for (let i = 0; user_bought.length > i; i++) {
-//         /*skjekker om skoen ligger i cart-en og om den har blitt lagt til i summen før*/
-//         if (user_bought[i].been_before == true && user_bought[i].calc_before == false) {
-//             /*definerer totalen*/
-//             let shoe_total_price = user_bought[i].antall * user_bought[i].pris
-//             /*lager elementer*/
-//             let price_div = document.createElement("div")
-//             let price_item = document.createElement("p")
-//             let price_total = document.createElement("p")
-//             /*oppdaterer total prisen*/
-//             total_price += shoe_total_price
-//             total_amount += user_bought[i].antall
-
-//             /*legger elementer der de skal være*/
-//             check_out.appendChild(price_div)
-//             price_div.appendChild(price_item)
-//             price_div.appendChild(price_total)
-
-//             /*skriver ut alle viktige verdier*/
-//             price_item.innerHTML = user_bought[i].full_name + ":"
-//             price_total.innerHTML = "Subtotal: " + shoe_total_price + "kr"
-//             document.getElementById("antall_solgt").innerHTML = total_amount
-//             document.getElementById("Sum").innerHTML = total_price + "kr"
-//             /*gir elementer klasser og id-er*/
-//             price_div.setAttribute("class", "item_nr_1")
-//             price_total.setAttribute("class", "subtotal")
-//             price_item.setAttribute("id", i + "item")
-//             price_total.setAttribute("id", i + "total")
-//             /*teller antall ganger den far gått gjennom*/
-//             counter++
-//             /*oppdaterer verdien om den far gått gjennom kalkulatoren før*/
-//             user_bought[i].calc_before = true
-//             /*hvis skoen er lagt til og har blir kalkulert før så oppdaterer vi verdien*/
-//         } else if (user_bought[i].been_before == true && user_bought[i].calc_before == true) {
-//             /*finner ut den totalen av en spesiell sko*/
-//             let shoe_total_price = user_bought[i].antall * user_bought[i].pris
-//             /*oppdaterer den totale prisen*/
-//             total_price += shoe_total_price
-//             total_amount += user_bought[i].antall
-//             /*definerer variabler*/
-//             let price_item = document.getElementById(i + "item")
-//             let price_total = document.getElementById(i + "total")
-//             /*oppdaterer visuelle verdier*/
-//             document.getElementById("Sum").innerHTML = total_price + "kr"
-//             document.getElementById("antall_solgt").innerHTML = total_amount
-//             price_item.innerHTML = user_bought[i].full_name + ":"
-//             price_total.innerHTML = "Subtotal: " + shoe_total_price + "kr"
-//         }
-//     }
-// }
-
 function cause_login() {
     if (sessionStorage.getItem("username")) {
         document.getElementById("login_base").style.display = "none"
