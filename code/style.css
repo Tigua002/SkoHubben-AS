@@ -141,6 +141,9 @@ div {
     color: #2D3142;
 
 }
+#log_in_header{
+    color: #2D3142;
+}
 #about_link{
     color: #2D3142;
 }
@@ -847,6 +850,9 @@ h1 {
     #home_link{
         display: none;
     }
+    #log_in_header{
+        display: none;
+    }
     #title{
         width: 50vw;
         font-size: 6.5vw;
@@ -869,7 +875,6 @@ h1 {
         height: 200vh;
         background-color: #B0D7FF;
         overflow: hidden;
-        z-index: 999;
         align-items: center;
         flex-direction: column;
         margin-top: -8vh;
