@@ -16,11 +16,13 @@ function show_password(){
     if (password_input.type == "password"){
         console.log("text")
         password_input.type = "text"
-        document.getElementById("show_password").innerHTML = "&#xe106;"
+        document.getElementById("show_password").style.display = "none"
+        document.getElementById("show_password1").style.display = "block"
     } else {
         console.log("password")
         password_input.type = "password"
-        document.getElementById("show_password").innerHTML = "&#xe106;"
+        document.getElementById("show_password").style.display = "block"
+        document.getElementById("show_password1").style.display = "none"
     }
 }
 

@@ -14,17 +14,20 @@
         opacity: 1;
         transform: translateX(0%);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0%);
     }
 }
+
 @keyframes slide-in {
-    
+
     0% {
         opacity: 1;
         transform: translateX(100%);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0%);
@@ -44,17 +47,18 @@
     }
 
 }
+
 @keyframes slide-out {
-    0%{
+    0% {
         opacity: 1;
         transform: translateX(-100%);
     }
 
-    100%{
+    100% {
         opacity: 1;
         transform: translateX(0%);
     }
-} 
+}
 
 
 /*
@@ -62,7 +66,7 @@
 vvv                         vvv
 */
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -102,7 +106,8 @@ body {
 div {
     border: none;
 }
-#menu_content{
+
+#menu_content {
     display: none;
     width: 0%;
     z-index: 2;
@@ -112,10 +117,12 @@ div {
     width: 7vw;
 
 }
-#hamburger_div{
+
+#hamburger_div {
     display: none;
     transition: 1s;
 }
+
 #logo {
     display: flex;
     align-items: center;
@@ -127,7 +134,8 @@ div {
     margin-left: -5vw;
     text-decoration: underline;
 }
-#header_log_out{
+
+#header_log_out {
     text-decoration: underline;
     color: #2D3142;
     display: none;
@@ -142,11 +150,13 @@ div {
     color: #2D3142;
 
 }
-#log_in_header{
+
+#log_in_header {
     color: #2D3142;
 
 }
-#about_link{
+
+#about_link {
     color: #2D3142;
 }
 
@@ -168,7 +178,7 @@ div {
     width: auto;
 }
 
-#link_holder{
+#link_holder {
     display: flex;
     flex-direction: row;
     padding: 0%;
@@ -217,22 +227,26 @@ button {
     margin-bottom: 5vh;
 }
 
-.changing{
+.changing {
     animation: slide-in 500ms forwards;
 
 }
-.changing_out{
+
+.changing_out {
     animation: slide-out 500ms forwards;
 
 }
-.animate_out{
+
+.animate_out {
     animation: slide-out-first 500ms forwards;
 
 }
-#animate_in{
+
+#animate_in {
     animation: slide-in-first 500ms forwards;
 }
-#continue_animation{
+
+#continue_animation {
     animation: slide-in 500ms forwards;
 }
 
@@ -329,7 +343,7 @@ button {
     background-color: #2D3142;
     box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.2), 10px 10px 10px 0px rgba(0, 0, 0, 0.19);
     border-radius: 1vw;
-    
+
 }
 
 #showcase_pictures {
@@ -395,7 +409,7 @@ h1 {
     width: 30vw;
     display: flex;
     flex-wrap: nowrap;
-    
+
 }
 
 #size_2nd_row {
@@ -546,20 +560,23 @@ h1 {
     margin-top: .5vw;
     margin-bottom: 2vw;
 }
-#log-in-button{
+
+#log-in-button {
     margin-top: 2vh;
 }
-#log_in_user_page{
+
+#log_in_user_page {
     height: 20vh;
     margin-top: 2vw;
 }
+
 .purchase_button {
     width: 28vw;
     border-radius: 50vw;
     background-color: #b0d9ff;
     border: solid #2D3142 .15vw;
     font-size: larger;
-    
+
 }
 
 #purchase_div :hover {
@@ -644,7 +661,7 @@ h1 {
     width: 5%;
 }
 
-#footer{
+#footer {
     margin-top: 60vh;
 }
 
@@ -657,15 +674,17 @@ h1 {
     background-color: #2D3142;
 }
 
-#about_us_header{
+#about_us_header {
     width: 100%;
     display: flex;
     color: #EAE8FF;
     justify-content: center;
 }
-#about_us_h_text{
+
+#about_us_h_text {
     text-align: center;
 }
+
 .about_us_text {
     margin-top: 20vh;
     font-weight: 100;
@@ -675,7 +694,8 @@ h1 {
     margin-right: 2vw;
     margin-left: 2vw;
 }
-#top_about_us_packing{
+
+#top_about_us_packing {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -683,7 +703,8 @@ h1 {
     background-image: linear-gradient(90deg, #EAE8FF 0%, #B0D7FF 100%);
 
 }
-#bottom_about_us_packing{
+
+#bottom_about_us_packing {
 
     width: 100%;
     display: flex;
@@ -693,10 +714,11 @@ h1 {
 
 }
 
-#bottom_tekst_about_us{
+#bottom_tekst_about_us {
     color: #2D3142;
 }
-#about_us_image{
+
+#about_us_image {
     width: 40vw;
     margin-left: 2vw;
     margin-right: 2vw;
@@ -709,71 +731,85 @@ h1 {
     height: 60vh;
     color: #EAE8FF;
 }
-#about_us_link{
+
+#about_us_link {
     cursor: pointer;
-    
+
 }
 
-#creator_holder{
+#creator_holder {
     width: 50vw;
 }
-#creator_container{
+
+#creator_container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 50vw;
     align-items: center;
 }
-#creator_logo_container{
+
+#creator_logo_container {
     width: 50vw;
     display: flex;
     justify-content: center;
-    
+
 }
-#Creator_intro{
+
+#Creator_intro {
     width: 30vw;
     font-size: 2vw;
 }
-#Creator{
+
+#Creator {
     width: 30vw;
 }
-#creator_logo{
+
+#creator_logo {
     border-radius: 50%;
     border: solid .5vw #6A2E35;
     height: 22vh;
 }
-#info{
+
+#info {
     width: 100%;
     display: flex;
     justify-content: center;
     align-self: center;
     flex-direction: column;
 }
-#link_Creator :hover{
+
+#link_Creator :hover {
     opacity: 0.8;
 }
-#company_info{
+
+#company_info {
     width: 50vw;
     color: #EAE8FF;
 }
-#info :hover{
+
+#info :hover {
     opacity: 1;
 }
-.company_links{
+
+.company_links {
     color: #EAE8FF;
     display: flex;
     text-align: center;
     justify-content: center;
     opacity: 0.6;
 }
-.company_links :hover{
+
+.company_links :hover {
     opacity: 1;
 }
-.company_tekst{
+
+.company_tekst {
     width: 30vw;
     font-size: 2vw;
 }
-#login_base{
+
+#login_base {
     position: fixed;
     display: flex;
     justify-content: center;
@@ -789,7 +825,8 @@ h1 {
     align-items: center;
     border: solid red 1px; */
 }
-#login_holder{
+
+#login_holder {
     display: flex;
     flex-direction: column;
     width: 30vw;
@@ -800,31 +837,49 @@ h1 {
     border-radius: 1vw;
     font-size: larger;
 }
-#login-packing{
+
+#login-packing {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 2vw;
 
 }
-#passord_holder{
+
+#passord_holder {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#password{
-    margin-left: -.5vw;
+#username{
+    font-size: 1.5vw;
 }
-#show_password{
-    margin-left: -3vw;
-    margin-right: 0vw;
-    background: none;
+#password {
+    margin-left: 19.4vw;
+    margin-left: -.5vw;
+    font-size: 1.5vw;
 }
 
-#login-tekst{
+#show_password {
+    margin-left: -2.9vw;
+    margin-right: 0vw;
+    background: none;
+    font-size: 1.6vw;
+}
+
+#show_password1 {
+    font-size: 1.6vw;
+    margin-left: -2.7vw;
+    margin-right: 0vw;
+    background: none;
+    display: none;
+}
+
+#login-tekst {
     color: #2D3142;
 }
-.login-input{
+
+.login-input {
     margin: 1vh;
     width: 20vw;
     height: 4vw;
@@ -835,7 +890,8 @@ h1 {
     border: solid 1px #2D3142;
     padding-left: 1vh;
 }
-#login-submit{
+
+#login-submit {
     margin: 1vw;
     width: 13vw;
     height: 7vh;
@@ -846,49 +902,61 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
-    button{
+    button {
         color: #2D3142;
     }
-    #link_holder{
-        display: none;
-    }
-    #shopping_link{
-        display: none;
-    }
-    #shopping_cart{
+
+    #link_holder {
         display: none;
     }
 
-    #header_index, #header{
+    #shopping_link {
+        display: none;
+    }
+
+    #shopping_cart {
+        display: none;
+    }
+
+    #header_index,
+    #header {
         display: flex;
         justify-content: space-between;
-        
+
     }
-    #logo_tekst{
+
+    #logo_tekst {
         width: 50vw;
         margin-right: 6vw;
     }
-    #home_link{
+
+    #home_link {
         display: none;
     }
-    #log_in_header{
+
+    #log_in_header {
         display: none;
     }
-    #title{
+
+    #title {
         width: 50vw;
         font-size: 6.5vw;
 
     }
-    #hamburger_div{
+
+    #hamburger_div {
         display: block;
     }
-    #hamburger_menu{
+
+    #hamburger_menu {
         font-size: 10vw;
     }
-    #logo{
+
+    #logo {
         display: none;
     }
-    #menu_content{
+
+    #menu_content {
         transition: .5s;
         display: flex;
         width: 0vw;
@@ -900,59 +968,73 @@ h1 {
         flex-direction: column;
         margin-top: -8vh;
     }
-    #menu_logo{
+
+    #menu_logo {
         width: 20vw;
         margin-bottom: 10vh;
     }
-    #home_menu{
+
+    #home_menu {
         margin-bottom: 5vh;
         color: #2D3142;
     }
-    #cart_menu{
+
+    #cart_menu {
         color: #2D3142;
     }
-    #log-in-menu{
+
+    #log-in-menu {
         width: 50vw;
         color: #2D3142;
     }
-    #log-out-menu{
+
+    #log-out-menu {
         width: 50vw;
         color: #2D3142;
     }
-    .bilde1{
+
+    .bilde1 {
         height: 30vh;
         width: auto;
         border-radius: 5vh;
     }
-    .button_holder{
+
+    .button_holder {
         display: none;
         height: 30vh;
     }
-    #button_right, #button_left{
+
+    #button_right,
+    #button_left {
         margin: 2vw;
         display: flex;
         height: 10vh;
         width: 10vw;
         justify-content: center;
     }
-    .paragraf_div{
+
+    .paragraf_div {
         margin-top: 5vw;
         width: 100%;
-        
+
     }
-    h1{
+
+    h1 {
         width: 80%;
     }
-    .border_div{
+
+    .border_div {
         box-shadow: none;
         background-color: #f6f6f6;
         height: 30vh;
         border-radius: 5vw;
     }
-    #popular_shoes{
+
+    #popular_shoes {
         margin-top: 10vw;
     }
-    #footer{
+
+    #footer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -963,47 +1045,56 @@ h1 {
         margin-top: 5vw;
     }
 
-    #company_info{
+    #company_info {
         text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
     }
-    .company_links{
+
+    .company_links {
         width: 100%;
         display: flex;
         justify-content: center;
         text-align: center;
 
     }
-    .company_tekst{
+
+    .company_tekst {
         width: 100%;
         font-size: 7vw;
     }
-    #creator_container{
+
+    #creator_container {
         width: 100%;
     }
-    #Creator_intro{
-        width: 100%;
-        font-size: 7vw;
-    }
-    #creator_holder{
+
+    #Creator_intro {
         width: 100%;
         font-size: 7vw;
     }
-    #Creator{
+
+    #creator_holder {
         width: 100%;
         font-size: 7vw;
     }
-    #creator_logo_container{
+
+    #Creator {
+        width: 100%;
+        font-size: 7vw;
+    }
+
+    #creator_logo_container {
         width: 100%
     }
-    #creator_logo{
+
+    #creator_logo {
         width: 30vw;
         height: auto;
     }
-    #top_about_us_packing{
+
+    #top_about_us_packing {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -1012,7 +1103,8 @@ h1 {
         border: none;
         margin: 0%;
     }
-    .about_us_text{
+
+    .about_us_text {
         width: 80%;
         font-size: 4.5vw;
         text-align: left;
@@ -1020,7 +1112,7 @@ h1 {
         color: #EAE8FF;
     }
 
-    #bottom_about_us_packing{
+    #bottom_about_us_packing {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -1030,7 +1122,8 @@ h1 {
         margin: 0%;
         padding-bottom: 20vw;
     }
-    #packing_sell{
+
+    #packing_sell {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -1038,63 +1131,77 @@ h1 {
         margin-bottom: 0%;
         height: auto;
     }
-    #packing_pictures{
+
+    #packing_pictures {
         width: auto;
         height: auto;
         padding: 3vw;
     }
-    #showcase_pictures{
+
+    #showcase_pictures {
         width: 40vw;
         height: auto;
     }
-    #packing_options{
+
+    #packing_options {
         width: 100%;
         display: flex;
         align-items: center;
         flex-direction: column;
     }
-    #change_color_shoe_orig{
+
+    #change_color_shoe_orig {
         width: 30vw;
         height: auto;
         margin: 5vw;
     }
-    #change_color_shoe{
+
+    #change_color_shoe {
         width: 30vw;
         height: auto;
         margin: 5vw;
     }
-    .Size_kubes{
+
+    .Size_kubes {
         width: 20vw;
-        height: 15vw;  
+        height: 15vw;
 
     }
-    #storelser, #size_2nd_row{
+
+    #storelser,
+    #size_2nd_row {
         width: 100%;
         display: flex;
         justify-content: center;
 
     }
-    #packing_price{
+
+    #packing_price {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    #price{
+
+    #price {
         width: 40vw;
     }
-    #price_tekst{
+
+    #price_tekst {
         width: 40vw;
     }
-    #add_to_cart{
+
+    #add_to_cart {
         width: 50vw;
         height: 20vw;
     }
-    .button_add_to_cart{
+
+    .button_add_to_cart {
         font-size: 5vw;
         font-weight: 560;
     }
-    #packing_pay_page{
+
+    #packing_pay_page {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1103,35 +1210,43 @@ h1 {
         height: auto;
         margin-bottom: 30vw;
     }
-    .shopping_items{
+
+    .shopping_items {
         width: 96%;
         margin: 0%;
         display: flex;
         justify-content: space-between;
     }
-    .shopping_image{
+
+    .shopping_image {
         width: 20vw;
         height: auto;
     }
-    .total_items_pay{
+
+    .total_items_pay {
         font-size: 4.5vw;
     }
-    .counter{
+
+    .counter {
         font-size: 4.5vw;
     }
-    .add, .subtract{
+
+    .add,
+    .subtract {
         width: 23vw;
         margin: 0%;
         height: 13vw;
         border-radius: 0%;
     }
-    .button_div{
+
+    .button_div {
         width: fit-content;
         margin: 0%;
         display: flex;
         flex-direction: column;
     }
-    #check_out_div{
+
+    #check_out_div {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -1139,20 +1254,25 @@ h1 {
         align-items: center;
         flex-direction: column-reverse;
     }
-    #item_prises{
+
+    #item_prises {
         width: 90%;
         padding: 0%;
         border: none;
     }
-    .item_nr_1, #final_total, #final_count{
+
+    .item_nr_1,
+    #final_total,
+    #final_count {
         width: 90%;
         margin: 0%;
-        
+
         height: 10vw;
         font-size: 4vw;
         font-weight: 600;
     }
-    .item_nr_1{
+
+    .item_nr_1 {
         width: 97%;
         margin: 0%;
         margin-bottom: 1vh;
@@ -1164,31 +1284,34 @@ h1 {
         border: solid #ADACB5 3px;
     }
 
-    .subtotal{
+    .subtotal {
         margin: 0%;
         padding: 0%;
     }
-    #item-listing{
+
+    #item-listing {
         width: 100vw;
         display: flex;
         justify-content: center;
         flex-direction: column;
     }
 
-    .purchase_div{
+    .purchase_div {
         width: 100%;
         position: fixed;
         bottom: 0%;
         right: 0%;
         height: 20vw;
     }
-    .purchase_button{
+
+    .purchase_button {
         position: fixed;
         border-radius: 0%;
         width: 100%;
         height: 20vw;
     }
-    #log-in-button{
+
+    #log-in-button {
         display: flex;
         position: fixed;
         width: 100%;
@@ -1197,37 +1320,45 @@ h1 {
         margin: 0%;
         margin-bottom: 24vw;
     }
-    #log-in{
+
+    #log-in {
         border-radius: 0%;
         width: 100%;
         height: 20vw;
     }
-    #empty_packing{
+
+    #empty_packing {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    #EMP{
+
+    #EMP {
         font-size: 7vw;
         width: 80vw;
     }
-    .emp{
+
+    .emp {
         width: 80%;
         margin: 5vw;
     }
-    #login_holder{
+
+    #login_holder {
         width: 80vw;
         margin-top: 10vh;
         padding-bottom: 5vh;
     }
-    .login-input{
+
+    .login-input {
         width: 50vw;
     }
-    #login-submit{
+
+    #login-submit {
         width: 30vw;
     }
-    #login_base{
+
+    #login_base {
         align-items: flex-start;
     }
 
