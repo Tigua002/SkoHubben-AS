@@ -2,7 +2,7 @@
 /*definerer en div for å bruke for placering senere*/
 var element = document.getElementById("item-listing")
 var check_out = document.getElementById("item_prises")
-
+var password_input = document.getElementById("password")
 /*lager variabler som må bli brukt gjennom og utenofor koder*/
 var counter = 1
 var total_price = 0
@@ -11,34 +11,19 @@ var total_amount
 
 var logged_inn = false
 
-/*legger til en bestemt sko (might come in handy)*/
-// function add_shoe(number) {
-//     all_shoes[number].antall = all_shoes[number].antall + 1
-//     update_total()
+function show_password(){
+    console.log("func")
+    if (password_input.type == "password"){
+        console.log("text")
+        password_input.type = "text"
+        document.getElementById("show_password").innerHTML = "&#xe106;"
+    } else {
+        console.log("password")
+        password_input.type = "password"
+        document.getElementById("show_password").innerHTML = "&#xe106;"
+    }
+}
 
-// }
-// /*fjerner en bestemt sko*/
-// function remove_shoe(number) {
-//     all_shoes[number].antall = all_shoes[number].antall - 1
-//     update_total()
-// }
-
-// /*her ligger alle skoene */
-// var all_shoes = [
-//     AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/red_and_black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
-//     AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/colorful/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
-//     AJDB = { navn: "AJDB", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub Black" },
-//     AJDW = { navn: "AJDW", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/white/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub White"  },
-//     JMB = { navn: "JMB", pris: 1424, antall: 0, link: "sko/jordan_max_aura_4/red&white/total.webp", been_before: false, calc_before: false, full_name: "Jordan Max Aura 4 White Top" },
-//     JMR = { navn: "JMR", pris: 1424, antall: 0, link: "sko/jordan_max_aura_4/white&black/total.webp", been_before: false, calc_before: false, full_name: "Jordan Max Aura 4 Black Top" },
-//     JR6B = { navn: "JR6B", pris: 1999, antall: 0, link: "sko/jordan6rings/black/total.webp", been_before: false, calc_before: false, full_name: "Jordan 6 Rings Black" },
-//     JR6W = { navn: "JR6W", pris: 1999, antall: 0, link: "sko/jordan6rings/white/total.webp", been_before: false, calc_before: false, full_name: "Jordan 6 Rings White"},
-//     NDW = { navn: "NDW", pris: 2375, antall: 0, link: "sko/Nike dunk high retro/red/nike_dunk_high_total_view.webp", been_before: false, calc_before: false, full_name: "Nike Dunk High Retro Red" },
-//     NDB = { navn: "NDB", pris: 2375, antall: 0, link: "sko/Nike dunk high retro/black/nike_dunk_shoe_total_view.webp", been_before: false, calc_before: false, full_name: "Nike Dunk High Retro Black" },
-//     NIB = { navn: "NIB", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/black/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro Black" },
-//     NIW = { navn: "NIW", pris: 1425, antall: 0, link: "sko/NikeInfinityReact3/white/total.webp", been_before: false, calc_before: false, full_name: "Nike Infinity Retro White" },
-// ]
-/*slik teller jeg alt for admin siden*/
 var username = "admin";
 var password = "hi";
 var bought_items = [

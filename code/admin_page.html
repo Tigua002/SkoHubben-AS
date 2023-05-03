@@ -8,6 +8,7 @@
     <title>SkoHubben | Admin page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="bilder/Logo.png" type="image/icon type">
 </head>
 
@@ -89,7 +90,11 @@
 
             <h1 id="login-tekst">Login</h1>
             <input type="text" id="username" class="login-input" placeholder="username">
-            <input type="password" id="password" class="login-input" placeholder="password">
+            <div id="passord_holder">
+                <input type="password" id="password" class="login-input" placeholder="password">
+                <i class="fa fa-eye" id="show_password" style="font-size:36px" onclick="show_password()"></i>
+            
+            </div>
             <div id="login-packing">
                 <button id="login-submit" onclick="submit_login()">Login</button>
             </div>
