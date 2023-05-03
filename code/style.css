@@ -817,7 +817,7 @@ h1 {
     height: 100vh;
     align-items: center;
     display: none;
-
+    background-color: #EAE8FF;
     /* width: 100vw;
     height: 100vh;
     display: flex;
