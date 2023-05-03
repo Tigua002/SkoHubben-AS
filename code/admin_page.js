@@ -267,7 +267,7 @@ async function submit_login() {
         }
     }
     if (logged_inn == false){
-        alert("You have the wrong input")
+        alert("User not found")
     }
 }
 cause_login()
