@@ -514,6 +514,7 @@ h1 {
 #packing_pay_page {
     display: flex;
     flex-direction: row;
+    background-color: #EAE8FF;
 }
 
 #check_out_div {
