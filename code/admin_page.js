@@ -9,6 +9,8 @@ var total_price = 0
 var purchase_checker = false
 var total_amount
 
+var logged_inn = false
+
 /*legger til en bestemt sko (might come in handy)*/
 // function add_shoe(number) {
 //     all_shoes[number].antall = all_shoes[number].antall + 1
@@ -273,8 +275,12 @@ async function submit_login() {
         if (users[i].username == usernameEL && users[i].passwor == passwordEL){
             alert("Hello " + usernameEL)
             sessionStorage.setItem("username", usernameEL)
+            logged_inn = true
             window.location.assign("user_page.html")
         }
+    }
+    if (logged_inn == false){
+        alert("You have the wrong input")
     }
 }
 cause_login()
