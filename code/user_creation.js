@@ -1,7 +1,7 @@
 var usernameEL = document.getElementById("username").value
 var passwordEL = document.getElementById("password").value
 var password_confEL = document.getElementById("password_confirm").value
-
+var moved_on = false
 document.getElementById("login_base").style.display = "flex"
 async function submit_sign_up() {
     var usernameEL = document.getElementById("username").value
@@ -59,5 +59,12 @@ async function submit_sign_up() {
     })
     alert_tekst.innerHTML = "User created, log in"
     show_alert()
-    window.location.assign("admin_page.html")
+    moved_on = true
+}
+
+function change_location(){
+    if (moved_on == true){
+        window.location.assign("admin_page.html")
+    }
+
 }
