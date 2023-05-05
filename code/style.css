@@ -1351,9 +1351,11 @@ h1 {
         right: 0%;
         height: 20vw;
     }
-
-    .purchase_button {
+    #complete_order{
         position: fixed;
+    }
+    .purchase_button {
+
         border-radius: 0%;
         width: 100%;
         height: 20vw;
