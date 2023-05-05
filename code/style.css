@@ -579,11 +579,9 @@ h1 {
 #log_in_user_page {
     height: 20vh;
     margin-top: 2vw;
-    position: initial;
+
 }
-#log_in, #log-in-button{
-    position: initial;
-}
+
 #purchase_div :hover {
     opacity: 0.6;
 }
@@ -1409,6 +1407,11 @@ h1 {
         font-weight: 500;
         margin-top: 5vh;
         margin-bottom: 2vh;
+    }
+
+
+    #log_in, #log-in-button, #log_in_user_page{
+        position: initial;
     }
     #password, #username, #password_confirm{
         font-size: 3vh;
