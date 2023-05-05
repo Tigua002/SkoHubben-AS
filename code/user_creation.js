@@ -1,6 +1,6 @@
 var usernameEL = document.getElementById("username").value
 var passwordEL = document.getElementById("password").value
-
+var password_confEL = document.getElementById("password_confirm").value
 
 document.getElementById("login_base").style.display = "flex"
 async function submit_sign_up() {
@@ -13,6 +13,9 @@ async function submit_sign_up() {
     var users = await res.json()
 
     // return users;
+    if (passwordEL ===! password_confEL){
+        return;
+    }
     for (let i = 0; i < users.length; i++){
         if (users[i].username === usernameEL){
             alert("Someone else already has that name")

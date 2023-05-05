@@ -12,8 +12,6 @@ var total_amount
 var logged_inn = false
 
 function show_password(){
-
-
     if (password_input.type == "password"){
         document.getElementById("login_checkbox").checked = true;
         password_input.type = "text"

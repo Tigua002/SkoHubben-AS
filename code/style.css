@@ -810,21 +810,15 @@ h1 {
     font-size: 2vw;
 }
 
-#login_base {
-    position: fixed;
+#login_base, #login_base_creation{
     display: flex;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     align-items: center;
     display: none;
     background-color: #EAE8FF;
-    /* width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid red 1px; */
+
 }
 
 #login_holder {
@@ -853,11 +847,16 @@ h1 {
     align-items: center;
 }
 #username{
+    margin-bottom: 2vw;
     font-size: 1.5vw;
 }
 #password {
 
     font-size: 1.5vw;
+}
+#password_confirm{
+    font-size: 1.5vw;
+    margin-bottom: 2vw;
 }
 #login_checkbox{
     width: 1.5vw;
@@ -889,10 +888,10 @@ h1 {
 
 #login-tekst {
     color: #2D3142;
-    margin-top: 8vh;
-    margin-bottom: 3vh;
-    font-size: 2.4vw;
-    font-weight: 500;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+    font-size: 2.5vw;
+    font-weight: 800;
 }
 
 .login-input {
@@ -909,12 +908,12 @@ h1 {
 
 #login-submit {
     margin: 1vw;
-    width: 5vw;
+    width: 15vw;
     height: 7vh;
     float: left;
     color: #2D3142;
     background-color: #EAE8FF;
-    font-size: 1.2vw;
+    font-size: 1.4vw;
 }
 #sign-submit {
     margin: 1vw;
@@ -923,7 +922,8 @@ h1 {
     float: left;
     color: #2D3142;
     background-color: #EAE8FF;
-    font-size: 1.2vw;
+    font-size: 1.4vw;
+
 }
 @media screen and (max-width: 600px) {
     button {
