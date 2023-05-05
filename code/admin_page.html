@@ -93,17 +93,21 @@
             <input type="text" id="username" class="login-input" placeholder="username">
             <div id="passord_holder">
                 <input type="password" id="password" class="login-input" placeholder="password">
-                <i class="fa fa-eye" id="show_password" style="font-size:36px" onclick="show_password()"></i>
-                <span  id="show_password1" class="glyphicon glyphicon-eye-close" onclick="show_password()"></span>
+                <!-- <i class="fa fa-eye" id="show_password" style="font-size:36px" onclick="show_password()"></i>
+                <span  id="show_password1" class="glyphicon glyphicon-eye-close" onclick="show_password()"></span> -->
             </div>
             <div id="login-packing">
-                <button id="login-submit" onclick="submit_login()">Login</button>
+                <div id="show_pass">
+                    <input type="checkbox" id="login_checkbox" onchange="show_password()">
+                    <label for="checkbox" id="checkbox_tekst" onclick="show_password()">Show password</label>
+                    
+                </div>
+                
+
             </div>
-            <a href="index.html">
-                <button id="login-submit">Home</button>
-            </a>
+            <button id="sign-submit" onclick="submit_login()">Login</button>
             <a href="user_creaton.html">
-                <button id="login-submit">Sign Up</button>
+                <button id="sign-submit">Sign Up</button>
             </a>
             <!-- <h1 id="password-tekst">
                 Password

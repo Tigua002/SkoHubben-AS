@@ -840,10 +840,10 @@ h1 {
 }
 
 #login-packing {
-    width: 100%;
+    width: 90%;
     display: flex;
-    justify-content: center;
-    margin-top: 2vw;
+    justify-content: space-between;
+
 
 }
 
@@ -856,33 +856,48 @@ h1 {
     font-size: 1.5vw;
 }
 #password {
-    margin-left: 19vw;
-    margin-left: -.5vw;
+
     font-size: 1.5vw;
 }
-
-#show_password {
-    margin-left: -2.9vw;
-    margin-right: 0vw;
-    background: none;
-    font-size: 1.6vw;
+#login_checkbox{
+    width: 1.5vw;
+    height: 1.5vw;
+    font-size: 3vw;
+    background-color: red;
+    margin-left: 2vw;
+    padding: 0%;
+    cursor: pointer;
+}
+#checkbox_tekst{
+    font-size: 1.3vw;
+    padding: 0%;
+    margin: 0%;
+    display: flex;
+    align-items: center;
+    margin-left: .5vw;
+}
+    #show_pass{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
+    margin: 0%;
+    height: 5vh;
+    margin-top: 1vw;
 }
 
-#show_password1 {
-    font-size: 1.6vw;
-    margin-left: -2.7vw;
-    margin-right: 0vw;
-    background: none;
-    display: none;
-}
 
 #login-tekst {
     color: #2D3142;
+    margin-top: 8vh;
+    margin-bottom: 3vh;
+    font-size: 2.4vw;
+    font-weight: 500;
 }
 
 .login-input {
     margin: 1vh;
-    width: 20vw;
+    width: 25vw;
     height: 4vw;
     min-height: 5vh;
     font-size: larger;
@@ -894,14 +909,22 @@ h1 {
 
 #login-submit {
     margin: 1vw;
-    width: 13vw;
+    width: 5vw;
     height: 7vh;
     float: left;
     color: #2D3142;
     background-color: #EAE8FF;
-    font-size: larger;
+    font-size: 1.2vw;
 }
-
+#sign-submit {
+    margin: 1vw;
+    width: 15vw;
+    height: 7vh;
+    float: left;
+    color: #2D3142;
+    background-color: #EAE8FF;
+    font-size: 1.2vw;
+}
 @media screen and (max-width: 600px) {
     button {
         color: #2D3142;

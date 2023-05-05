@@ -12,14 +12,15 @@ var total_amount
 var logged_inn = false
 
 function show_password(){
-    console.log("func")
+
+
     if (password_input.type == "password"){
-        console.log("text")
+        document.getElementById("login_checkbox").checked = true;
         password_input.type = "text"
         document.getElementById("show_password").style.display = "none"
         document.getElementById("show_password1").style.display = "block"
     } else {
-        console.log("password")
+        document.getElementById("login_checkbox").checked = false;
         password_input.type = "password"
         document.getElementById("show_password").style.display = "block"
         document.getElementById("show_password1").style.display = "none"
