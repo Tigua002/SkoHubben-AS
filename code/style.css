@@ -1454,8 +1454,9 @@ h1 {
         width: 90%;
     }
     #alerts{
-        width: 80%;
-        min-height: 50vw;
+        width: 100%;
+        min-height: 20vw;
+        top: -79%;
     }
     #alert_tekst{
         font-size: 7vw;
@@ -1463,7 +1464,7 @@ h1 {
     #alert_close{
         margin-top: 5vw;
         width: 30%;
-        height: 30%;
+        height: 6vh;
         font-size: 5vw;
     }   
     
