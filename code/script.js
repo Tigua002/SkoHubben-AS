@@ -23,10 +23,12 @@ var alerts = document.getElementById("alerts")
 var alert_tekst = document.getElementById("alert_tekst")
 
 function show_alert(){
+  alerts.style.display = "flex";
   alerts.showModal()
 }
 
 function close_modal(){
-  alerts.close()
+  alerts.close();
+  alerts.style.display = "none";
 }
 
