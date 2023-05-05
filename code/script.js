@@ -32,3 +32,5 @@ function close_modal(){
   alerts.style.display = "none";
 }
 
+
+close_modal()

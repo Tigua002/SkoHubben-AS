@@ -108,16 +108,17 @@ function close_menu() {
 }
 
 
-function show_alert(){
+function show_alert() {
     alerts.style.display = "flex";
     alerts.showModal()
-  }
-  
-  function close_modal(){
+}
+
+function close_modal() {
     alerts.close();
     alerts.style.display = "none";
-  }
+}
 
+close_modal()
 /*liten huske regel fra SIMEN :)*/
 // JSON.stringify = objekt -> string
 // JSON.parse = string -> objekt
