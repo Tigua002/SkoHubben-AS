@@ -581,7 +581,9 @@ h1 {
     margin-top: 2vw;
     position: initial;
 }
-
+#log_in{
+    position: initial;
+}
 #purchase_div :hover {
     opacity: 0.6;
 }
