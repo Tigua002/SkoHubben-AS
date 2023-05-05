@@ -251,7 +251,7 @@ async function submit_login() {
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
         alert_tekst.innerHTML = "Hello admin!"
-        
+        document.getElementById("login_base").remove()
         show_alert()
         Get_Orders()
         update_total()
