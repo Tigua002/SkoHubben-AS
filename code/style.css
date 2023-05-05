@@ -938,7 +938,14 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 2vw;
+
 }
+::backdrop{
+    background: #b0d9ff;
+    opacity: .5;
+}
+
 #alert_tekst{
     font-size: 3vw;
 }
@@ -948,6 +955,7 @@ h1 {
     background-color: #2D3142;
     color: #EAE8FF;
     font-size: 2vw;
+    border-radius: 1vw;
 }
 @media screen and (max-width: 600px) {
     button {
