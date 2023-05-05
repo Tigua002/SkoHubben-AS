@@ -1312,7 +1312,7 @@ h1 {
     .item_nr_1,
     #final_total,
     #final_count {
-        width: 98vw;
+        width: 97vw;
         margin: 0%;
 
         height: 10vw;
@@ -1344,6 +1344,7 @@ h1 {
     }
     #complete_div{
         position: fixed;
+        margin: 0%;
     }
     .purchase_div {
         width: 100%;
@@ -1352,6 +1353,7 @@ h1 {
     }
     #complete_order{
         position: fixed;
+        margin: 0%;
     }
     .purchase_button {
 
