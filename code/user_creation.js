@@ -13,8 +13,8 @@ async function submit_sign_up() {
     var users = await res.json()
 
     // return users;
-    if (passwordEL !== password_confEL){
-        alert("there is an error")
+    if (passwordEL != password_confEL){
+        alert("the passwords are not matching")
         return;
     }
     for (let i = 0; i < users.length; i++){
