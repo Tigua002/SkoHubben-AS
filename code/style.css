@@ -1367,6 +1367,7 @@ h1 {
         height: 20vw;
         margin: 0%;
         padding: 0%;
+        margin-bottom: 2vh;
     }
     #log-in-button{
         margin: 0%;
