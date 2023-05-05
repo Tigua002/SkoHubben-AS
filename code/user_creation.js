@@ -6,6 +6,7 @@ document.getElementById("login_base").style.display = "flex"
 async function submit_sign_up() {
     var usernameEL = document.getElementById("username").value
     var passwordEL = document.getElementById("password").value
+    var password_confEL = document.getElementById("password_confirm").value
     const res = await fetch("http://65.108.15.66:22223/get/users",
         {
             method: "GET"
