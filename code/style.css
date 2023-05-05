@@ -1312,7 +1312,7 @@ h1 {
     .item_nr_1,
     #final_total,
     #final_count {
-        width: 90%;
+        width: 98vw;
         margin: 0%;
 
         height: 10vw;
@@ -1321,7 +1321,6 @@ h1 {
     }
 
     .item_nr_1 {
-        width: 95vw;
         margin: 0%;
         margin-bottom: 1vh;
         padding: 0%;
