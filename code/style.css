@@ -1411,7 +1411,7 @@ h1 {
 
 
     #log_in, #log-in-button, #log_in_user_page{
-        position: relative;
+        position: static;
     }
     #password, #username, #password_confirm{
         font-size: 3vh;
