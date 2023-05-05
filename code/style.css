@@ -1401,7 +1401,10 @@ h1 {
         
     }
     #login-tekst{
-        font-size: 3.5vh;
+        font-size: 4vh;
+        font-weight: 500;
+        margin-top: 5vh;
+        margin-bottom: 2vh;
     }
     #password, #username, #password_confirm{
         font-size: 3vh;
@@ -1412,13 +1415,19 @@ h1 {
     #login-submit, #sign-submit{
         font-size: 3vh;
         width: 30vw;
+        margin-bottom: 2vh;
     }
     #login_checkbox{
         width: 3vh;
         height: 3vh;
     }
+
+    #show_pass{
+        margin-bottom: 5vh;
+    }
     #checkbox_tekst{
         font-size: 2vh;
+        
     }
     #show_pass{
         width: 90%;
