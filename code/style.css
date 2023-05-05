@@ -933,7 +933,7 @@ h1 {
     color: #2D3142;
     border: solid #2D3142 1px;
     width: 30vw;
-    height: 20vw;
+    min-height: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1448,7 +1448,7 @@ h1 {
     }
     #alerts{
         width: 80%;
-        height: 50vw;
+        min-height: 50vw;
     }
     #alert_tekst{
         font-size: 7vw;
