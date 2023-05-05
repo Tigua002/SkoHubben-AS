@@ -1367,7 +1367,7 @@ h1 {
         height: 20vw;
         margin: 0%;
         padding: 0%;
-        
+        border: solid #2D3142 2px;
     }
     #log-in-button{
         margin: 0%;
@@ -1375,7 +1375,7 @@ h1 {
         display: flex;
         justify-content: center;
         margin-bottom: 2vh;
-        border: solid #2D3142 4px;
+        
     }
 
     #empty_packing {
