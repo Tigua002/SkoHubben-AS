@@ -14,29 +14,33 @@ async function submit_sign_up() {
     var users = await res.json()
 
     // return users;
-    if (passwordEL != password_confEL){
+    if (passwordEL != password_confEL) {
         alert_tekst.innerHTML = "the passwords are not matching"
         show_alert()
-        alert("the passwords are not matching")
         return;
     }
-    for (let i = 0; i < users.length; i++){
-        if (users[i].username === usernameEL){
-            alert("Someone else already has that name")
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].username === usernameEL) {
+            alert_tekst.innerHTML = "Someone else already has that name"
+            show_alert()
             return;
         }
     }
     if (usernameEL === "") {
-        alert("you need to fill inn the username")
+        alert_tekst.innerHTML = "you need to fill inn the username"
+        show_alert()
         return;
     } else if (passwordEL === "") {
-        alert("you need to fill inn the password")
+        alert_tekst.innerHTML = "you need to fill inn the password"
+        show_alert()
         return;
     } else if (usernameEL.length >= 30) {
-        alert("sorry, no more than 30 characters, shorten the username")
+        alert_tekst.innerHTML = "sorry, no more than 30 characters, shorten the username"
+        show_alert()
         return;
     } else if (passwordEL.length >= 30) {
-        alert("sorry, no more than 30 characters, shorten the password")
+        alert_tekst.innerHTML = "sorry, no more than 30 characters, shorten the password"
+        show_alert()
         return;
     }
 
@@ -51,9 +55,9 @@ async function submit_sign_up() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-        
+
     })
-    alert("User created, log in")
+    alert_tekst.innerHTML = "User created, log in"
+    show_alert()
     window.location.assign("admin_page.html")
 }
-document.getElementById("alerts").showModal()
