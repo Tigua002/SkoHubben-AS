@@ -1408,6 +1408,9 @@ h1 {
     }
     #password, #username, #password_confirm{
         font-size: 3vh;
+        border-radius: 0%;
+        height: 6vh;
+        width: 60vw;
     }
     #login_base {
         align-items: flex-start;
@@ -1421,6 +1424,7 @@ h1 {
         width: 3vh;
         height: 3vh;
         font-family: light_font;
+        border-radius: 0%;
     }
 
     #show_pass{
