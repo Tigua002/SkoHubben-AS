@@ -1398,14 +1398,30 @@ h1 {
 
     .login-input {
         width: 50vw;
+        
     }
-
-    #login-submit {
-        width: 30vw;
+    #login-tekst{
+        font-size: 3.5vh;
     }
-
+    #password, #username{
+        font-size: 3vh;
+    }
     #login_base {
         align-items: flex-start;
     }
-
+    #login-submit, #sign-submit{
+        font-size: 3vh;
+        width: 30vw;
+    }
+    #login_checkbox{
+        width: 2vh;
+        height: 2vh;
+    }
+    #checkbox_tekst{
+        font-size: 2vh;
+    }
+    #show_pass{
+        width: 90%;
+    }
+    
 }
