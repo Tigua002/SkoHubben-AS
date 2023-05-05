@@ -1409,7 +1409,7 @@ h1 {
     #password, #username, #password_confirm{
         font-size: 3vh;
         border-radius: 0%;
-        height: 6vh;
+        height: 8vh;
         width: 60vw;
     }
     #username{
