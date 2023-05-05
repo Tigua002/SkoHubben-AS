@@ -14,6 +14,7 @@ async function submit_sign_up() {
 
     // return users;
     if (passwordEL ===! password_confEL){
+        alert("there is an error")
         return;
     }
     for (let i = 0; i < users.length; i++){
