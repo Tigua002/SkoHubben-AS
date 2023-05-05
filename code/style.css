@@ -1414,8 +1414,8 @@ h1 {
         width: 30vw;
     }
     #login_checkbox{
-        width: 2vh;
-        height: 2vh;
+        width: 3vh;
+        height: 3vh;
     }
     #checkbox_tekst{
         font-size: 2vh;
@@ -1423,5 +1423,18 @@ h1 {
     #show_pass{
         width: 90%;
     }
+    #alerts{
+        width: 80%;
+        height: 50vw;
+    }
+    #alert_tekst{
+        font-size: 7vw;
+    }
+    #alert_close{
+        margin-top: 5vw;
+        width: 30%;
+        height: 30%;
+        font-size: 5vw;
+    }   
     
 }
