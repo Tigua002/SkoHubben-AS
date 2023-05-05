@@ -280,6 +280,7 @@ for (let i = 0; all_shoes.length > i; i++) {
         all_shoes[i].calc_before = false
         /*fjerner alt*/
         document.getElementById("packing_pay_page").remove()
+        close_modal()
         /*gir feil meldingen*/
         document.getElementById("EMP").innerHTML = "Your shopping cart is empty, go get a shoe and return here"
         document.getElementById("EMP").style.width = "100%"

@@ -263,7 +263,7 @@ async function submit_login() {
 
         for (let i = 0; i < users.length; i++) {
             if (users[i].username == usernameEL && users[i].passwor == passwordEL) {
-                alert_tekst.innerHTML = "Hello" + usernameEL
+                alert_tekst.innerHTML = "Hello " + usernameEL
                 show_alert()
                 sessionStorage.setItem("username", usernameEL)
                 logged_inn = true
