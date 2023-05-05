@@ -1375,6 +1375,7 @@ h1 {
         display: flex;
         justify-content: center;
         margin-bottom: 2vh;
+        border: solid #2D3142 4px;
     }
 
     #empty_packing {
