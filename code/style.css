@@ -1321,7 +1321,7 @@ h1 {
     }
 
     .item_nr_1 {
-        width: 100%;
+        width: 95vw;
         margin: 0%;
         margin-bottom: 1vh;
         padding: 0%;
@@ -1366,7 +1366,6 @@ h1 {
         height: 20vw;
         margin: 0%;
         padding: 0%;
-        color: #EAE8FF;
     }
     #log-in-button{
         margin: 0%;
