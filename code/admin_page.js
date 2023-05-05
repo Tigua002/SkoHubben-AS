@@ -8,11 +8,10 @@ var counter = 1
 var total_price = 0
 var purchase_checker = false
 var total_amount
-
 var logged_inn = false
 
-function show_password(){
-    if (password_input.type == "password"){
+function show_password() {
+    if (password_input.type == "password") {
         document.getElementById("login_checkbox").checked = true;
         password_input.type = "text"
         document.getElementById("show_password").style.display = "none"
@@ -223,7 +222,7 @@ function calculate() {
 }
 
 function cause_login() {
-    if (sessionStorage.getItem("username")){
+    if (sessionStorage.getItem("username")) {
         window.location.assign("user_page.html")
     }
     document.getElementById("login_base").style.display = "flex"
@@ -251,24 +250,40 @@ async function submit_login() {
     if (username == usernameEL && password == passwordEL) {
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
-        alert("Hello admin")
+        alert_tekst.innerHTML = "Hello admin!"
+        
+        show_alert()
         Get_Orders()
         update_total()
         calculate()
         return;
-    } 
-    for (let i = 0; i < users.length; i++){
-        if (users[i].username == usernameEL && users[i].passwor == passwordEL){
-            alert("Hello " + usernameEL)
-            sessionStorage.setItem("username", usernameEL)
-            logged_inn = true
-            window.location.assign("user_page.html")
+        
+    } else {
+
+
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].username == usernameEL && users[i].passwor == passwordEL) {
+                alert_tekst.innerHTML = "Hello" + usernameEL
+                show_alert()
+                sessionStorage.setItem("username", usernameEL)
+                logged_inn = true
+            }
         }
     }
-    if (logged_inn == false){
-        alert("User not found")
+    if (logged_inn == false) {
+        alert_tekst.innerHTML = "User not found";
+        show_alert();
     }
 }
+
+
+function change_location(){
+    if (logged_inn == true){
+        window.location.assign("user_page.html")
+    }
+
+}
+
 cause_login()
 /*får alt til å gå*/
 

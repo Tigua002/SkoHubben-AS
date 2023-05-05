@@ -87,12 +87,14 @@ function add_specific_shoe() {
             if (all_shoes[i].navn == document.getElementsByClassName("button_add_to_cart")[0].id) {
                 all_shoes[i].antall += 1
                 sessionStorage.setItem(all_shoes[i].navn, JSON.stringify(all_shoes[i]))
-                alert("Order Recieved, go to the cart to check out.")
+                alert_tekst.innerHTML = "Order Recieved, go to the cart to check out.";
+                show_alert();
 
             }
         }
     } else {
-        alert("Please pick a shoe size")
+        alert_tekst.innerHTML = "Please pick a shoe size";
+        show_alert();
     }
 }
 function open_menu() {

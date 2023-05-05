@@ -203,7 +203,8 @@ function purchase() {
     if (sessionStorage.getItem("username")){
         user = sessionStorage.getItem("username")
     }
-    alert("Thank you for your purchase!")
+    alert_tekst.innerHTML = "Thank you for your purchase!";
+    show_alert();
     document.getElementById("packing_pay_page").remove()
     for (let i = 0; i < all_shoes.length; i++) {
         if (all_shoes[i].antall > 0) {

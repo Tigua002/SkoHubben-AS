@@ -29,3 +29,4 @@ function show_alert(){
 function close_modal(){
   alerts.close()
 }
+

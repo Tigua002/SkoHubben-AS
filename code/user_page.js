@@ -183,8 +183,8 @@ async function submit_login() {
     if (username == usernameEL && password == passwordEL) {
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
-        alert("Hello admin")
-       
+        alert_tekst.innerHTML = "Hello admin";
+        show_alert();
         Get_Orders()
         update_total()
 
@@ -192,7 +192,8 @@ async function submit_login() {
     }
     for (let i = 0; i < users.length; i++) {
         if (users[i].username == usernameEL && users[i].passwor == passwordEL) {
-            alert("Hello " + usernameEL)
+            alert_tekst.innerHTML = "Hello" + usernameEL;
+            show_alert();
             sessionStorage.setItem("username", usernameEL)
             
         }
