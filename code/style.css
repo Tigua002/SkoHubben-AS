@@ -925,6 +925,28 @@ h1 {
     font-size: 1.4vw;
 
 }
+
+#alerts{
+    background-color: #B0D7FF;
+    color: #2D3142;
+    border: solid #2D3142 1px;
+    width: 30vw;
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#alert_tekst{
+    font-size: 3vw;
+}
+#alert_close{
+    width: 10vw;
+    height: 5vw;
+    background-color: #2D3142;
+    color: #EAE8FF;
+    font-size: 2vw;
+}
 @media screen and (max-width: 600px) {
     button {
         color: #2D3142;

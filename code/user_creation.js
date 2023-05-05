@@ -15,6 +15,8 @@ async function submit_sign_up() {
 
     // return users;
     if (passwordEL != password_confEL){
+        alert_tekst.innerHTML = "the passwords are not matching"
+        show_alert()
         alert("the passwords are not matching")
         return;
     }
@@ -54,3 +56,4 @@ async function submit_sign_up() {
     alert("User created, log in")
     window.location.assign("admin_page.html")
 }
+document.getElementById("alerts").showModal()

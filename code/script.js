@@ -19,3 +19,13 @@ if (sessionStorage.getItem("username")) {
   document.getElementById("log-out-menu").style.display = "none"
   
 }
+var alerts = document.getElementById("alerts")
+var alert_tekst = document.getElementById("alert_tekst")
+
+function show_alert(){
+  alerts.showModal()
+}
+
+function close_modal(){
+  alerts.close()
+}
