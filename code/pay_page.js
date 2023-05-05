@@ -6,7 +6,7 @@ var check_out = document.getElementById("item_prises")
 var counter = 1
 var total_price = 0
 var purchase_checker = false
-
+var no_shoes = false
 /*legger til en bestemt sko*/
 function add_shoe(number) {
     all_shoes[number].antall = all_shoes[number].antall + 1
@@ -280,6 +280,7 @@ for (let i = 0; all_shoes.length > i; i++) {
         all_shoes[i].calc_before = false
         /*fjerner alt*/
         document.getElementById("packing_pay_page").remove()
+        no_shoes = true
         close_modal()
         /*gir feil meldingen*/
         document.getElementById("EMP").innerHTML = "Your shopping cart is empty, go get a shoe and return here"
@@ -290,4 +291,9 @@ for (let i = 0; all_shoes.length > i; i++) {
 
 }
 
+function change_location(){
+    if (no_shoes = true){
+        window.location.assign("index.html")
+    }
+}
 
