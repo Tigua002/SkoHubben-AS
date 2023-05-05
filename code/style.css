@@ -1412,6 +1412,9 @@ h1 {
         height: 6vh;
         width: 60vw;
     }
+    #username{
+        margin-bottom: 5vh;
+    }
     #login_base {
         align-items: flex-start;
     }
