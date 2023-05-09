@@ -3,21 +3,49 @@ var element = document.getElementById("item-listing")
 var check_out = document.getElementById("item_prises")
 
 /*lager variabler som må bli brukt gjennom og utenofor koder*/
+var shoe_remover = 0
 var counter = 1
 var total_price = 0
 var purchase_checker = false
 var no_shoes = false
+var delete_shoe = false
 /*legger til en bestemt sko*/
 function add_shoe(number) {
     all_shoes[number].antall = all_shoes[number].antall + 1
     update_total()
     calculate()
 }
+
 /*fjerner en bestemt sko*/
 function remove_shoe(number) {
-    all_shoes[number].antall = all_shoes[number].antall - 1
+    shoe_remover = number
+    if (all_shoes[number].antall == 1 && delete_shoe == false) {
+        confirm_tekst.innerHTML = "You are about to remove a shoe from your bag";
+        alert_confirm();
+        return;
+    }
+    all_shoes[shoe_remover].antall = all_shoes[shoe_remover].antall - 1
     update_total()
     calculate()
+    
+}
+
+function proceed() {
+    delete_shoe = true
+    all_shoes[shoe_remover].been_before = false
+    all_shoes[shoe_remover].calc_before = false
+    remove_shoe(shoe_remover)
+    cart_amount()
+    document.getElementById(all_shoes[shoe_remover].navn + "_div").remove()
+    delete_shoe = false
+}
+function cancel() {
+    document.getElementById("packing_pay_page").style.display = "flex";
+    document.getElementById("EMP").style.width = "0%"
+    delete_shoe = false
+    update_total()
+    calculate()
+
 }
 /*her ligger alle skoene */
 var all_shoes = [
@@ -200,7 +228,7 @@ function calculate() {
 var user = "anonymous"
 /*hva som skjer når du trykker på "purchase"*/
 function purchase() {
-    if (sessionStorage.getItem("username")){
+    if (sessionStorage.getItem("username")) {
         user = sessionStorage.getItem("username")
     }
     alert_tekst.innerHTML = "Thank you for your purchase!";
@@ -215,15 +243,15 @@ function purchase() {
                 AJ1C: all_shoes[1].antall,
                 AJDB: all_shoes[2].antall,
                 AJDW: all_shoes[3].antall,
-                JMB : all_shoes[4].antall,
-                JMR : all_shoes[5].antall,
+                JMB: all_shoes[4].antall,
+                JMR: all_shoes[5].antall,
                 JR6B: all_shoes[6].antall,
                 JR6W: all_shoes[7].antall,
-                NDW : all_shoes[8].antall,
-                NDB : all_shoes[9].antall,
-                NIB : all_shoes[10].antall,
-                NIW : all_shoes[11].antall,
-                buyer : user,
+                NDW: all_shoes[8].antall,
+                NDB: all_shoes[9].antall,
+                NIB: all_shoes[10].antall,
+                NIW: all_shoes[11].antall,
+                buyer: user,
             }
             fetch("/buy/shoe", {
                 method: "POST",
@@ -239,12 +267,12 @@ function purchase() {
     for (let i = 0; all_shoes.length > i; i++) {
         /*skjekker om en div existerer, hvis den existerer, så gjør den ikke det lenger*/
         if (document.getElementById(all_shoes[i].navn + "_div")) {
-            
+
             /*definerer div navn*/
             var shoe_name = document.getElementById(all_shoes[i].navn + "_div")
             /*sletter div-em*/
             shoe_name.remove()
-            
+
             /*oppdaterer antall sko som er skjøpt*/
 
             /*skjekker om noe har blitt skjøpt*/
@@ -267,32 +295,35 @@ update_total()
 calculate()
 var tester = 0
 /*igjen igjen; går antall ganger som sko*/
-for (let i = 0; all_shoes.length > i; i++) {
-    /*skjekker om en spesific sko er på siden*/
-    if (all_shoes[i].been_before == false) {
-        /*legger til en verdi, den totale verdien av "tester" er hvor mange sko som ikke er på siden*/
-        tester += 1
-    }
-    /*hvis ingen sko er der, så slettes alt på siden, og gir en melding som sier at du må velge noe*/
-    if (all_shoes.length == tester) {
-        /*oppdaterer alle sko verdier i tilfelle*/
-        all_shoes[i].been_before = false
-        all_shoes[i].calc_before = false
-        /*fjerner alt*/
-        document.getElementById("packing_pay_page").remove()
-        no_shoes = true
-        close_modal()
-        /*gir feil meldingen*/
-        document.getElementById("EMP").innerHTML = "Your shopping cart is empty, go get a shoe and return here"
-        document.getElementById("EMP").style.width = "100%"
+function cart_amount() {
+    tester = 0
+    for (let i = 0; all_shoes.length > i; i++) {
+        /*skjekker om en spesific sko er på siden*/
+        if (all_shoes[i].been_before == false) {
+            /*legger til en verdi, den totale verdien av "tester" er hvor mange sko som ikke er på siden*/
+            tester += 1
+        }
+        /*hvis ingen sko er der, så slettes alt på siden, og gir en melding som sier at du må velge noe*/
+        if (all_shoes.length == tester) {
+            /*oppdaterer alle sko verdier i tilfelle*/
+            all_shoes[i].been_before = false
+            all_shoes[i].calc_before = false
+            /*fjerner alt*/
+            document.getElementById("packing_pay_page").style.display = "none"
+            no_shoes = true
+            close_modal()
+            /*gir feil meldingen*/
+            document.getElementById("EMP").innerHTML = "Your shopping cart is empty, go get a shoe and return here"
+            document.getElementById("EMP").style.width = "100%"
 
-    } else {
-    }
+        } else {
+        }
 
+    }
 }
-
-function change_location(){
-    if (no_shoes = true){
+cart_amount()
+function change_location() {
+    if (no_shoes = true) {
         window.location.assign("index.html")
     }
 }

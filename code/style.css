@@ -928,7 +928,7 @@ h1 {
 
 }
 
-#alerts{
+#alerts, #confirm{
     background-color: #B0D7FF;
     color: #2D3142;
     border: solid #2D3142 1px;
@@ -942,7 +942,8 @@ h1 {
     top: -75%;
 }
 
-#alert_tekst{
+#alert_tekst, #confirm_tekst{
+    margin-top: 3vw;
     font-size: 2vw;
 }
 #alert_close{
@@ -953,6 +954,25 @@ h1 {
     font-size: 1.5vw;
     border-radius: 1vw;
 }
+#confirm_button_holder{
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+}
+#confirm_tekst{
+    margin-top: 7vw;
+}
+.confirm_button{
+    width: 8vw;
+    height: 4vw;
+    background-color: #2D3142;
+    color: #EAE8FF;
+    font-size: 1.5vw;
+    border-radius: 1vw;
+    margin-top: 3vw;
+    padding: .5vw;
+}
+
 @media screen and (max-width: 600px) {
     button {
         color: #2D3142;
@@ -1453,12 +1473,12 @@ h1 {
     #show_pass{
         width: 90%;
     }
-    #alerts{
+    #alerts, #confirm{
         width: 100%;
         min-height: 20vw;
         top: -75%;
     }
-    #alert_tekst{
+    #alert_tekst, #confirm_tekst{
         font-size: 7vw;
     }
     #alert_close{

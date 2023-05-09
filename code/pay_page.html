@@ -93,6 +93,13 @@
         <h1 id="alert_tekst"></h1>
         <button id="alert_close" onclick="close_modal(), change_location()">OK</button>
     </dialog>
+    <dialog id="confirm">
+        <h1 id="confirm_tekst">Are you sure?</h1>
+        <div id="confirm_button_holder">
+            <button class="confirm_button" onclick="confirmed(), proceed()">Proceed</button>
+            <button class="confirm_button" onclick="confirmed(), cancel()">Cancel</button>
+        </div>
+    </dialog>
 </body>
 <script src="script.js"></script>
 <script src="pay_page.js"></script>
