@@ -634,8 +634,8 @@ h1 {
 }
 
 .shopping_image {
-    width: 20vh;
-    height: 20vh;
+    width: 50vh;
+    height: 50vh;
 }
 
 .subtract {
@@ -1288,34 +1288,46 @@ h1 {
         margin: 0%;
         display: flex;
         justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #f6f6f6;
+
     }
 
     .shopping_image {
-        width: 20vw;
+        width: 30vw;
         height: auto;
+        margin-left: 35vw;
+        margin-right: 35vw;
     }
 
-    .total_items_pay {
-        font-size: 4.5vw;
+    .total_items_pay, .counter {
+        font-size: 6vw;
+        font-weight: 900;
+        margin: 2vh;
     }
 
-    .counter {
-        font-size: 4.5vw;
-    }
 
-    .add,
-    .subtract {
-        width: 23vw;
-        margin: 0%;
-        height: 13vw;
-        border-radius: 0%;
+    .add, .subtract {
+        width: 25vw;
+        margin: 1vh;
+        margin-right: 4vh;
+        margin-left: 4vw;
+        height: 15vw;
+        border-radius: 5vw;
+        font-size: 4.6vw;
+        font-weight: 600;
     }
-
+    .add{
+        font-size: 5vw;
+    }
     .button_div {
         width: fit-content;
         margin: 0%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
     }
 
     #check_out_div {
