@@ -49,8 +49,8 @@ function cancel() {
 }
 /*her ligger alle skoene */
 var all_shoes = [
-    AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/red_and_black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
-    AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/colorful/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
+    AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/TotalsNoBC/R&B.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
+    AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/TotalsNoBC/totalCF.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
     AJDB = { navn: "AJDB", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub Black" },
     AJDW = { navn: "AJDW", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/white/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub White" },
     JMB = { navn: "JMB", pris: 1424, antall: 0, link: "sko/jordan_max_aura_4/red&white/total.webp", been_before: false, calc_before: false, full_name: "Jordan Max Aura 4 White Top" },
@@ -65,8 +65,8 @@ var all_shoes = [
 ]
 /*slik teller jeg alt for admin siden*/
 var bought_items = [
-    AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/red_and_black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
-    AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/Air_Jordan_1_mid/colorful/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
+    AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/TotalsNoBC/R&B.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
+    AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/TotalsNoBC/totalCF.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
     AJDB = { navn: "AJDB", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/black/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub Black" },
     AJDW = { navn: "AJDW", pris: 1899, antall: 0, link: "sko/air_jordan_dub_zero/white/total.webp", been_before: false, calc_before: false, full_name: "Air Jordan Dub White" },
     JMB = { navn: "JMB", pris: 1424, antall: 0, link: "sko/jordan_max_aura_4/red&white/total.webp", been_before: false, calc_before: false, full_name: "Jordan Max Aura 4 White Top" },
@@ -106,17 +106,21 @@ function update_total() {
         if (all_shoes[i].antall > 0 && all_shoes[i].been_before == false) {
             /*lager hele div-en til sko-checkout*/
             let shoes_div = document.createElement("div")
+            let img_div = document.createElement("div")
             let shoes_img = document.createElement("img")
             let shoes_counter = document.createElement("h3")
             let shoes_total = document.createElement("h3")
             let shoes_button = document.createElement("button")
             let shoes_plus = document.createElement("button")
             let shoes_button_div = document.createElement("div")
+            let shoe_tekst = document.createElement("h3")
             /*legger skoene i riktig div slik at alt passer*/
             element.appendChild(shoes_div)
-            shoes_div.appendChild(shoes_img)
+            shoes_div.appendChild(shoe_tekst)  
+            shoes_div.appendChild(img_div)
+            img_div.appendChild(shoes_img)      
             shoes_div.appendChild(shoes_counter)
-            shoes_div.appendChild(shoes_total)
+            shoes_div.appendChild(shoes_total)           
             shoes_div.appendChild(shoes_button_div)
             shoes_button_div.appendChild(shoes_button)
             shoes_button_div.appendChild(shoes_plus)
@@ -126,9 +130,12 @@ function update_total() {
             shoes_img.setAttribute("class", "shopping_image")
             shoes_img.setAttribute("src", all_shoes[i].link)
             shoes_counter.setAttribute("class", "counter")
+            img_div.setAttribute("class", "cart_img_holder")
             shoes_counter.setAttribute("id", "count_items_" + all_shoes[i].navn)
             shoes_total.setAttribute("id", "total_pay_" + all_shoes[i].navn)
             shoes_total.setAttribute("class", "total_items_pay")
+            shoe_tekst.setAttribute("class", "cart_full_name")
+            shoe_tekst.innerHTML = all_shoes[i].full_name
             shoes_button_div.setAttribute("class", "button_div")
             shoes_button.setAttribute("class", "subtract")
             shoes_button.setAttribute("onclick", "remove_shoe(" + i + ")")
