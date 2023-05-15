@@ -81,6 +81,13 @@ for (let i = 0; all_shoes.length > i; i++) {
     }
 }
 
+for (let i = 0; all_shoes.length > i; i++) {
+    if (sessionStorage.getItem(all_shoes[i].navn) && JSON.parse(sessionStorage.getItem(all_shoes[i].navn))) {
+        var shoe_amount = JSON.parse(sessionStorage.getItem(all_shoes[i].navn))
+        all_shoes[i].antall = shoe_amount.antall
+    }
+}
+
 function add_specific_shoe() {
     if (shoe_selected === true) {
         for (let i = 0; all_shoes.length > i; i++) {
@@ -119,18 +126,20 @@ function close_modal() {
     cart_counter()
 }
 function cart_counter() {
-    console.log("hello")
+
     cart_amount = 0;
     for (let i = 0; all_shoes.length > i; i++) {
+        console.log("i")
         if (all_shoes[i].antall > 0) {
             cart_amount += 1;
+
         }
-    }
+    }    
 
     document.getElementById("cart_counter").innerHTML = cart_amount
 
 }
-cart_counter()
+
 
 close_modal()
 /*liten huske regel fra SIMEN :)*/
