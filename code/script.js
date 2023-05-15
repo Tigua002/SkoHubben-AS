@@ -45,6 +45,7 @@ for (let i = 0; all_shoes.length > i; i++) {
 }
 
 function cart_counter() {
+  
   cart_amount = 0;
   for (let i = 0; all_shoes.length > i; i++) {
     if (all_shoes[i].antall > 0) {

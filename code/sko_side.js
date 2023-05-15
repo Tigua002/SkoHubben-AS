@@ -118,6 +118,7 @@ function close_modal() {
     alerts.style.display = "none";
 }
 function cart_counter() {
+    console.log("hello")
     cart_amount = 0;
     for (let i = 0; all_shoes.length > i; i++) {
         if (all_shoes[i].antall > 0) {
