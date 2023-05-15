@@ -101,14 +101,16 @@ function update_total() {
             let shoes_img = document.createElement("img")
             let shoes_counter = document.createElement("h3")
             let shoes_total = document.createElement("h3")
-            
+            let img_div = document.createElement("div")
             /*legger elementene der de skal være*/
             element.appendChild(shoes_div)
-            shoes_div.appendChild(shoes_img)
+            shoes_div.appendChild(img_div)
+            img_div.appendChild(shoes_img)  
             shoes_div.appendChild(shoes_counter)
             shoes_div.appendChild(shoes_total)
 
             /*gir elementene klasser, id-er og links*/
+            img_div.setAttribute("class", "cart_img_holder")
             shoes_div.setAttribute("class", "shopping_items")
             shoes_div.setAttribute("id", user_bought[i].navn + "_div")
             shoes_img.setAttribute("class", "shopping_image")
