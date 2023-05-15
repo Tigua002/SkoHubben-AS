@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkoHubben | Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="bilder/Logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <!--alt i headeren -->
+    <div id="header_index">
+        <div id="hamburger_div">
+            <h1 id="hamburger_menu" onclick="open_menu()">&#9776;</h1>
+        </div>
+        <div id="link_holder">
+            <a href="admin_page.html" id="log_in_header">
+                <h1 id="home">Settings</h1>
+
+            </a>
+        </div>
+        <div id="logo_holder">
+            <div id="logo_tekst">
+                <a href="index.html">
+                    <h1 id="title">SkoHubben AS</h1>
+                </a>
+            </div>
+            <a href="index.html">
+                <img id="logo" src="bilder/Logo.png" alt="">
+            </a>
+        </div>
+
+        <a href="pay_page.html" id="shopping_link">
+            <img src="bilder/shopping_cart.png" alt="" id="shopping_cart" class="index_shopping">
+            <h1 id="cart_counter">0</h1>
+        </a>
+
+    </div>
+
+    <div id="menu_content">
+        <h1 id="close_button" onclick="close_menu()">X</h1>
+        <img id="menu_logo" onclick="close_menu()" src="bilder/Logo.png" alt="">
+        <a href="index.html">
+            <h1 id="home_menu">Home</h1>
+        </a>
+        <a href="pay_page.html">
+            <h1 id="cart_menu">Cart</h1>
+        </a>
+        <a href="admin_page.html">
+            <h1 id="log-in-menu">Log In</h1>
+        </a>
+
+        <h1 id="log-out-menu" onclick="log_out()">Log Out</h1>
+    </div>
+    <div id="packing_account">
+        <div id="account_button_packing">
+            <h2 id="welcome_tekst">Welcome Timur</h2>
+            <button class="account_buttons" onclick="to_user_page()">History</button>
+            <button class="account_buttons">Account Details</button>
+        </div>
+    </div>
+
+
+    <dialog id="alerts">
+        <h1 id="alert_tekst"></h1>
+        <button id="alert_close" onclick="close_modal()">OK</button>
+    </dialog>
+</body>
+<script>
+    AOS.init();
+</script>
+<script src="script.js"></script>
+
+
+</html>

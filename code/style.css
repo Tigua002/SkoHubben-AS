@@ -993,10 +993,42 @@ h1 {
     margin-top: 3vw;
     padding: .5vw;
 }
+#packing_account{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#account_button_packing{
+    width: 40vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    background-color: #B0D7FF;
+    margin-top: 15vh;
+    border-radius: 2vw;
+    flex-direction: column;
+}
+.account_buttons{
+    width: 30vw;
+    height: 10vh;
+    margin-bottom: 5vh;
+    background-color: #2D3142;
+    color: #EAE8FF;
+    font-size: 2vw;
+    border-radius: .4vw;
+}
+#welcome_tekst{
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    font-size: 3vw;
+}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     button {
         color: #2D3142;
+        font-size: 3vh;
     }
 
     #link_holder {
@@ -1032,7 +1064,7 @@ h1 {
     }
 
     #title {
-        width: 50vw;
+        width: auto;
         font-size: 6.5vw;
         margin-right: 2vw;
     }
@@ -1258,7 +1290,7 @@ h1 {
     .Size_kubes {
         width: 20vw;
         height: 15vw;
-
+  
     }
 
     #storelser,

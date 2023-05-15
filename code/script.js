@@ -74,6 +74,10 @@ function close_modal() {
 
 }
 
+function to_user_page(){
+  window.location.assign("admin_page.html")
+}
+
 
 cart_counter()
 close_modal()
