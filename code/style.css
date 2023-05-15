@@ -117,7 +117,16 @@ div {
     width: 7vw;
 
 }
-
+#cart_counter{
+    position: absolute;
+    width: auto;
+    height: auto;
+    font-size: 1.2vw;
+    border: solid black 1px;
+    top: 1%;
+    left: 96.3%;
+    color: #EAE8FF;
+}
 #hamburger_div {
     display: none;
     transition: 1s;

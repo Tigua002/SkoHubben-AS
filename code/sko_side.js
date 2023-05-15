@@ -122,3 +122,5 @@ close_modal()
 /*liten huske regel fra SIMEN :)*/
 // JSON.stringify = objekt -> string
 // JSON.parse = string -> objekt
+
+
