@@ -98,32 +98,25 @@ function update_total() {
         if (user_bought[i].antall > 0 && user_bought[i].been_before == false) {
             /*skaper alle elementene*/
             let shoes_div = document.createElement("div")
-            let img_div = document.createElement("div")
             let shoes_img = document.createElement("img")
             let shoes_counter = document.createElement("h3")
             let shoes_total = document.createElement("h3")
-            let shoe_tekst = document.createElement("h3")
-
+            
             /*legger elementene der de skal være*/
             element.appendChild(shoes_div)
-            shoes_div.appendChild(shoe_tekst)  
-            shoes_div.appendChild(img_div)
-            img_div.appendChild(shoes_img)      
+            shoes_div.appendChild(shoes_img)
             shoes_div.appendChild(shoes_counter)
-            shoes_div.appendChild(shoes_total)           
+            shoes_div.appendChild(shoes_total)
 
             /*gir elementene klasser, id-er og links*/
             shoes_div.setAttribute("class", "shopping_items")
-            shoes_div.setAttribute("id", all_shoes[i].navn + "_div")
+            shoes_div.setAttribute("id", user_bought[i].navn + "_div")
             shoes_img.setAttribute("class", "shopping_image")
-            shoes_img.setAttribute("src", all_shoes[i].link)
+            shoes_img.setAttribute("src", user_bought[i].link)
             shoes_counter.setAttribute("class", "counter")
-            img_div.setAttribute("class", "cart_img_holder")
-            shoes_counter.setAttribute("id", "count_items_" + all_shoes[i].navn)
-            shoes_total.setAttribute("id", "total_pay_" + all_shoes[i].navn)
+            shoes_counter.setAttribute("id", "count_items_" + user_bought[i].navn)
+            shoes_total.setAttribute("id", "total_pay_" + user_bought[i].navn)
             shoes_total.setAttribute("class", "total_items_pay")
-            shoe_tekst.setAttribute("class", "cart_full_name")
-            shoe_tekst.innerHTML = all_shoes[i].full_name
 
 
 
