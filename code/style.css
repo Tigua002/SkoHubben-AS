@@ -1330,7 +1330,7 @@ h1 {
         text-align: center;
         font-family: thick-font;
         padding-bottom: 3vh;
-        z-index: 5;
+        z-index: 1;
     }
 
     .add, .subtract {
