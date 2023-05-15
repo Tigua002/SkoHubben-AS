@@ -1304,7 +1304,7 @@ h1 {
         flex-wrap: wrap;
         background-color: #f6f6f6;
         border: none;
-        margin-bottom: 1vh;
+        margin-bottom: .2vh;
     }
     .cart_img_holder    {
         width: 100%;
