@@ -122,7 +122,6 @@ div {
     width: auto;
     height: auto;
     font-size: 1.2vw;
-    border: solid black 1px;
     top: 1%;
     left: 96.3%;
     color: #EAE8FF;
@@ -1035,7 +1034,7 @@ h1 {
     #title {
         width: 50vw;
         font-size: 6.5vw;
-
+        margin-right: 2vw;
     }
 
     #hamburger_div {
