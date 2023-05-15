@@ -78,6 +78,9 @@ function to_user_page(){
   window.location.assign("admin_page.html")
 }
 
+function to_account_page(){
+  window.location.assign("account.html")
+}
 
 cart_counter()
 close_modal()
