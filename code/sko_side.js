@@ -117,6 +117,18 @@ function close_modal() {
     alerts.close();
     alerts.style.display = "none";
 }
+function cart_counter() {
+    cart_amount = 0;
+    for (let i = 0; all_shoes.length > i; i++) {
+        if (all_shoes[i].antall > 0) {
+            cart_amount += 1;
+        }
+    }
+
+    document.getElementById("cart_counter").innerHTML = cart_amount
+
+}
+cart_counter()
 
 close_modal()
 /*liten huske regel fra SIMEN :)*/
