@@ -1322,10 +1322,11 @@ h1 {
     .total_items_pay, .counter, .cart_full_name {
         font-size: 6vw;
         font-weight: 900;
-        margin: 2vh;
+        margin: 1vh;
         display: block;
         font-weight: 900;
     }
+    .counter
     .cart_full_name{
         width: 100%;
         text-align: center;
