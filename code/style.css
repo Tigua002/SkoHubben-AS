@@ -1303,6 +1303,7 @@ h1 {
         flex-direction: row;
         flex-wrap: wrap;
         background-color: #f6f6f6;
+        border-top: none;
 
     }
     .cart_img_holder    {
