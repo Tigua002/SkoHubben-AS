@@ -122,7 +122,7 @@ function update_total() {
             shoes_total.setAttribute("id", "total_pay_" + user_bought[i].navn)
             shoes_total.setAttribute("class", "total_items_pay")
             shoe_tekst.setAttribute("class", "cart_full_name")
-            shoe_tekst.innerHTML = all_shoes[i].full_name
+            shoe_tekst.innerHTML = user_bought[i].full_name
 
 
 
