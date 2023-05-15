@@ -35,14 +35,5 @@ function close_modal(){
   alerts.close();
 
 }
-function alert_confirm(){
-  confirm.style.display = "flex";
-  confirm.showModal()
-}
-function confirmed(){
-  confirm.style.display = "none";
-  confirm.close();
 
-}
 close_modal()
-confirmed()
