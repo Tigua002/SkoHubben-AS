@@ -137,7 +137,7 @@ function cart_counter() {
     }    
 
     document.getElementById("cart_counter").innerHTML = cart_amount
-
+    document.getElementById("cart_menu").innerHTML = "Cart(" + cart_amount + ")";
 }
 
 
