@@ -23,6 +23,7 @@ function alert_confirm() {
 
 
 async function delete_user() {
+    console.log(sessionStorage.getItem("username"))
     const res = await fetch("http://65.108.15.66:22223/delete/user",
         {
             method: "GET"
