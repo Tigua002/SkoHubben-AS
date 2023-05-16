@@ -75,7 +75,7 @@ function close_modal() {
 }
 
 function to_user_page(){
-  window.location.assign("admin_page.html")
+  window.location.assign("user_page.html")
 }
 
 function to_account_page(){
