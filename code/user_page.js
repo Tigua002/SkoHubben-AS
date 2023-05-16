@@ -165,6 +165,7 @@ function cause_login() {
         document.getElementById("login_base").style.display = "flex"
         document.getElementById("packing_pay_page").style.display = "none"
         document.getElementById("empty_packing").style.display = "none"
+        window.location.assign("admin_page.html")
     }
 
 

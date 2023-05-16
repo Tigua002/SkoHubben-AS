@@ -154,14 +154,11 @@ div {
     text-decoration: underline;
 }
 
-#home_link {
+#home_link, #log_in_header {
     color: #2D3142;
-
-}
-
-#log_in_header {
-    color: #2D3142;
-
+    height: 100%;
+    padding: 0%;
+    margin: 0%;
 }
 
 #about_link {
@@ -1024,8 +1021,89 @@ h1 {
     margin-top: 5vh;
     font-size: 3vw;
 }
+#user_account_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#packing_user{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: light-font;
+}
+#user_account_div{
+    background-color: #b0d9ff;
+    width: 100%;
+    min-height: 100%;
+}
+#welcome_tekst{
+    width: 100%;
+    background-color: #2D3142;
+    text-align: center;
+    margin: 0%;
+    color: #EAE8FF;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+}
+.account_divs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.account_desc_text{
+    font-size: 2.5vw;
+}
+.account_main_text{
+    font-size: 2vw;
+    margin-bottom: 3vw;
+}
+.account_action{
+    background-color: #2D3142;
+    color: #EAE8FF;
+    width: 15vw;
+    height: 10vh;
+    font-size: 1.5vw;
+    border-radius: 1vw;
+}
+#user_buttons{
+    margin-top: 10vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#log_out_account{
+    width: 15vw;
+    height: 10vh;
+    margin-bottom: 2vw;
+    border: solid #6A2E35 2px;
+    color: #2D3142;
+    font-size: 2vw;
+    font-family: light-font;
+    background-color: #b0d9ff;
+    border-radius: 2vw;
 
-@media screen and (max-width: 800px) {
+}
+#Delete_account{
+    width: 15vw;
+    height: 10vh;
+    margin-bottom: 10vw;
+    background-color: #6A2E35;
+    border-radius: 2vw;
+    color: #EAE8FF;
+    font-size: 1.5vw;
+    font-family: light-font;
+}
+
+
+@media screen and (max-width: 600px) {
     button {
         color: #2D3142;
         font-size: 3vh;

@@ -81,6 +81,10 @@ function to_user_page(){
 function to_account_page(){
   window.location.assign("account.html")
 }
+function to_user_acc(){
+  window.location.assign("user_account.html")
+}
+
 
 cart_counter()
 close_modal()
