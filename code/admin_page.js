@@ -223,7 +223,7 @@ function calculate() {
 
 function cause_login() {
     if (sessionStorage.getItem("username")) {
-        window.location.assign("user_page.html")
+        window.location.assign("account.html")
     }
     document.getElementById("login_base").style.display = "flex"
     document.getElementById("packing_pay_page").style.display = "none"
