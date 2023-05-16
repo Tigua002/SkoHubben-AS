@@ -1,3 +1,8 @@
+
+var confirm = document.getElementById("confirm")
+var confirm_tekst = document.getElementById("confirm_tekst")
+
+
 function proceed() {
     delete_user()
 }
@@ -10,6 +15,7 @@ function confirmed() {
 
 }
 function alert_confirm() {
+    confirm_tekst.innerHTML = "You are about to delete your account, are you sure you wish to proceed?"
     confirm.style.display = "flex";
     confirm.showModal()
 }
