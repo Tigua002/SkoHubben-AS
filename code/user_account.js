@@ -23,13 +23,22 @@ function alert_confirm() {
 
 
 async function delete_user() {
-    console.log(sessionStorage.getItem("username"))
-    const res = await fetch("http://65.108.15.66:22223/delete/user",
-        {
-            method: "GET"
-        })
-    const data = await res.json()
+    // console.log(sessionStorage.getItem("username"))
+    // const res = await fetch("http://65.108.15.66:22223/delete/user",
+    //     {
+    //         method: "GET"
+    //     })
+    // const data = await res.json()
 
 
-
+    const data = {
+        username: sessionStorage.getItem("username")
+    }
+    fetch("/delete/user", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
 }
