@@ -78,7 +78,7 @@ app.post("/delete/user", function (req, res) {
     connection.query(`SELECT * FROM users`, function (err, result, fields) {
         var data = JSON.parse(JSON.stringify(result))
         let username = sessionStorage.getItem("username")
-        connection.query(`DELETE FROM users WHERE passwor=${connection.escape(username)};`)
+        connection.query(`DELETE FROM users WHERE passwor="${connection.escape(username)};"`)
     })
 })
 
