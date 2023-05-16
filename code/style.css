@@ -1565,5 +1565,20 @@ h1 {
         height: 6vh;
         font-size: 5vw;
     }   
-    
+    #confirm_tekst{
+        margin-top: 10vh
+    }
+    #confirm_button_holder{
+        width: 100%;
+        height: 10vh;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+    }
+    .confirm_button{
+        width: 15vh;
+        height: 10vh;
+        font-size: 5vw;
+        border-radius: 2vw;
+        
+    }
 }
