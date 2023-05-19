@@ -27,7 +27,7 @@ function remove_shoe(number) {
     all_shoes[shoe_remover].antall = all_shoes[shoe_remover].antall - 1
     update_total()
     calculate()
-    
+
 }
 
 function proceed() {
@@ -116,11 +116,11 @@ function update_total() {
             let shoe_tekst = document.createElement("h3")
             /*legger skoene i riktig div slik at alt passer*/
             element.appendChild(shoes_div)
-            shoes_div.appendChild(shoe_tekst)  
+            shoes_div.appendChild(shoe_tekst)
             shoes_div.appendChild(img_div)
-            img_div.appendChild(shoes_img)      
+            img_div.appendChild(shoes_img)
             shoes_div.appendChild(shoes_counter)
-            shoes_div.appendChild(shoes_total)           
+            shoes_div.appendChild(shoes_total)
             shoes_div.appendChild(shoes_button_div)
             shoes_button_div.appendChild(shoes_button)
             shoes_button_div.appendChild(shoes_plus)
@@ -260,17 +260,18 @@ function purchase() {
                 NIW: all_shoes[11].antall,
                 buyer: user,
             }
-            console.log(data)
-            fetch("/buy/shoe", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
+
         }
 
     }
+    console.log(data)
+    fetch("/buy/shoe", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
     /*igjen; går antall ganger som antall sko*/
     for (let i = 0; all_shoes.length > i; i++) {
         /*skjekker om en div existerer, hvis den existerer, så gjør den ikke det lenger*/
@@ -335,13 +336,13 @@ function change_location() {
         window.location.assign("index.html")
     }
 }
-function alert_confirm(){
+function alert_confirm() {
     confirm.style.display = "flex";
     confirm.showModal()
-  }
-  function confirmed(){
+}
+function confirmed() {
     confirm.style.display = "none";
     confirm.close();
-  
-  }
+
+}
 confirmed()
