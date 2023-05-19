@@ -41,4 +41,6 @@ async function delete_user() {
         },
         body: JSON.stringify(data)
     })
+    sessionStorage.clear("username")
+    window.location.assign("index.html")
 }
