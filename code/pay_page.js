@@ -243,7 +243,6 @@ function purchase() {
     document.getElementById("packing_pay_page").remove()
 
     const data = {
-        antall: all_shoes[i].antall,
         AJ1R: all_shoes[0].antall,
         AJ1C: all_shoes[1].antall,
         AJDB: all_shoes[2].antall,

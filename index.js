@@ -32,7 +32,6 @@ app.post("/buy/shoe", function (req, res) {
         var data = JSON.parse(JSON.stringify(result))
         var order_nr = data.length + 1
 
-        let antall = req.body.antall
         let AJ1R = req.body.AJ1R
         let AJ1C = req.body.AJ1C
         let AJDB = req.body.AJDB
