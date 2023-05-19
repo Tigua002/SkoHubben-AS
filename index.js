@@ -78,8 +78,16 @@ app.post("/delete/user", function (req, res) {
     connection.query(`SELECT * FROM users`, function (err, result, fields) {
         var data = JSON.parse(JSON.stringify(result))
         let nameOfUser = req.body.username
-        console.log("yalle")
         connection.query(`DELETE FROM users WHERE username=${connection.escape(nameOfUser)};`)
+    })
+})
+
+app.post("/change/pass", function (req, res) {
+    connection.query(`SELECT * FROM users`, function (err, result, fields) {
+        var data = JSON.parse(JSON.stringify(result))
+        let nameOfUser = req.body.username
+        let newPass = req.body.newPass
+        connection.query(`UPDATE users SET passwor = ${connection.escape(newPass)} WHERE username = ${connection.escape(nameOfUser)};`)
     })
 })
 

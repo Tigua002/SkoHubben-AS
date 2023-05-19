@@ -1,7 +1,7 @@
 
 var confirm = document.getElementById("confirm")
 var confirm_tekst = document.getElementById("confirm_tekst")
-
+var password_counter = false
 
 function proceed() {
     delete_user()
@@ -30,7 +30,6 @@ async function delete_user() {
     //     })
     // const data = await res.json()
     let user = sessionStorage.getItem("username")
-    console.log(sessionStorage.getItem("username"))
     const data = {
         username: user
     }
@@ -45,8 +44,56 @@ async function delete_user() {
     window.location.assign("index.html")
 }
 
-if (sessionStorage.getItem("username")){
+// if (sessionStorage.getItem("username")){
 
-} else{
-    window.location.assign("admin_page.html")
+// } else{
+//     window.location.assign("admin_page.html")
+// }
+function hello(){
+    document.querySelector("body").style.display = "none"
+}
+
+function password_change(){
+    if (password_counter == true){
+        password_counter = false
+        document.getElementById("password_holder").style.height = "0vh"
+    } else{
+        password_counter = true
+        document.getElementById("password_holder").style.height = "auto"
+    }
+    
+}
+
+function username_change(){
+    if (password_counter == true){
+        password_counter = false
+        document.getElementById("username_holder").style.height = "0vh"
+    } else{
+        password_counter = true
+        document.getElementById("username_holder").style.height = "auto"
+    }
+    
+}
+
+async function change_password(){
+    let orig_pass = document.getElementById("orig_pass").value;
+    let conf_pass = document.getElementById("conf_pass").value;
+    if(orig_pass != conf_pass){
+        alert_tekst.innerHTML = "The password is not confirmed"
+        show_alert()
+        return;
+    }
+
+    let user = sessionStorage.getItem("username")
+    const data = {
+        username: user,
+        newPass: orig_pass
+    }
+    fetch("/change/pass", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
 }

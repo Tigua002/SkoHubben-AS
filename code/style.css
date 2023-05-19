@@ -7,7 +7,14 @@
     font-family: light_font;
     src: url(fonts/Ubuntu/Ubuntu-Light.ttf);
 }
-
+@keyframes height_control {
+    0% {
+        height: 0vh;
+    }
+    100%{
+        height: auto;
+    }
+}
 
 @keyframes slide-in-first {
     0% {
@@ -1101,7 +1108,26 @@ h1 {
     font-size: 1.5vw;
     font-family: light-font;
 }
+.account_changer{
+    display: flex;
+    margin-top: 4vw;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    height: 0vh;
 
+    cursor: pointer;
+}
+.submit_change{
+    margin-top: 2vw;
+    background-color: #2D3142;
+    width: 20vw;
+    height: 10vh;
+    font-size: 2vw;
+    font-family: light-font;
+    color: #EAE8FF;
+    border-radius: 1vw;
+}
 
 @media screen and (max-width: 600px) {
     button {
