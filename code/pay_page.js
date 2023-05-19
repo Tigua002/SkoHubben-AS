@@ -257,7 +257,6 @@ function purchase() {
         NIW: all_shoes[11].antall,
         buyer: user,
     }
-    console.log(data)
     fetch("/buy/shoe", {
         method: "POST",
         headers: {

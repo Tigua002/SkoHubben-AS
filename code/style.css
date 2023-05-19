@@ -1510,11 +1510,14 @@ h1 {
     }
 
     #item_prises {
-        width: 90%;
+        width: 100%;
         padding: 0%;
         border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0%;
     }
-
     .item_nr_1,
     #final_total,
     #final_count {
@@ -1523,11 +1526,13 @@ h1 {
 
         height: 10vw;
         font-size: 4vw;
-        font-weight: 600;
+        font-weight: 200;
+        font-family: light-font;
+        background-color: #2D3142;
+        color: #EAE8FF;
     }
 
     .item_nr_1 {
-        margin: 0%;
         margin-bottom: 1vh;
         padding: 0%;
         border: none;
@@ -1535,6 +1540,8 @@ h1 {
         justify-content: space-between;
         align-items: center;
         border: solid #ADACB5 3px;
+        background-color: #2D3142;
+        color: #EAE8FF;
     }
 
     .subtotal {

@@ -49,36 +49,36 @@ async function delete_user() {
 // } else{
 //     window.location.assign("admin_page.html")
 // }
-function hello(){
+function hello() {
     document.querySelector("body").style.display = "none"
 }
 
-function password_change(){
-    if (password_counter == true){
+function password_change() {
+    if (password_counter == true) {
         password_counter = false
         document.getElementById("password_holder").style.height = "0vh"
-    } else{
+    } else {
         password_counter = true
         document.getElementById("password_holder").style.height = "auto"
     }
-    
+
 }
 
-function username_change(){
-    if (password_counter == true){
+function username_change() {
+    if (password_counter == true) {
         password_counter = false
         document.getElementById("username_holder").style.height = "0vh"
-    } else{
+    } else {
         password_counter = true
         document.getElementById("username_holder").style.height = "auto"
     }
-    
+
 }
 
-async function change_password(){
+async function change_password() {
     let orig_pass = document.getElementById("orig_pass").value;
     let conf_pass = document.getElementById("conf_pass").value;
-    if(orig_pass != conf_pass){
+    if (orig_pass != conf_pass) {
         alert_tekst.innerHTML = "The password is not confirmed"
         show_alert()
         return;
@@ -103,10 +103,10 @@ async function change_password(){
     window.location.assign("user_account.html")
 }
 
-async function change_username(){
+async function change_username() {
     let orig_user = document.getElementById("orig_user").value;
     let conf_user = document.getElementById("conf_user").value;
-    if(orig_user != conf_user){
+    if (orig_user != conf_user) {
         alert_tekst.innerHTML = "The password is not confirmed"
         show_alert()
         return;
@@ -133,9 +133,6 @@ async function change_username(){
 }
 
 
-if (document.getElementById("username_show")){
-    document.getElementById("username_show").innerHTML = sessionStorage.getItem("username")
-}
-if (document.getElementById("password_show")){
-    document.getElementById("password_show").innerHTML = sessionStorage.getItem("password")
-}
+document.getElementById("username_show").innerHTML = sessionStorage.getItem("username")
+document.getElementById("password_show").innerHTML = sessionStorage.getItem("password")
+document.getElementById("welcome_tekst").innerHTML = "Welcome" + sessionStorage.getItem("username")
