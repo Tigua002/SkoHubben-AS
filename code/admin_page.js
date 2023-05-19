@@ -265,6 +265,7 @@ async function submit_login() {
             if (users[i].username == usernameEL && users[i].passwor == passwordEL) {
                 alert_tekst.innerHTML = "Hello " + usernameEL
                 show_alert()
+                sessionStorage.setItem("pass", document.getElementById("password").value)
                 sessionStorage.setItem("username", usernameEL)
                 logged_inn = true
             }

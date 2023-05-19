@@ -127,3 +127,11 @@ async function change_username(){
     window.location.assign("user_account.html")
 
 }
+
+
+if (document.getElementById("username_show")){
+    document.getElementById("username_show").innerHTML = sessionStorage.getItem("username")
+}
+if (document.getElementById("passowrd_show")){
+    
+}

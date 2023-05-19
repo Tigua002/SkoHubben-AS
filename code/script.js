@@ -88,3 +88,7 @@ function to_user_acc(){
 
 cart_counter()
 close_modal()
+
+if (document.getElementById("welcome_tekst_account")){
+  document.getElementById("welcome_tekst_account").innerHTML = "Welcome" + sessionStorage.getItem("username")
+}
