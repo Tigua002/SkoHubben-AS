@@ -79,7 +79,7 @@ app.post("/delete/user", function (req, res) {
         var data = JSON.parse(JSON.stringify(result))
         let nameOfUser = req.body.username
         console.log("yalle")
-        connection.query(`DELETE FROM users WHERE passwor="${connection.escape(nameOfUser)}";`)
+        connection.query(`DELETE FROM users WHERE username="${connection.escape(nameOfUser)}";`)
     })
 })
 
