@@ -132,6 +132,6 @@ async function change_username(){
 if (document.getElementById("username_show")){
     document.getElementById("username_show").innerHTML = sessionStorage.getItem("username")
 }
-if (document.getElementById("passowrd_show")){
-    document.getElementById("passowrd_show").innerHTML = sessionStorage.getItem("password")
+if (document.getElementById("password_show")){
+    document.getElementById("password_show").innerHTML = sessionStorage.getItem("password")
 }
