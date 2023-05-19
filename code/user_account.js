@@ -126,6 +126,7 @@ async function change_username(){
     })
     alert_tekst.innerHTML = "All done"
     show_alert()
+    document.getElementById("username_show").innerHTML = orig_user
     window.location.assign("user_account.html")
 
 }
