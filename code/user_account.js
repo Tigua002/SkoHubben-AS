@@ -30,7 +30,7 @@ async function delete_user() {
     //     })
     // const data = await res.json()
 
-
+    console.log(sessionStorage.getItem("username"))
     const data = {
         username: sessionStorage.getItem("username")
     }
