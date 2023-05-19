@@ -44,3 +44,9 @@ async function delete_user() {
     sessionStorage.clear("username")
     window.location.assign("index.html")
 }
+
+if (sessionStorage.getItem("username")){
+
+} else{
+    window.location.assign("admin_page.html")
+}
