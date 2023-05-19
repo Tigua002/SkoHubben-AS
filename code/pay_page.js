@@ -241,28 +241,23 @@ function purchase() {
     alert_tekst.innerHTML = "Thank you for your purchase!";
     show_alert();
     document.getElementById("packing_pay_page").remove()
-    for (let i = 0; i < all_shoes.length; i++) {
-        if (all_shoes[i].antall > 0) {
-            const data = {
-                antall: all_shoes[i].antall,
-                name: all_shoes[i].full_name,
-                AJ1R: all_shoes[0].antall,
-                AJ1C: all_shoes[1].antall,
-                AJDB: all_shoes[2].antall,
-                AJDW: all_shoes[3].antall,
-                JMB: all_shoes[4].antall,
-                JMR: all_shoes[5].antall,
-                JR6B: all_shoes[6].antall,
-                JR6W: all_shoes[7].antall,
-                NDW: all_shoes[8].antall,
-                NDB: all_shoes[9].antall,
-                NIB: all_shoes[10].antall,
-                NIW: all_shoes[11].antall,
-                buyer: user,
-            }
 
-        }
-
+    const data = {
+        antall: all_shoes[i].antall,
+        name: all_shoes[i].full_name,
+        AJ1R: all_shoes[0].antall,
+        AJ1C: all_shoes[1].antall,
+        AJDB: all_shoes[2].antall,
+        AJDW: all_shoes[3].antall,
+        JMB: all_shoes[4].antall,
+        JMR: all_shoes[5].antall,
+        JR6B: all_shoes[6].antall,
+        JR6W: all_shoes[7].antall,
+        NDW: all_shoes[8].antall,
+        NDB: all_shoes[9].antall,
+        NIB: all_shoes[10].antall,
+        NIW: all_shoes[11].antall,
+        buyer: user,
     }
     console.log(data)
     fetch("/buy/shoe", {
