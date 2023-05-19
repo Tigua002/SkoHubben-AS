@@ -135,4 +135,4 @@ async function change_username() {
 
 document.getElementById("username_show").innerHTML = sessionStorage.getItem("username")
 document.getElementById("password_show").innerHTML = sessionStorage.getItem("password")
-document.getElementById("welcome_tekst").innerHTML = "Welcome" + sessionStorage.getItem("username")
+document.getElementById("welcome_tekst").innerHTML = "Welcome " + sessionStorage.getItem("username")
