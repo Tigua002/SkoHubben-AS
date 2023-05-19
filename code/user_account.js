@@ -133,5 +133,5 @@ if (document.getElementById("username_show")){
     document.getElementById("username_show").innerHTML = sessionStorage.getItem("username")
 }
 if (document.getElementById("passowrd_show")){
-    
+    document.getElementById("passowrd_show").innerHTML = sessionStorage.getItem("password")
 }
