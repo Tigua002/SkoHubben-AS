@@ -104,8 +104,8 @@ async function change_password(){
 }
 
 async function change_username(){
-    let orig_user = document.getElementById("orig_pass").value;
-    let conf_user = document.getElementById("conf_pass").value;
+    let orig_user = document.getElementById("orig_user").value;
+    let conf_user = document.getElementById("orig_user").value;
     if(orig_user != conf_user){
         alert_tekst.innerHTML = "The password is not confirmed"
         show_alert()
