@@ -98,6 +98,8 @@ async function change_password(){
     })
     alert_tekst.innerHTML = "All done"
     show_alert()
+    sessionStorage.setItem("password", orig_pass)
+    document.getElementById("password_show").innerHTML = orig_pass
     window.location.assign("user_account.html")
 }
 
