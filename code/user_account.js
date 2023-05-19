@@ -29,10 +29,10 @@ async function delete_user() {
     //         method: "GET"
     //     })
     // const data = await res.json()
-
+    let user = sessionStorage.getItem("username")
     console.log(sessionStorage.getItem("username"))
     const data = {
-        username: sessionStorage.getItem("username")
+        username: user
     }
     fetch("/delete/user", {
         method: "POST",
