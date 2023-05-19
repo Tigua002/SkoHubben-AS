@@ -96,4 +96,34 @@ async function change_password(){
         },
         body: JSON.stringify(data)
     })
+    alert_tekst.innerHTML = "All done"
+    show_alert()
+    window.location.assign("user_account.html")
+}
+
+async function change_username(){
+    let orig_user = document.getElementById("orig_pass").value;
+    let conf_user = document.getElementById("conf_pass").value;
+    if(orig_user != conf_user){
+        alert_tekst.innerHTML = "The password is not confirmed"
+        show_alert()
+        return;
+    }
+
+    let user = sessionStorage.getItem("username")
+    const data = {
+        username: user,
+        newUser: orig_user
+    }
+    fetch("/change/user", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    alert_tekst.innerHTML = "All done"
+    show_alert()
+    window.location.assign("user_account.html")
+
 }

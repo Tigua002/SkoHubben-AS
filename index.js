@@ -91,6 +91,16 @@ app.post("/change/pass", function (req, res) {
     })
 })
 
+app.post("/change/user", function (req, res) {
+    connection.query(`SELECT * FROM users`, function (err, result, fields) {
+        var data = JSON.parse(JSON.stringify(result))
+        let nameOfUser = req.body.username
+        let newUser = req.body.newUser
+        connection.query(`UPDATE users SET username = ${connection.escape(newUser)} WHERE username = ${connection.escape(nameOfUser)};`)
+        connection.query(`UPDATE orders SET buyer = ${connection.escape(newUser)} WHERE buyer = ${connection.escape(nameOfUser)};`)
+    })
+})
+
 
 
 app.listen(22223)
