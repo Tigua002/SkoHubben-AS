@@ -14,11 +14,7 @@ function log_out() {
 }
 
 
-if (sessionStorage.getItem("username")) {
-} else {
-  document.getElementById("log-out-menu").style.display = "none"
 
-}
 var cart_amount = 0;
 
 var all_shoes = [
