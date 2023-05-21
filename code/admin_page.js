@@ -14,13 +14,11 @@ function show_password() {
     if (password_input.type == "password") {
         document.getElementById("login_checkbox").checked = true;
         password_input.type = "text"
-        document.getElementById("show_password").style.display = "none"
-        document.getElementById("show_password1").style.display = "block"
+
     } else {
         document.getElementById("login_checkbox").checked = false;
         password_input.type = "password"
-        document.getElementById("show_password").style.display = "block"
-        document.getElementById("show_password1").style.display = "none"
+
     }
 }
 
