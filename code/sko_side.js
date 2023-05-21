@@ -158,7 +158,7 @@ function get_shoes() {
         change_colorEL.src = leftEL.src.replace("black", "white")
     }
     for (let i = 0; all_Shoe_link.length > i; i++) {
-        if (all_Shoe_link[i] == change_colorEL.src.replace("http://127.0.0.1:5501/code/", "").replace("left.webp", "")) {
+        if (all_Shoe_link[i] == change_colorEL.src.replace("http://65.108.15.66:22223", "").replace("left.webp", "")) {
             break;
         } else {
             shoe_looper++
