@@ -278,6 +278,10 @@ function close_menu() {
   document.getElementById("header_index").style.display = "flex"
 }
 
+function move_to_shoePage(shoe){
+  sessionStorage.setItem("shoe", shoe)
+  window.location.assign("sko_page.html")
+}
 
 let touchstartX = 0
 let touchendX = 0
