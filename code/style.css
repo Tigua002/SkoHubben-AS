@@ -132,6 +132,9 @@ div {
     top: 1%;
     left: 96.3%;
     color: #EAE8FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #hamburger_div {
     display: none;
