@@ -1709,4 +1709,16 @@ h1 {
         font-family: light-font;
         
     }
+    .account_desc_text, #welcome_tekst, .account_main_text{
+        font-size: 10vw;
+    }
+    .account_action{
+        width: 40vw;
+        font-size: 5vw;
+    }
+    #log_out_account, #Delete_account{
+        width: 40vw;
+        font-size: 7vw;
+        margin-top: 3vh;
+    }
 }
