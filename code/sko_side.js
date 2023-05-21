@@ -161,6 +161,7 @@ function get_shoes() {
         if (all_Shoe_link[i] == change_colorEL.src.replace("http://65.108.15.66:22223/", "").replace("left.webp", "")) {
             break;
         } else {
+            console.log(change_colorEL)
             shoe_looper++
         }
     }
