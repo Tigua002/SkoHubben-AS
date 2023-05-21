@@ -148,6 +148,7 @@ div {
 #home {
     margin-left: -5vw;
     text-decoration: underline;
+    text-align: center;
 }
 
 #header_log_out {
