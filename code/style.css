@@ -150,7 +150,9 @@ div {
     text-decoration: underline;
     text-align: center;
 }
-
+#home_menu{
+    text-align: center;
+}
 #header_log_out {
     text-decoration: underline;
     color: #2D3142;
