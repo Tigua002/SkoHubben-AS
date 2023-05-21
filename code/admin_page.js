@@ -278,7 +278,7 @@ async function submit_login() {
 
 function change_location(){
     if (logged_inn == true){
-        window.location.assign("user_page.html")
+        window.location.assign("account.html")
     }
 
 }
