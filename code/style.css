@@ -1716,6 +1716,7 @@ h1 {
         margin-bottom: 4vh;
         margin-top: 0%;
         font-family: light-font;
+        font-weight: 100;
     }
     .account_action{
         width: 40vw;
