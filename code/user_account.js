@@ -83,7 +83,11 @@ async function change_password() {
         show_alert()
         return;
     }
-
+    if (orig_user == ""){
+        alert_tekst.innerHTML = "You must fill in the username"
+        show_alert()
+        return
+    }
     let user = sessionStorage.getItem("username")
     const data = {
         username: user,
@@ -111,6 +115,25 @@ async function change_username() {
         show_alert()
         return;
     }
+    if (orig_user == ""){
+        alert_tekst.innerHTML = "You must fill in the username"
+        show_alert()
+        return
+    }
+    const res = await fetch("http://65.108.15.66:22223/get/users",
+        {
+            method: "GET"
+        })
+    var users = await res.json()
+
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].username === orig_user) {
+            alert_tekst.innerHTML = "Someone else already has that name"
+            show_alert()
+            return;
+        }
+    }
+
 
     let user = sessionStorage.getItem("username")
     const data = {

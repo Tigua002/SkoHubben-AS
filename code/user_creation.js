@@ -26,6 +26,11 @@ async function submit_sign_up() {
             return;
         }
     }
+    if (passwordEL != password_confEL) {
+        alert_tekst.innerHTML = "the passwords are not matching"
+        show_alert()
+        return;
+    }
     if (usernameEL === "") {
         alert_tekst.innerHTML = "you need to fill inn the username"
         show_alert()
