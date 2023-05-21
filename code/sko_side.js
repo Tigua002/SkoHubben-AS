@@ -119,8 +119,8 @@ var all_Shoe_link = [
     JMR = { total: "sko/jordan_max_aura_4/white/" },
     JR6B = { total: "sko/jordan6rings/black/" },
     JR6W = { total: "sko/jordan6rings/white/" },
-    NDW = { total: "sko/Nike dunk high retro/white/" },
-    NDB = { total: "sko/Nike dunk high retro/black/" },
+    NDW = { total: "sko/Nike_dunk_high_retro/white/" },
+    NDB = { total: "sko/Nike_dunk_high_retro/black/" },
     NIB = { total: "sko/NikeInfinityReact3/black/" },
     NIW = { total: "sko/NikeInfinityReact3/white/" },
 ]
@@ -135,8 +135,8 @@ var all_Shoe_link = [
     JMR = "sko/jordan_max_aura_4/white/",
     JR6B = "sko/jordan6rings/black/",
     JR6W = "sko/jordan6rings/white/",
-    NDW = "sko/Nike dunk high retro/white/",
-    NDB = "sko/Nike dunk high retro/black/",
+    NDW = "sko/Nike_dunk_high_retro/white/",
+    NDB = "sko/Nike_dunk_high_retro/black/",
     NIB = "sko/NikeInfinityReact3/black/",
     NIW = "sko/NikeInfinityReact3/white/"
 ]
