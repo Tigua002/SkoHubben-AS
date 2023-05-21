@@ -88,6 +88,8 @@ for (let i = 0; all_shoes.length > i; i++) {
 
     }
 }
+var clicked_shoe = sessionStorage.getItem("shoe")
+document.getElementById("price_tekst").innerHTML = "Price: " + all_shoes[clicked_shoe].pris + "kr"
 
 for (let i = 0; all_shoes.length > i; i++) {
     if (sessionStorage.getItem(all_shoes[i].navn) && JSON.parse(sessionStorage.getItem(all_shoes[i].navn))) {
