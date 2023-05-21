@@ -154,7 +154,11 @@ async function change_username() {
     window.location.assign("user_account.html")
 
 }
+if (sessionStorage.getItem("username")){
 
+} else{
+    window.location.assign("admin_page.html")
+}
 
 document.getElementById("username_show").innerHTML = sessionStorage.getItem("username")
 document.getElementById("password_show").innerHTML = sessionStorage.getItem("password")

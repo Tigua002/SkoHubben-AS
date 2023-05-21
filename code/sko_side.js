@@ -162,52 +162,18 @@ function get_shoes() {
     for (let i = 0; all_Shoe_link.length > i; i++) {
         if (all_Shoe_link[i] == change_colorEL.src.replace("http://65.108.15.66:22223/", "").replace("left.webp", "")) {
             break;
+        } else if (all_Shoe_link[i] == change_colorEL.src.replace("http://127.0.0.1:5501/code/", "").replace("left.webp", "")){
+            break;
         } else {
-            console.log(change_colorEL)
             shoe_looper++
+            console.log(change_colorEL.src.replace("http://127.0.0.1:5501/code/", "").replace("left.webp", ""))
         }
     }
+    console.log(shoe_looper)
     change_colorEL.setAttribute("onclick", "move_to_shoePage(" + shoe_looper + ")")
 
 }
 
-function open_menu() {
-    document.getElementById("menu_content").style.width = "100%"
-    document.getElementById("header_index").style.display = "none"
-
-}
-function close_menu() {
-    document.getElementById("menu_content").style.width = "0%"
-    document.getElementById("header_index").style.display = "flex"
-}
-
-
-function show_alert() {
-    alerts.style.display = "flex";
-    alerts.showModal()
-}
-
-function close_modal() {
-    alerts.close();
-    alerts.style.display = "none";
-    cart_counter()
-}
-function cart_counter() {
-
-    cart_amount = 0;
-    for (let i = 0; all_shoes.length > i; i++) {
-        if (all_shoes[i].antall > 0) {
-            cart_amount += 1;
-
-        }
-    }
-
-    document.getElementById("cart_counter").innerHTML = cart_amount
-    document.getElementById("cart_menu").innerHTML = "Cart(" + cart_amount + ")";
-}
-
-
-close_modal()
 get_shoes()
 
 /*liten huske regel fra SIMEN :)*/
