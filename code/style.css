@@ -1712,7 +1712,7 @@ h1 {
     .account_desc_text, #welcome_tekst, .account_main_text{
         font-size: 10vw;
     }
-    #account_main_text{
+    .account_main_text{
         margin-bottom: 2vw;
     }
     .account_action{
