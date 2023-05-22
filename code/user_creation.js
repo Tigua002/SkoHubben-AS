@@ -2,6 +2,7 @@ var usernameEL = document.getElementById("username").value
 var passwordEL = document.getElementById("password").value
 var password_confEL = document.getElementById("password_confirm").value
 var moved_on = false
+var users;
 document.getElementById("login_base").style.display = "flex"
 async function submit_sign_up() {
     var usernameEL = document.getElementById("username").value
@@ -20,7 +21,7 @@ async function submit_sign_up() {
         return;
     }
     for (let i = 0; i < users.length; i++) {
-        console.log(users[1].username)
+        
         if (users[i].username.toUppercase() === usernameEL.toUppercase()) {
             alert_tekst.innerHTML = "Someone else already has that name"
             show_alert()
