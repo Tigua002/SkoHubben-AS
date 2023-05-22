@@ -110,20 +110,7 @@ function add_specific_shoe() {
         show_alert();
     }
 }
-var all_Shoe_link = [
-    AJ1R = { total: "sko/Air_Jordan_1_mid/black/" },
-    AJ1C = { total: "sko/Air_Jordan_1_mid/white/" },
-    AJDB = { total: "sko/air_jordan_dub_zero/black/" },
-    AJDW = { total: "sko/air_jordan_dub_zero/white/" },
-    JMB = { total: "sko/jordan_max_aura_4/black/" },
-    JMR = { total: "sko/jordan_max_aura_4/white/" },
-    JR6B = { total: "sko/jordan6rings/black/" },
-    JR6W = { total: "sko/jordan6rings/white/" },
-    NDW = { total: "sko/Nike_dunk_high_retro/white/" },
-    NDB = { total: "sko/Nike_dunk_high_retro/black/" },
-    NIB = { total: "sko/NikeInfinityReact3/black/" },
-    NIW = { total: "sko/NikeInfinityReact3/white/" },
-]
+
 
 
 var all_Shoe_link = [

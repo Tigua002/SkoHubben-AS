@@ -1,8 +1,8 @@
-/*definerer en div for å bruke for placering senere*/
+/*definerer 2 div-er for å bruke for placering senere*/
 var element = document.getElementById("item-listing")
 var check_out = document.getElementById("item_prises")
 
-/*lager variabler som må bli brukt gjennom og utenofor koder*/
+/*lager variabler som må bli brukt gjennom og utenfor koden*/
 var shoe_remover = 0
 var counter = 1
 var total_price = 0
@@ -12,34 +12,50 @@ var delete_shoe = false
 /*legger til en bestemt sko*/
 function add_shoe(number) {
     all_shoes[number].antall = all_shoes[number].antall + 1
+    // kjører functionene som har ansvar for å holde styr på sidene og hvor mange sko det er
     update_total()
     calculate()
 }
 
 /*fjerner en bestemt sko*/
 function remove_shoe(number) {
+    // globaliserer et variabel
     shoe_remover = number
+    //hvis antallet på skoen er 1 og om har har slettet skoen før (for å unga at programmet kjører samme greie om og om igjen)
     if (all_shoes[number].antall == 1 && delete_shoe == false) {
+        //  sender en confirmation om brukeren skal fjerne skoen helt
+        // endrer tekster
         confirm_tekst.innerHTML = "You are about to remove a shoe from your bag";
+        //  viser, confirmationen
         alert_confirm();
+
         return;
     }
+    //fjerner en sko
     all_shoes[shoe_remover].antall = all_shoes[shoe_remover].antall - 1
+    // oppdater alle veridier og all visuale reprationer
     update_total()
     calculate()
 
 }
-
+// en function som runner hvis brukeren sier ja til confirmation til å fjerne den siste skoen-
 function proceed() {
+    // oppdaterer verdier
     delete_shoe = true
+    // resetter verier på skoen, for å ungå problemer 
     all_shoes[shoe_remover].been_before = false
     all_shoes[shoe_remover].calc_before = false
+    //caller functionen til å fjerne den siste skoen
     remove_shoe(shoe_remover)
+    // oppdaterer cart counteren (det lille tallet øverst til høyre)
     cart_amount()
+    //  sletter den visuale reprasantationen for skoen
     document.getElementById(all_shoes[shoe_remover].navn + "_div").remove()
+    //oppdaterer verdien på nytt
     delete_shoe = false
 }
 function cancel() {
+    //hva som skjer vis brukeren avlyser å fjerne den siste av en sko type
     document.getElementById("packing_pay_page").style.display = "flex";
     document.getElementById("EMP").style.width = "0%"
     delete_shoe = false
@@ -81,6 +97,8 @@ var bought_items = [
 ]
 
 /*skjekker om noe finnes før*/
+//går gjennom hver sko i "bought_items"
+// (jeg trenger ikke denne lenger, men i tilfelle databasen feiler så bruker jeg denne)
 for (let i = 0; bought_items.length > i; i++) {
     if (sessionStorage.getItem(bought_items[i].navn + "_bought")) {
         var shoe_amount = parseInt(sessionStorage.getItem(bought_items[i].navn + "_bought"))
@@ -88,13 +106,15 @@ for (let i = 0; bought_items.length > i; i++) {
     }
 }
 /*skjekker om noe finner før*/
+// går gjennom hver sko i "all_shoes"
 for (let i = 0; all_shoes.length > i; i++) {
+    // hvis jeg har lagt til en sko i session storage, så legger vi den skoen til i all shoes
     if (sessionStorage.getItem(all_shoes[i].navn) && JSON.parse(sessionStorage.getItem(all_shoes[i].navn))) {
         var shoe_amount = JSON.parse(sessionStorage.getItem(all_shoes[i].navn))
         all_shoes[i].antall = shoe_amount.antall
     }
 }
-/*oh here we go... 
+/*oh, here we go... 
     oppdatere totalen
 */
 function update_total() {
@@ -232,16 +252,21 @@ function calculate() {
         }
     }
 }
+// hva brukeren er, hvis det ikke finnes i session storage
 var user = "anonymous"
 /*hva som skjer når du trykker på "purchase"*/
 function purchase() {
+    //  hvis det finnes et brukernavn i session storage
     if (sessionStorage.getItem("username")) {
+        // så er variablet "user" det brukernavnet
         user = sessionStorage.getItem("username")
     }
+    // alerter brukeren om at han fikk kjøpt alt 
     alert_tekst.innerHTML = "Thank you for your purchase!";
     show_alert();
+    //sletter alt på pay page
     document.getElementById("packing_pay_page").remove()
-
+    // all informationen som skal bli sent til databaser
     const data = {
         AJ1R: all_shoes[0].antall,
         AJ1C: all_shoes[1].antall,
@@ -257,6 +282,7 @@ function purchase() {
         NIW: all_shoes[11].antall,
         buyer: user,
     }
+    // sender alt til index.js, den som er utenfor folderet "code"
     fetch("/buy/shoe", {
         method: "POST",
         headers: {
@@ -266,7 +292,7 @@ function purchase() {
     })
     /*igjen; går antall ganger som antall sko*/
     for (let i = 0; all_shoes.length > i; i++) {
-        /*skjekker om en div existerer, hvis den existerer, så gjør den ikke det lenger*/
+        /*skjekker om en div existerer, hvis den existerer, så sletter vi den (liten fail safe)*/
         if (document.getElementById(all_shoes[i].navn + "_div")) {
 
             /*definerer div navn*/
@@ -291,11 +317,9 @@ function purchase() {
 
 
 
-/*før de første kalkulationene til å gå*/
-update_total()
-calculate()
+
 var tester = 0
-/*igjen igjen; går antall ganger som sko*/
+// går antall ganger som sko*/
 function cart_amount() {
     tester = 0
     for (let i = 0; all_shoes.length > i; i++) {
@@ -322,7 +346,7 @@ function cart_amount() {
 
     }
 }
-cart_amount()
+
 function change_location() {
     if (no_shoes = true) {
         window.location.assign("index.html")
@@ -337,4 +361,9 @@ function confirmed() {
     confirm.close();
 
 }
+// fjerner alerten, (liten fail safe)
 confirmed()
+/*før de første kalkulationene til å gå*/
+update_total()
+calculate()
+cart_amount()

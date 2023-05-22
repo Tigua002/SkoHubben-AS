@@ -127,7 +127,7 @@ async function change_username() {
     var users = await res.json()
 
     for (let i = 0; i < users.length; i++) {
-        if (users[i].username === orig_user) {
+        if (users[i].username == orig_user) {
             alert_tekst.innerHTML = "Someone else already has that name"
             show_alert()
             return;

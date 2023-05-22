@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkoHubben | Admin page</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="icon" href="bilder/Logo.png" type="image/icon type">
 </head>
 <style>
+    /* bare noen styles som skulle bare på denne siden, */
     body{
         font-family: light_font;
     }
@@ -27,7 +27,7 @@
             <!-- dette er hamburger meny-en som kommer opp bare på mobil -->
             <h1 id="hamburger_menu" onclick="open_menu()">&#9776;</h1>
         </div>
-        <!-- det er en link til "account" siden. -->
+        <!-- det er en link til "home" siden. -->
         <div id="link_holder">
             <a href="index.html" id="home_link">
                 <h1 id="home">Home</h1>
@@ -100,21 +100,23 @@
     <div id="empty_packing">
         <h1 id="EMP"></h1>
     </div>
-
+    <!-- en holder for login sjermen som kommer opp, hvis du ikke er logget inn -->
     <div id="login_base">
+        <!--er holder jeg bruker for at alt står på plass -->
         <div id="login_holder">
-            <!-- <h1 id="username">
-                Username
-            </h1> -->
-
+            <!--tekst for log-in  -->
             <h1 id="login-tekst">Login</h1>
+            <!-- inputs hvis du skriver inn brukernavn -->
             <input type="text" id="username" class="login-input" placeholder="username">
             <div id="passord_holder">
+                <!-- og passord -->
                 <input type="password" id="password" class="login-input" placeholder="password">
 
             </div>
+            <!-- packing for "vis passord" -->
             <div id="login-packing">
                 <div id="show_pass">
+                    <!--her har vi selve elementene til checkboxen og teksten -->
                     <input type="checkbox" id="login_checkbox" onchange="show_password()">
                     <label for="checkbox" id="checkbox_tekst" onclick="show_password()">Show password</label>
                     
@@ -122,21 +124,23 @@
                 
 
             </div>
+            <!-- knapp for log-in  -->
             <button id="login-submit" onclick="submit_login()">Login</button>
+            <!--link til å lage en bruker  -->
             <a href="user_creaton.html">
                 <button id="sign-submit">Sign Up</button>
             </a>
-            <!-- <h1 id="password-tekst">
-                Password
-            </h1> -->
         </div>
     </div>
-
+    <!--dette er en alert som jeg bruker for å gi brukeren meldinger og at de skal være pene   -->
     <dialog id="alerts">
+        <!-- hva det skal stå i "alerten" -->
         <h1 id="alert_tekst"></h1>
+        <!-- en knapp for å lukke alerten, med en extra command, som flytter det til en ny side, etter at du har logget inn -->
         <button id="alert_close" onclick="close_modal(), change_location()">OK</button>
     </dialog>
 </body>
+<!--bare link til scriptsa mine  -->
 <script src="admin_page.js"></script>
 <script src="script.js"></script>
 
