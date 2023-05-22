@@ -140,6 +140,7 @@ function get_shoes() {
     rightEL.src = all_Shoe_link[clicked_shoe] + "right.webp"
     topEL.src = all_Shoe_link[clicked_shoe] + "top.webp"
     bottomEL.src = all_Shoe_link[clicked_shoe] + "bottom.webp"
+    document.getElementById("shoe_desc-tekst").innerHTML = all_shoes[clicked_shoe].full_name
     change_color_origEL.src = all_Shoe_link[clicked_shoe] + "left.webp"
     if (all_Shoe_link[clicked_shoe].includes("white")) {
         change_colorEL.src = leftEL.src.replace("white", "black")
