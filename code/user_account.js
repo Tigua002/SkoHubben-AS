@@ -125,7 +125,7 @@ async function change_username() {
             method: "GET"
         })
     var users = await res.json()
-    console.log(users[1])
+    console.log(users[1].username)
     for (let i = 0; i < users.length; i++) {
         console.log(users[i].username)
         if (users[i].username.toUppercase()  == orig_user.toUppercase()) {
