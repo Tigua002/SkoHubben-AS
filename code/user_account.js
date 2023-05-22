@@ -1,4 +1,3 @@
-const { json } = require("body-parser");
 
 var confirm = document.getElementById("confirm")
 var confirm_tekst = document.getElementById("confirm_tekst")
@@ -128,8 +127,7 @@ async function change_username() {
     var users = await res.json()
 
     for (let i = 0; i < users.length; i++) {
-
-        if (users[i].username  == orig_user) {
+        if (users[i].username.toUppercase()  == orig_user.toUppercase()) {
             alert_tekst.innerHTML = "Someone else already has that name"
             show_alert()
             return;
