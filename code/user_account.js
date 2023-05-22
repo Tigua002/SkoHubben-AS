@@ -111,7 +111,7 @@ async function change_username() {
     let orig_user = document.getElementById("orig_user").value;
     let conf_user = document.getElementById("conf_user").value;
     if (orig_user != conf_user) {
-        alert_tekst.innerHTML = "The password is not confirmed"
+        alert_tekst.innerHTML = "The Username is not confirmed"
         show_alert()
         return;
     }
@@ -125,10 +125,7 @@ async function change_username() {
             method: "GET"
         })
     var users = await res.json()
-    // console.log(users[1].username)
     for (let i = 0; i < users.length; i++) {
-        // var str_username = users[i].username.toString()
-        // console.log(users[i].username)
         if (users[i].username.toUpperCase()  == orig_user.toUpperCase()) {
             alert_tekst.innerHTML = "Someone else already has that name"
             show_alert()
