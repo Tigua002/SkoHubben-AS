@@ -125,10 +125,11 @@ async function change_username() {
             method: "GET"
         })
     var users = await res.json()
-    console.log(users[1].username)
+    // console.log(users[1].username)
     for (let i = 0; i < users.length; i++) {
-        console.log(users[i].username)
-        if (users[i].username.toUppercase()  == orig_user.toUppercase()) {
+        // var str_username = users[i].username.toString()
+        // console.log(users[i].username)
+        if (users[i].username.toUpperCase()  == orig_user.toUpperCase()) {
             alert_tekst.innerHTML = "Someone else already has that name"
             show_alert()
             return;
