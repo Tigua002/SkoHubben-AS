@@ -128,7 +128,7 @@ async function change_username() {
 
     for (let i = 0; i < users.length; i++) {
         console.log(users[i].username)
-        if (users[i].username.toUppercase()  == orig_user.toUppercase()) {
+        if (toString(users[i].username).toUppercase()  == orig_user.toUppercase()) {
             alert_tekst.innerHTML = "Someone else already has that name"
             show_alert()
             return;
