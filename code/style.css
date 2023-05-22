@@ -309,12 +309,12 @@ button {
     justify-content: center;
     height: 19vw;
     width: 100%;
+    
 }
 
 .button_holder {
     display: flex;
     align-items: center;
-    z-index: 5;
 }
 
 
@@ -1263,6 +1263,10 @@ h1 {
         background-color: #f6f6f6;
         height: 30vh;
         border-radius: 5vw;
+        
+    }
+    #slideshow_div1, #slideshow_div2{
+        height: auto;
     }
 
     #popular_shoes {
