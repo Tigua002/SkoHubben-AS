@@ -20,6 +20,7 @@ async function submit_sign_up() {
         return;
     }
     for (let i = 0; i < users.length; i++) {
+        console.log(users[i].username)
         if (users[i].username.toUppercase() === usernameEL.toUppercase()) {
             alert_tekst.innerHTML = "Someone else already has that name"
             show_alert()
