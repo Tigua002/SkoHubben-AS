@@ -23,12 +23,6 @@ function alert_confirm() {
 
 
 async function delete_user() {
-    // console.log(sessionStorage.getItem("username"))
-    // const res = await fetch("http://65.108.15.66:22223/delete/user",
-    //     {
-    //         method: "GET"
-    //     })
-    // const data = await res.json()
     let user = sessionStorage.getItem("username")
     const data = {
         username: user
@@ -44,11 +38,7 @@ async function delete_user() {
     window.location.assign("index.html")
 }
 
-// if (sessionStorage.getItem("username")){
 
-// } else{
-//     window.location.assign("admin_page.html")
-// }
 function hello() {
     document.querySelector("body").style.display = "none"
 }
