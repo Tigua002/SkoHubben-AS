@@ -7,11 +7,13 @@
     font-family: light_font;
     src: url(fonts/Ubuntu/Ubuntu-Light.ttf);
 }
+
 @keyframes height_control {
     0% {
         height: 0vh;
     }
-    100%{
+
+    100% {
         height: auto;
     }
 }
@@ -124,7 +126,8 @@ div {
     width: 7vw;
 
 }
-#cart_counter{
+
+#cart_counter {
     position: absolute;
     width: auto;
     height: auto;
@@ -136,6 +139,7 @@ div {
     align-items: center;
     justify-content: center;
 }
+
 #hamburger_div {
     display: none;
     transition: 1s;
@@ -153,9 +157,11 @@ div {
     text-decoration: underline;
     text-align: center;
 }
-#home_menu{
+
+#home_menu {
     text-align: center;
 }
+
 #header_log_out {
     text-decoration: underline;
     color: #2D3142;
@@ -167,7 +173,8 @@ div {
     text-decoration: underline;
 }
 
-#home_link, #log_in_header {
+#home_link,
+#log_in_header {
     color: #2D3142;
     height: 100%;
     padding: 0%;
@@ -309,7 +316,7 @@ button {
     justify-content: center;
     height: 19vw;
     width: 100%;
-    
+
 }
 
 .button_holder {
@@ -594,6 +601,7 @@ h1 {
     font-size: larger;
 
 }
+
 #log_in_user_page {
     height: 20vh;
     margin-top: 2vw;
@@ -650,10 +658,12 @@ h1 {
     padding: 2vw;
     justify-content: center;
 }
-.cart_full_name{
+
+.cart_full_name {
     display: none;
 }
-.cart_img_holder{
+
+.cart_img_holder {
     background-color: #EAE8FF;
     width: 20vh;
     height: 20vh;
@@ -665,7 +675,7 @@ h1 {
 
 .shopping_image {
     width: 18vh;
-    background-color: #f6f6f6           ;
+    background-color: #f6f6f6;
     color: #EAE8FF;
 }
 
@@ -843,7 +853,8 @@ h1 {
     font-size: 2vw;
 }
 
-#login_base, #login_base_creation{
+#login_base,
+#login_base_creation {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -879,19 +890,23 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-#username{
+
+#username {
     margin-bottom: 2vw;
     font-size: 1.5vw;
 }
+
 #password {
 
     font-size: 1.5vw;
 }
-#password_confirm{
+
+#password_confirm {
     font-size: 1.5vw;
     margin-bottom: 2vw;
 }
-#login_checkbox{
+
+#login_checkbox {
     width: 1.5vw;
     height: 1.5vw;
     font-size: 3vw;
@@ -900,7 +915,8 @@ h1 {
     padding: 0%;
     cursor: pointer;
 }
-#checkbox_tekst{
+
+#checkbox_tekst {
     font-size: 1.3vw;
     padding: 0%;
     margin: 0%;
@@ -908,7 +924,8 @@ h1 {
     align-items: center;
     margin-left: .5vw;
 }
-    #show_pass{
+
+#show_pass {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -948,6 +965,7 @@ h1 {
     background-color: #EAE8FF;
     font-size: 1.4vw;
 }
+
 #sign-submit {
     margin: 1vw;
     width: 15vw;
@@ -959,7 +977,8 @@ h1 {
 
 }
 
-#alerts, #confirm{
+#alerts,
+#confirm {
     background-color: #B0D7FF;
     color: #2D3142;
     border: solid #2D3142 1px;
@@ -973,11 +992,13 @@ h1 {
     top: -75%;
 }
 
-#alert_tekst, #confirm_tekst{
+#alert_tekst,
+#confirm_tekst {
     margin-top: 3vw;
     font-size: 2vw;
 }
-#alert_close{
+
+#alert_close {
     width: 10vw;
     height: 5vw;
     background-color: #2D3142;
@@ -985,15 +1006,18 @@ h1 {
     font-size: 1.5vw;
     border-radius: 1vw;
 }
-#confirm_button_holder{
+
+#confirm_button_holder {
     display: flex;
     justify-content: space-around;
     width: 20vw;
 }
-#confirm_tekst{
+
+#confirm_tekst {
     margin-top: 7vw;
 }
-.confirm_button{
+
+.confirm_button {
     width: 8vw;
     height: 4vw;
     background-color: #2D3142;
@@ -1003,14 +1027,16 @@ h1 {
     margin-top: 3vw;
     padding: .5vw;
 }
-#packing_account{
+
+#packing_account {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#account_button_packing{
+
+#account_button_packing {
     width: 40vw;
     height: 60vh;
     display: flex;
@@ -1020,7 +1046,8 @@ h1 {
     border-radius: 2vw;
     flex-direction: column;
 }
-.account_buttons{
+
+.account_buttons {
     width: 30vw;
     height: 10vh;
     margin-bottom: 5vh;
@@ -1029,18 +1056,21 @@ h1 {
     font-size: 2vw;
     border-radius: .4vw;
 }
-#welcome_tekst_account{
+
+#welcome_tekst_account {
     margin-bottom: 10vh;
     margin-top: 5vh;
     font-size: 3vw;
 }
-#user_account_div{
+
+#user_account_div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#packing_user{
+
+#packing_user {
     width: 100%;
     height: 100%;
     display: flex;
@@ -1049,12 +1079,14 @@ h1 {
     flex-direction: column;
     font-family: light-font;
 }
-#user_account_div{
+
+#user_account_div {
     background-color: #b0d9ff;
     width: 100%;
     min-height: 100%;
 }
-#welcome_tekst{
+
+#welcome_tekst {
     width: 100%;
     background-color: #2D3142;
     text-align: center;
@@ -1063,21 +1095,25 @@ h1 {
     padding-top: 5vw;
     padding-bottom: 5vw;
 }
-.account_divs{
+
+.account_divs {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
 }
-.account_desc_text{
+
+.account_desc_text {
     font-size: 2.5vw;
 }
-.account_main_text{
+
+.account_main_text {
     font-size: 2vw;
     margin-bottom: 3vw;
 }
-.account_action{
+
+.account_action {
     background-color: #2D3142;
     color: #EAE8FF;
     width: 15vw;
@@ -1085,14 +1121,16 @@ h1 {
     font-size: 1.5vw;
     border-radius: 1vw;
 }
-#user_buttons{
+
+#user_buttons {
     margin-top: 10vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-#log_out_account{
+
+#log_out_account {
     width: 15vw;
     height: 10vh;
     margin-bottom: 2vw;
@@ -1104,7 +1142,8 @@ h1 {
     border-radius: 2vw;
 
 }
-#Delete_account{
+
+#Delete_account {
     width: 15vw;
     height: 10vh;
     margin-bottom: 10vw;
@@ -1114,7 +1153,8 @@ h1 {
     font-size: 1.5vw;
     font-family: light-font;
 }
-.account_changer{
+
+.account_changer {
     display: flex;
     margin-top: 4vw;
     flex-direction: column;
@@ -1124,7 +1164,8 @@ h1 {
 
     cursor: pointer;
 }
-.submit_change{
+
+.submit_change {
     margin-top: 2vw;
     background-color: #2D3142;
     width: 20vw;
@@ -1263,9 +1304,11 @@ h1 {
         background-color: #f6f6f6;
         height: 30vh;
         border-radius: 5vw;
-        
+
     }
-    #slideshow_div1, #slideshow_div2{
+
+    #slideshow_div1,
+    #slideshow_div2 {
         height: auto;
     }
 
@@ -1376,8 +1419,7 @@ h1 {
         height: auto;
         padding: 3vw;
     }
-
-    #showcase_pictures {
+    .showcase_pictures {
         width: 40vw;
         height: auto;
     }
@@ -1404,7 +1446,7 @@ h1 {
     .Size_kubes {
         width: 20vw;
         height: 15vw;
-  
+
     }
 
     #storelser,
@@ -1461,26 +1503,31 @@ h1 {
         border: none;
         margin-bottom: .2vh;
     }
-    .cart_img_holder    {
+
+    .cart_img_holder {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
+
     .shopping_image {
         width: 50vw;
         height: auto;
 
     }
 
-    .total_items_pay, .counter, .cart_full_name {
+    .total_items_pay,
+    .counter,
+    .cart_full_name {
         font-size: 6vw;
         font-weight: 900;
         margin: 1vh;
         display: block;
         font-weight: 900;
     }
-    .cart_full_name{
+
+    .cart_full_name {
         width: 100%;
         text-align: center;
         font-family: thick-font;
@@ -1488,7 +1535,8 @@ h1 {
         z-index: 1;
     }
 
-    .add, .subtract {
+    .add,
+    .subtract {
         width: 25vw;
         margin: 1vh;
         margin-right: 4vh;
@@ -1498,9 +1546,11 @@ h1 {
         font-size: 4.6vw;
         font-weight: 600;
     }
-    .add{
+
+    .add {
         font-size: 5vw;
     }
+
     .button_div {
         width: fit-content;
         margin: 0%;
@@ -1528,6 +1578,7 @@ h1 {
         justify-content: center;
         margin-left: 0%;
     }
+
     .item_nr_1,
     #final_total,
     #final_count {
@@ -1565,25 +1616,30 @@ h1 {
         justify-content: center;
         flex-direction: column;
     }
-    #complete_div{
+
+    #complete_div {
         position: fixed;
         margin: 0%;
     }
+
     .purchase_div {
         width: 100%;
         bottom: 0%;
         height: 20vw;
     }
-    #complete_order{
+
+    #complete_order {
         position: fixed;
         margin: 0%;
     }
+
     .purchase_button {
 
         border-radius: 0%;
         width: 100%;
         height: 20vw;
     }
+
     #log-in {
         border-radius: 0%;
         width: 98vw;
@@ -1592,13 +1648,14 @@ h1 {
         padding: 0%;
         border: solid #2D3142 2px;
     }
-    #log-in-button{
+
+    #log-in-button {
         margin: 0%;
         padding: 0%;
         display: flex;
         justify-content: center;
         margin-bottom: 2vh;
-        
+
     }
 
     #empty_packing {
@@ -1626,9 +1683,10 @@ h1 {
 
     .login-input {
         width: 50vw;
-        
+
     }
-    #login-tekst{
+
+    #login-tekst {
         font-size: 4vh;
         font-weight: 500;
         margin-top: 5vh;
@@ -1636,82 +1694,105 @@ h1 {
     }
 
 
-    #log_in, #log-in-button, #log_in_user_page{
+    #log_in,
+    #log-in-button,
+    #log_in_user_page {
         position: static;
     }
-    #password, #username, #password_confirm{
+
+    #password,
+    #username,
+    #password_confirm {
         font-size: 3vh;
         border-radius: 0%;
         height: 8vh;
         width: 60vw;
     }
-    #username{
+
+    #username {
         margin-bottom: 5vh;
     }
+
     #login_base {
         align-items: flex-start;
     }
-    #login-submit, #sign-submit{
+
+    #login-submit,
+    #sign-submit {
         font-size: 3vh;
         width: 30vw;
         margin-bottom: 2vh;
     }
-    #login_checkbox{
+
+    #login_checkbox {
         width: 3vh;
         height: 3vh;
         font-family: light_font;
         border-radius: 0%;
     }
 
-    #show_pass{
+    #show_pass {
         margin-bottom: 5vh;
     }
-    #checkbox_tekst{
+
+    #checkbox_tekst {
         font-size: 2vh;
     }
-    #show_pass{
+
+    #show_pass {
         width: 90%;
     }
-    #alerts, #confirm{
+
+    #alerts,
+    #confirm {
         width: 100%;
         min-height: 20vw;
         top: -75%;
     }
-    #alert_tekst, #confirm_tekst{
+
+    #alert_tekst,
+    #confirm_tekst {
         font-size: 7vw;
     }
-    #alert_close{
+
+    #alert_close {
         margin-top: 5vw;
         width: 30%;
         height: 6vh;
         font-size: 5vw;
-    }   
-    #confirm_tekst{
+    }
+
+    #confirm_tekst {
         margin-top: 10vh
     }
-    #confirm_button_holder{
+
+    #confirm_button_holder {
         width: 100%;
         height: 10vh;
         margin-top: 3vh;
         margin-bottom: 3vh;
     }
-    .confirm_button{
+
+    .confirm_button {
         width: 15vh;
         height: 10vh;
         font-size: 5vw;
         border-radius: 2vw;
-        
+
     }
-    #account_button_packing{
+
+    #account_button_packing {
         margin-top: 10vh;
         width: 80vw;
         height: 70vh;
     }
-    #welcome_tekst_account{
+
+    #welcome_tekst_account {
         font-size: 8vw;
         font-family: thick-font;
     }
-    .account_buttons{
+
+    .account_buttons {
         height: 15vh;
         width: 40vw;
         font-size: 7vw;
@@ -1719,20 +1800,27 @@ h1 {
         font-family: light-font;
         box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.2), 10px 10px 10px 0px rgba(0, 0, 0, 0.19);
     }
-    .account_desc_text, #welcome_tekst, .account_main_text{
+
+    .account_desc_text,
+    #welcome_tekst,
+    .account_main_text {
         font-size: 10vw;
     }
-    .account_main_text{
+
+    .account_main_text {
         margin-bottom: 4vh;
         margin-top: 0%;
         font-family: light-font;
         font-weight: 100;
     }
-    .account_action{
+
+    .account_action {
         width: 40vw;
         font-size: 5vw;
     }
-    #log_out_account, #Delete_account{
+
+    #log_out_account,
+    #Delete_account {
         width: 40vw;
         font-size: 7vw;
         margin-top: 3vh;
