@@ -171,7 +171,9 @@ function update_total() {
             sessionStorage.setItem(all_shoes[i].navn, JSON.stringify(all_shoes[i]))
 
         }
-        /*skjekker om skoen har blitt lagt til i checkout page, og hvis den har det så skjekker vi om hvis antallet på skoen er 0 eller mindre, hvis det er det, så fjerner vi skoen fra shopping- carten*/
+        /*skjekker om skoen har blitt lagt til i checkout page, og hvis den har det så skjekker vi om 
+        hvis antallet på skoen er 0 eller mindre, hvis det er det, så fjerner vi skoen fra
+        shopping- carten*/
         if (all_shoes[i].been_before == true && all_shoes[i].antall <= 0) {
             var shoe_name = document.getElementById(all_shoes[i].navn + "_div")
             /*fjerner skoen*/

@@ -297,7 +297,9 @@ button {
     width: 100%;
 }
 
+
 .border_div {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;

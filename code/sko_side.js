@@ -1,69 +1,28 @@
-// document.getElementsByClassName("button_add_to_cart")[0].addEventListener('click', add_item)
+// et variabel som skjekker om brukeren har valgt en sko
 var shoe_selected = false
-
+// lager variabler som corresponerer til bildene
 var leftEL = document.getElementById("left")
 var rightEL = document.getElementById("right")
 var topEL = document.getElementById("top")
 var bottomEL = document.getElementById("bottom")
-
+// lager variabler slik at det blir lettere å referere til farge bytte
 var change_color_origEL = document.getElementById("change_color_shoe_orig")
 var change_colorEL = document.getElementById("change_color_shoe")
-/*får select feature til å funke litt i hvært fall*/
-function border38() {
-    document.getElementById("storelse38").style.border = "solid " + "#2D3142 " + "2px"
-    document.getElementById("storelse39").style.border = "none"
-    document.getElementById("storelse40").style.border = "none"
-    document.getElementById("storelse41").style.border = "none"
-    document.getElementById("storelse42").style.border = "none"
-    document.getElementById("storelse43").style.border = "none"
+// her lager jeg borderen
+function border(number){
+    // definerer sko som alle de forskjellige størrelsene
+    var sko = document.getElementsByClassName("Size_kubes")
+    // går for hver sko størrelse og setter alle til å ikke ha en border
+    for (let i = 0; i < sko.length; i++){
+        sko[i].style.border = "none"
+    }
+    // oppdaterer bprder-en til skoen
+    sko[number].style.border = "solid #2D3142 1px"
+    // oppdaterer verdien til true for å sybolisere at brukeren
+    // har valgt en sko
     shoe_selected = true
-}
-function border39() {
-    document.getElementById("storelse38").style.border = "none"
-    document.getElementById("storelse39").style.border = "solid " + "#2D3142 " + "2px"
-    document.getElementById("storelse40").style.border = "none"
-    document.getElementById("storelse41").style.border = "none"
-    document.getElementById("storelse42").style.border = "none"
-    document.getElementById("storelse43").style.border = "none"
-    shoe_selected = true
-}
-function border40() {
-    document.getElementById("storelse38").style.border = "none"
-    document.getElementById("storelse39").style.border = "none"
-    document.getElementById("storelse40").style.border = "solid " + "#2D3142 " + "2px"
-    document.getElementById("storelse41").style.border = "none"
-    document.getElementById("storelse42").style.border = "none"
-    document.getElementById("storelse43").style.border = "none"
-    shoe_selected = true
-}
-function border41() {
-    document.getElementById("storelse38").style.border = "none"
-    document.getElementById("storelse39").style.border = "none"
-    document.getElementById("storelse40").style.border = "none"
-    document.getElementById("storelse41").style.border = "solid " + "#2D3142 " + "2px"
-    document.getElementById("storelse42").style.border = "none"
-    shoe_selected = true
-}
-function border42() {
-    document.getElementById("storelse38").style.border = "none"
-    document.getElementById("storelse39").style.border = "none"
-    document.getElementById("storelse40").style.border = "none"
-    document.getElementById("storelse41").style.border = "none"
-    document.getElementById("storelse42").style.border = "solid " + "#2D3142 " + "2px"
-    document.getElementById("storelse43").style.border = "none"
-    shoe_selected = true
-}
-function border43() {
-    document.getElementById("storelse38").style.border = "none"
-    document.getElementById("storelse39").style.border = "none"
-    document.getElementById("storelse40").style.border = "none"
-    document.getElementById("storelse41").style.border = "none"
-    document.getElementById("storelse42").style.border = "none"
-    document.getElementById("storelse43").style.border = "solid " + "#2D3142 " + "2px"
-    shoe_selected = true
-}
 
-
+}
 /*her ligger alle skoene */
 var all_shoes = [
     AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/TotalsNoBC/R&B.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
@@ -82,37 +41,35 @@ var all_shoes = [
 ]
 
 
-for (let i = 0; all_shoes.length > i; i++) {
-    if (all_shoes[i].navn == document.getElementsByClassName("button_add_to_cart")[0].id) {
-        document.getElementById("price_tekst").innerHTML = "Price: " + all_shoes[i].pris + "kr"
-
-    }
-}
+// clicked shoe er hvilken sko, som ble trykket på
 var clicked_shoe = sessionStorage.getItem("shoe")
+// 
+
+// setter prisen på siden
 document.getElementById("price_tekst").innerHTML = "Price: " + all_shoes[clicked_shoe].pris + "kr"
 
-for (let i = 0; all_shoes.length > i; i++) {
-    if (sessionStorage.getItem(all_shoes[i].navn) && JSON.parse(sessionStorage.getItem(all_shoes[i].navn))) {
-        var shoe_amount = JSON.parse(sessionStorage.getItem(all_shoes[i].navn))
-        all_shoes[i].antall = shoe_amount.antall
-    }
-}
-
+// dette er funktionen til å legge til en sko
 function add_specific_shoe() {
-    var clicked_shoe = sessionStorage.getItem("shoe")
+    // oppdaterer verdien til clicked shoe, i tilfelle noe har skjedd
+    clicked_shoe = sessionStorage.getItem("shoe")
+    // en if for å skjekke om brukeren har valgt størrelse
     if (shoe_selected === true) {
+        // legger til en sko til all_shoes 
         all_shoes[clicked_shoe].antall += 1
+        // lagrer skoen brukeren kjøpte i session storage
         sessionStorage.setItem(all_shoes[clicked_shoe].navn, JSON.stringify(all_shoes[clicked_shoe]))
+        // sender melding til brukeren om at alt er ferdig
         alert_tekst.innerHTML = "Order Recieved, go to the cart to check out.";
         show_alert();
     } else {
+        // sender en feilmelding til brukeren 
         alert_tekst.innerHTML = "Please pick a shoe size";
         show_alert();
     }
 }
 
 
-
+// en array med alle sko linkene, det er det jeg bruker til å vise bildene
 var all_Shoe_link = [
     AJ1R = "sko/Air_Jordan_1_mid/black/",
     AJ1C = "sko/Air_Jordan_1_mid/white/",
@@ -127,41 +84,53 @@ var all_Shoe_link = [
     NIB = "sko/NikeInfinityReact3/black/",
     NIW = "sko/NikeInfinityReact3/white/"
 ]
-
+// en function som sender deg til sko page 
 function move_to_shoePage(shoe) {
+    // lagrer hvilken plass i arrayen skoen er
     sessionStorage.setItem("shoe", shoe)
     window.location.assign("sko_page.html")
 }
-
+// en funktion som plasserer alle bildene på siden
 function get_shoes() {
+    // definerer et variabel som
     var shoe_looper = 0;
+    // oppdaterer verdien til clicked_shoe
     var clicked_shoe = sessionStorage.getItem("shoe")
+    // oppdaterer src-en til alle bildene for å matche skoen
     leftEL.src = all_Shoe_link[clicked_shoe] + "left.webp"
     rightEL.src = all_Shoe_link[clicked_shoe] + "right.webp"
     topEL.src = all_Shoe_link[clicked_shoe] + "top.webp"
     bottomEL.src = all_Shoe_link[clicked_shoe] + "bottom.webp"
+    // oppdaterer teksten på toppen av siden for å vise riktig sko
     document.getElementById("shoe_desc-tekst").innerHTML = all_shoes[clicked_shoe].full_name
+    // oppdaterer et til bilde som blir brukt til å endre farge
     change_color_origEL.src = all_Shoe_link[clicked_shoe] + "left.webp"
+    // skjekker hvilken farge finnes nå
     if (all_Shoe_link[clicked_shoe].includes("white")) {
+        // endrer src, til å være riktig farge
         change_colorEL.src = leftEL.src.replace("white", "black")
     } else {
         change_colorEL.src = leftEL.src.replace("black", "white")
     }
+    // en for loop som går for hver lenke i shoe_links
     for (let i = 0; all_Shoe_link.length > i; i++) {
+        // her har jeg 2 links, en er for live server og den andre er for siden som er oppe på nettet
         if (all_Shoe_link[i] == change_colorEL.src.replace("http://65.108.15.66:22223/", "").replace("left.webp", "")) {
             break;
         } else if (all_Shoe_link[i] == change_colorEL.src.replace("http://127.0.0.1:5501/code/", "").replace("left.webp", "")){
             break;
         } else {
+            // shoe looper er ment for å være hvilket nummer lenken er i arrayen
             shoe_looper++
-            console.log(change_colorEL.src.replace("http://127.0.0.1:5501/code/", "").replace("left.webp", ""))
+            
         }
     }
-    console.log(shoe_looper)
+    // setter en onclick attribute
     change_colorEL.setAttribute("onclick", "move_to_shoePage(" + shoe_looper + ")")
 
 }
 
+// får alt til å gå
 get_shoes()
 
 /*liten huske regel fra SIMEN :)*/

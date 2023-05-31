@@ -7,25 +7,10 @@ var check_out = document.getElementById("item_prises")
 var counter = 1
 var total_price = 0
 var purchase_checker = false
-var total_amount
 
-/*legger til en bestemt sko (might come in handy)*/
-// function add_shoe(number) {
-//     all_shoes[number].antall = all_shoes[number].antall + 1
-//     update_total()
 
-// }
-// /*fjerner en bestemt sko*/
-// function remove_shoe(number) {
-//     all_shoes[number].antall = all_shoes[number].antall - 1
-//     update_total()
-// }
+// /*her ligger alle skoene brukeren har kjøpt */
 
-// /*her ligger alle skoene */
-
-/*slik teller jeg alt for admin siden*/
-var username = "admin";
-var password = "hi";
 var user_bought = [
     AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/TotalsNoBC/R&B.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
     AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/TotalsNoBC/totalCF.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
@@ -41,31 +26,18 @@ var user_bought = [
     NIW = { navn: "NIW", pris: 1425, antall: 0, link: "sko/TotalsNoBC/totalIW.png", been_before: false, calc_before: false, full_name: "Nike Infinity Retro White" },
 ]
 
-
-var shoe_types = [
-    "AJ1R",
-    "AJ1C",
-    "AJDB",
-    "AJDW",
-    "JMB",
-    "JMR",
-    "JR6B",
-    "JR6W",
-    "NDW",
-    "NDB",
-    "NIB",
-    "NIW",
-]
-
-
+// en funktion for å skaffe alle bestillingene
 async function Get_Orders() {
     const res = await fetch("http://65.108.15.66:22223/bought/items",
         {
             method: "GET"
         })
     const data = await res.json()
+    // en for loop som går gjennom hver bestilling
     for (let i = 0; i < data.length; i++) {
+        // hvis kjøperen er det samme som brukernavnet til brukeren
         if (data[i].buyer == sessionStorage.getItem("username")) {
+            // så legger vi til hele bestillingen til totalen
             user_bought[0].antall += data[i].AJ1R
             user_bought[1].antall += data[i].AJ1C
             user_bought[2].antall += data[i].AJDB
@@ -82,8 +54,11 @@ async function Get_Orders() {
             user_bought[11].antall += data[i].NIW
         }
     }
+    // her oppdaterer jeg headeren får å si for eks: Timur's page
     document.getElementById("title").innerHTML = sessionStorage.getItem("username") + "'s page"
+    // kjører funktionen
     update_total()
+    
 
 }
 
@@ -151,62 +126,57 @@ function update_total() {
             document.getElementById("count_items_" + user_bought[i].navn).innerHTML = "Bought: " + items_shoes
 
         }
-        /*lagrer alt*/
     }
 }
-
+// en funktion som skjekker om brukeren er innlogget
 function cause_login() {
+    // hvis brukeren er innlogget 
     if (sessionStorage.getItem("username")) {
+        // så fjerner vi log in screen og lar brukeren se det han har kjøpt
         document.getElementById("login_base").style.display = "none"
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
         Get_Orders()
     } else {
-        document.getElementById("login_base").style.display = "flex"
-        document.getElementById("packing_pay_page").style.display = "none"
-        document.getElementById("empty_packing").style.display = "none"
+        // hvis brukeren ikke er logget inn, så sender vi han til admin page, hvor brukeren skal logge inn
         window.location.assign("admin_page.html")
     }
 
 
 }
-
+// forkorer 2 verdier, som skal bli brukt senere
 var usernameEL = document.getElementById("username").value
 var passwordEL = document.getElementById("password").value
 
-
+// funktionen som lar brukeren logge inn
 async function submit_login() {
+    // oppdaterer vediene
     var usernameEL = document.getElementById("username").value
     var passwordEL = document.getElementById("password").value
+    // sender en forespørsel til databasen om alle brukere
     const res = await fetch("http://65.108.15.66:22223/get/users",
         {
             method: "GET"
         })
+        
+    // definerer users, som alle brukerene som ble sent tilbake av databasen
     var users = await res.json()
 
-    var usernameEL = document.getElementById("username").value
-    var passwordEL = document.getElementById("password").value
-
-    if (username == usernameEL && password == passwordEL) {
-        document.getElementById("packing_pay_page").style.display = "flex"
-        document.getElementById("empty_packing").style.display = "flex"
-        alert_tekst.innerHTML = "Hello admin";
-        show_alert();
-        Get_Orders()
-        update_total()
-
-        return;
-    }
+    // går gjennom hver bruker i databasen 
     for (let i = 0; i < users.length; i++) {
+        // skjekker om passordet til brukeren og input matcher
         if (users[i].username == usernameEL && users[i].passwor == passwordEL) {
+            // gir en alert
             alert_tekst.innerHTML = "Hello " + usernameEL;
             show_alert();
+            // lagrer brukernavnet i sessionstorage
             sessionStorage.setItem("username", usernameEL)
+
             
         }
     }
 }
-
-cause_login()
 /*får alt til å gå*/
+cause_login()
+
 

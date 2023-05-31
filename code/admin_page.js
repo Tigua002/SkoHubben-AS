@@ -10,6 +10,7 @@ var purchase_checker = false
 var total_amount
 var logged_inn = false
 
+// en funktion som blir brukt til å vise passordet
 function show_password() {
     if (password_input.type == "password") {
         document.getElementById("login_checkbox").checked = true;
@@ -22,8 +23,10 @@ function show_password() {
     }
 }
 
+// definerer brukernavner og passordet til admin page
 var username = "admin";
 var password = "hi";
+// en liste med alle kjøpte gjenstander
 var bought_items = [
     AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/TotalsNoBC/R&B.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
     AJ1C = { navn: "AJ1C", pris: 1429, antall: 0, link: "sko/TotalsNoBC/totalCF.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Lakers" },
@@ -38,6 +41,7 @@ var bought_items = [
     NIB = { navn: "NIB", pris: 1425, antall: 0, link: "sko/TotalsNoBC/totalIB.png", been_before: false, calc_before: false, full_name: "Nike Infinity Retro Black" },
     NIW = { navn: "NIW", pris: 1425, antall: 0, link: "sko/TotalsNoBC/totalIW.png", been_before: false, calc_before: false, full_name: "Nike Infinity Retro White" },
 ]
+// en liste alle gjenstandende 1 bruker har kjøpt
 
 var user_bought = [
     AJ1R = { navn: "AJ1R", pris: 1429, antall: 0, link: "sko/TotalsNoBC/R&B.png", been_before: false, calc_before: false, full_name: "Air Jordan 1 Red and Black" },
@@ -53,33 +57,16 @@ var user_bought = [
     NIB = { navn: "NIB", pris: 1425, antall: 0, link: "sko/TotalsNoBC/totalIB.png", been_before: false, calc_before: false, full_name: "Nike Infinity Retro Black" },
     NIW = { navn: "NIW", pris: 1425, antall: 0, link: "sko/TotalsNoBC/totalIW.png", been_before: false, calc_before: false, full_name: "Nike Infinity Retro White" },
 ]
-var shoe_types = [
-    "AJ1R",
-    "AJ1C",
-    "AJDB",
-    "AJDW",
-    "JMB",
-    "JMR",
-    "JR6B",
-    "JR6W",
-    "NDW",
-    "NDB",
-    "NIB",
-    "NIW",
-]
-/*skjekker om noe finnes før*/
-// for (let i = 0; bought_items.length > i; i++) {
-//     if (sessionStorage.getItem(bought_items[i].navn) && JSON.parse(sessionStorage.getItem(bought_items[i].navn + "_bought"))) {
-//         bought_items[i].antall = JSON.parse(sessionStorage.getItem(bought_items[i].navn + "_bought"))
-//     }
-// }
-document.getElementById("home").style.marg
+
+// her skaffer jeg alle bestillingene
 async function Get_Orders() {
+    // sender en forespørsel til databasen
     const res = await fetch("http://65.108.15.66:22223/bought/items",
         {
             method: "GET"
         })
     const data = await res.json()
+    // for loop som går for hver bestilling
     for (let i = 0; i < data.length; i++) {
         bought_items[0].antall += data[i].AJ1R
         bought_items[1].antall += data[i].AJ1C
@@ -96,6 +83,7 @@ async function Get_Orders() {
         bought_items[10].antall += data[i].NIB
         bought_items[11].antall += data[i].NIW
     }
+    // caller funktioner, som gjør alt det visuale
     update_total()
     calculate()
 }
@@ -159,7 +147,6 @@ function update_total() {
             document.getElementById("count_items_" + bought_items[i].navn).innerHTML = "Bought: " + items_shoes
 
         }
-        /*lagrer alt*/
     }
 }
 
@@ -220,70 +207,78 @@ function calculate() {
     }
 }
 
+// funktionen som får log in til å funke
 function cause_login() {
+    // skjekker om username er lagret i sessionStorage
     if (sessionStorage.getItem("username")) {
+        // hvis det er det, så sender vi brukeren til account siden
         window.location.assign("account.html")
     }
+    // hvis brukeren ikke er logget inn, så åpner vi hele log in siden. mens i skjuler det andre
     document.getElementById("login_base").style.display = "flex"
     document.getElementById("packing_pay_page").style.display = "none"
     document.getElementById("empty_packing").style.display = "none"
-
 }
-
+// definerer variabler, som er forkortelser
 var usernameEL = document.getElementById("username").value
 var passwordEL = document.getElementById("password").value
 
-
+// det som skjer når brukeren trykker på log in
 async function submit_login() {
+    // oppdaterer alle verdiene
     var usernameEL = document.getElementById("username").value
     var passwordEL = document.getElementById("password").value
+    // sender er forespørsel til databasen om alle brukere
     const res = await fetch("http://65.108.15.66:22223/get/users",
         {
             method: "GET"
         })
     var users = await res.json()
-
-    var usernameEL = document.getElementById("username").value
-    var passwordEL = document.getElementById("password").value
-
+    // hvis passordene og brukernavnet matcher admin brukeren, så er brukeren logget inn som admin 
     if (username == usernameEL && password == passwordEL) {
+        // viser all informationen
         document.getElementById("packing_pay_page").style.display = "flex"
         document.getElementById("empty_packing").style.display = "flex"
+        // gir en velkommen til admin
         alert_tekst.innerHTML = "Hello admin!"
         document.getElementById("login_base").remove()
+        // kjører alle funktionene
         show_alert()
         Get_Orders()
         update_total()
         calculate()
         return;
-        
+
     } else {
 
-
+        // går gjennom hver bruker 
         for (let i = 0; i < users.length; i++) {
+            //  hvis brukernavnet og passordet matcher, med en av de existerende brukerne
             if (users[i].username == usernameEL && users[i].passwor == passwordEL) {
+                //  så gir vi en velcommen
                 alert_tekst.innerHTML = "Hello " + usernameEL
                 show_alert()
+                // og lagrer brukernavnet og passoret i session Storage
                 sessionStorage.setItem("password", passwordEL)
                 sessionStorage.setItem("username", usernameEL)
-                logged_inn = true
+                return;
             }
         }
     }
-    if (logged_inn == false) {
-        alert_tekst.innerHTML = "User not found";
-        show_alert();
-    }
+    // sender en feilmelding om vi ikke finder brukeren
+    alert_tekst.innerHTML = "User not found";
+    show_alert();
+
 }
 
-
-function change_location(){
-    if (logged_inn == true){
+// sender brukeren til account siden, når brukeren har logget inn
+function change_location() {
+    if (logged_inn == true) {
         window.location.assign("account.html")
     }
 
 }
-
-cause_login()
 /*får alt til å gå*/
+cause_login()
+
 
