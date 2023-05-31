@@ -261,6 +261,8 @@ async function submit_login() {
                 // og lagrer brukernavnet og passoret i session Storage
                 sessionStorage.setItem("password", passwordEL)
                 sessionStorage.setItem("username", usernameEL)
+                // sender brukeren til account.html
+                change_location()
                 return;
             }
         }
