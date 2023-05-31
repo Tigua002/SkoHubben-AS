@@ -262,6 +262,7 @@ async function submit_login() {
                 sessionStorage.setItem("password", passwordEL)
                 sessionStorage.setItem("username", usernameEL)
                 // sender brukeren til account.html
+                logged_inn = true
                 change_location()
                 return;
             }
