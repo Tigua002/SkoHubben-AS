@@ -96,7 +96,7 @@ if (document.getElementById("welcome_tekst_account")){
 }
 
 // dette gir alerten, som kommer opp, hvis man er på live server istedet for hoved siden
-if (document.getElementById("menu_logo").src.includes("65.108.15.66/22223")){
+if (document.getElementById("menu_logo").src.includes("65.108.15.66:22223")){
 } else{
   alert("This is a test site, to view the full site go to '65.108.15.66:22223'")
 }
