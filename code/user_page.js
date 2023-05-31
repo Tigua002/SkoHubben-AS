@@ -145,37 +145,8 @@ function cause_login() {
 
 }
 // forkorer 2 verdier, som skal bli brukt senere
-var usernameEL = document.getElementById("username").value
-var passwordEL = document.getElementById("password").value
 
-// funktionen som lar brukeren logge inn
-async function submit_login() {
-    // oppdaterer vediene
-    var usernameEL = document.getElementById("username").value
-    var passwordEL = document.getElementById("password").value
-    // sender en forespørsel til databasen om alle brukere
-    const res = await fetch("http://65.108.15.66:22223/get/users",
-        {
-            method: "GET"
-        })
-        
-    // definerer users, som alle brukerene som ble sent tilbake av databasen
-    var users = await res.json()
 
-    // går gjennom hver bruker i databasen 
-    for (let i = 0; i < users.length; i++) {
-        // skjekker om passordet til brukeren og input matcher
-        if (users[i].username == usernameEL && users[i].passwor == passwordEL) {
-            // gir en alert
-            alert_tekst.innerHTML = "Hello " + usernameEL;
-            show_alert();
-            // lagrer brukernavnet i sessionstorage
-            sessionStorage.setItem("username", usernameEL)
-
-            
-        }
-    }
-}
 /*får alt til å gå*/
 cause_login()
 
